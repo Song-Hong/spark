@@ -1,14 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7xw0idyjrlj"]
+[gd_scene load_steps=20 format=3 uid="uid://b7xw0idyjrlj"]
 
 [ext_resource type="Script" path="res://Pages/MainPage/main_page.gd" id="1_ux6rw"]
 [ext_resource type="ButtonGroup" uid="uid://yd3x5h3lkmxv" path="res://Pages/MainPage/left_tray_mode.tres" id="2_3umps"]
 [ext_resource type="Script" path="res://Pages/Main_ChatsPage/main_chats_page.gd" id="3_knxx7"]
+[ext_resource type="ButtonGroup" uid="uid://c087wss6fec0u" path="res://Pages/Main_ChatsPage/friend_item_group.tres" id="4_knx3o"]
 [ext_resource type="Script" path="res://Pages/Main_ChatsPage/text_edit_controller.gd" id="4_pagv0"]
-[ext_resource type="PackedScene" uid="uid://dbn3srh14mamt" path="res://Prefabs/chat_item.tscn" id="4_wqqyu"]
 [ext_resource type="Texture2D" uid="uid://dq2t5geycnvr6" path="res://Assets/Icon/emoji_icon.png" id="5_8f04f"]
-[ext_resource type="Script" path="res://Pages/MainPage/net_controller.gd" id="7_7uo06"]
-[ext_resource type="Script" path="res://Pages/MainPage/net_connection_controller.gd" id="8_msqnn"]
-[ext_resource type="Script" path="res://Pages/MainPage/net_data_parsing_controller.gd" id="9_e6j45"]
+[ext_resource type="Texture2D" uid="uid://bbljbftf5jci7" path="res://Assets/Icon/search_black.svg" id="5_uvg3a"]
+[ext_resource type="Script" path="res://Pages/Main_ChatsPage/firend_controller.gd" id="6_vg7y3"]
+[ext_resource type="Script" path="res://Pages/Main_ChatsPage/message_net.gd" id="6_wj6jr"]
+[ext_resource type="Script" path="res://Pages/Main_ChatsPage/search_button_controller.gd" id="10_w2wyg"]
+[ext_resource type="PackedScene" uid="uid://pakfb8o0rjmf" path="res://Pages/Search/search.tscn" id="11_7sm5u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gcq0"]
 bg_color = Color(0.823529, 0.956863, 1, 1)
@@ -30,6 +32,15 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pm3ib"]
+bg_color = Color(0.65098, 0.917647, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tavsm"]
 bg_color = Color(0.752941, 0.941176, 1, 1)
@@ -62,10 +73,9 @@ shadow_size = 2
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wol56"]
 
-[node name="MainPage" type="Node" node_paths=PackedStringArray("Net")]
+[node name="MainPage" type="Node"]
 script = ExtResource("1_ux6rw")
 LeftTrayMode = ExtResource("2_3umps")
-Net = NodePath("Controller/NetController")
 
 [node name="MainPage" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -79,10 +89,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2gcq0")
 
 [node name="MarginContainer" type="MarginContainer" parent="MainPage"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 6
 theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainPage/MarginContainer"]
 layout_mode = 2
@@ -148,13 +158,18 @@ button_group = ExtResource("2_3umps")
 text = "Setting"
 flat = true
 
-[node name="Main_ChatsPage" type="HBoxContainer" parent="MainPage/MarginContainer/HBoxContainer" node_paths=PackedStringArray("TextInput", "TextArea", "TextView")]
+[node name="Main_ChatsPage" type="HBoxContainer" parent="MainPage/MarginContainer/HBoxContainer" node_paths=PackedStringArray("FriendArea", "ChatPanel", "TextInput", "TextArea", "TextView", "SearchPanel", "SearchButton")]
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("3_knxx7")
-TextInput = NodePath("PanelContainer/MarginContainer/VBoxContainer/TextInputArea/MarginContainer/TextEdit")
-TextArea = NodePath("PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer")
-TextView = NodePath("PanelContainer/MarginContainer/VBoxContainer/ScrollContainer")
+FriendAreaButtonGroup = ExtResource("4_knx3o")
+FriendArea = NodePath("Middle/VBoxContainer/Friends/ScrollContainer/FriendArea")
+ChatPanel = NodePath("Content/ChatPanel")
+TextInput = NodePath("Content/ChatPanel/VBoxContainer/TextInputArea/MarginContainer/TextEdit")
+TextArea = NodePath("Content/ChatPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer")
+TextView = NodePath("Content/ChatPanel/VBoxContainer/ScrollContainer")
+SearchPanel = NodePath("../../../Search")
+SearchButton = NodePath("Middle/VBoxContainer/MarginContainer/Search")
 
 [node name="Middle" type="PanelContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage"]
 custom_minimum_size = Vector2(200, 0)
@@ -165,35 +180,76 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_su6wl")
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage"]
+[node name="Friends" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer/Friends"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FriendArea" type="VBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer/Friends/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 14
+
+[node name="Search" type="Button" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_pm3ib")
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer/MarginContainer/Search"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 26.0
+offset_bottom = 24.0
+texture = ExtResource("5_uvg3a")
+expand_mode = 1
+
+[node name="Content" type="PanelContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_tavsm")
 
-[node name="MarginContainer" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer"]
+[node name="ChatPanel" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 6
 theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="NowChatTarget" type="Label" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "肖杰 (在线)"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 follow_focus = true
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -202,20 +258,17 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 26
 
-[node name="ChatItem" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("4_wqqyu")]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
@@ -223,18 +276,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3k8j0")
 icon = ExtResource("5_8f04f")
 icon_alignment = 1
 
-[node name="TextInputArea" type="PanelContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="TextInputArea" type="PanelContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mop00")
 
-[node name="MarginContainer" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer/MarginContainer/VBoxContainer/TextInputArea"]
+[node name="MarginContainer" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer/TextInputArea"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="TextEdit" type="TextEdit" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/PanelContainer/MarginContainer/VBoxContainer/TextInputArea/MarginContainer"]
+[node name="TextEdit" type="TextEdit" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer/TextInputArea/MarginContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -246,17 +299,17 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_wol56")
 [node name="TextEditController" type="Node" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Controller"]
 script = ExtResource("4_pagv0")
 
+[node name="FirendController" type="Node" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Controller"]
+script = ExtResource("6_vg7y3")
+
+[node name="MessageNetController" type="Node" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Controller"]
+script = ExtResource("6_wj6jr")
+
+[node name="SearchButtonController" type="Node" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Controller"]
+script = ExtResource("10_w2wyg")
+
+[node name="Search" parent="MainPage" instance=ExtResource("11_7sm5u")]
+visible = false
+layout_mode = 2
+
 [node name="Controller" type="Node" parent="."]
-
-[node name="NetController" type="Node" parent="Controller" node_paths=PackedStringArray("server", "receive")]
-script = ExtResource("7_7uo06")
-server = NodePath("NetConnectionController")
-receive = NodePath("NetDataParsingController")
-
-[node name="NetConnectionController" type="Node" parent="Controller/NetController"]
-script = ExtResource("8_msqnn")
-host = "127.0.0.1"
-port = 1728
-
-[node name="NetDataParsingController" type="Node" parent="Controller/NetController"]
-script = ExtResource("9_e6j45")

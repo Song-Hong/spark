@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxo84sklosl5i"]
+[gd_scene load_steps=7 format=3 uid="uid://cxo84sklosl5i"]
 
 [ext_resource type="Script" path="res://Pages/LoginPage/login_page.gd" id="1_icq30"]
 [ext_resource type="ButtonGroup" uid="uid://dsyh40qrwa2jo" path="res://Pages/LoginPage/LoginPage.tres" id="2_47xag"]
 [ext_resource type="Script" path="res://Pages/LoginPage/choose_login_mode_controller.gd" id="3_ynso5"]
 [ext_resource type="Script" path="res://Pages/LoginPage/login_controller.gd" id="4_xc54x"]
-[ext_resource type="Script" path="res://Pages/LoginPage/server_connect.gd" id="5_muebp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5wap"]
 bg_color = Color(0.823529, 0.956863, 1, 1)
@@ -141,8 +140,3 @@ script = ExtResource("3_ynso5")
 
 [node name="LoginController" type="Node" parent="Controller"]
 script = ExtResource("4_xc54x")
-
-[node name="ServerConnect" type="Node" parent="Controller"]
-script = ExtResource("5_muebp")
-host = "60.204.140.223"
-port = 1728

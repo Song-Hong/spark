@@ -1,4 +1,13 @@
-res://Pages/Core/Core.tscn
-res://Pages/LoginPage/LoginPage.tscn
 res://Pages/MainPage/MainPage.tscn
-res://Pages/Core/core.gd
+res://Pages/Song/Song.tscn
+res://Pages/LoginPage/LoginPage.tscn
+res://Pages/Main_ChatsPage/Prefabs/friend_item.tscn
+res://Pages/Main_ChatsPage/text_edit_controller.gd
+res://Pages/Main_ChatsPage/main_chats_page.gd
+res://Pages/Main_ChatsPage/search_button_controller.gd
+res://Pages/Main_ChatsPage/search_controller.gd
+res://Pages/Search/search.tscn
+res://Pages/Search/main_search.gd
+res://Pages/Search/search_input_controller.gd
+res://Pages/Main_ChatsPage/Prefabs/friend_item.gd
+res://Pages/Search/search_controller.gd

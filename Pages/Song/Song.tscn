@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8hnm4cbetssm"]
+
+[ext_resource type="Script" path="res://Pages/Song/song.gd" id="1_0nhxl"]
+[ext_resource type="PackedScene" uid="uid://cxo84sklosl5i" path="res://Pages/LoginPage/LoginPage.tscn" id="2_3w26m"]
+[ext_resource type="Script" path="res://Pages/Song/net_controller.gd" id="3_co7fd"]
+[ext_resource type="Script" path="res://Pages/Song/net_connection_controller.gd" id="4_jhfi1"]
+[ext_resource type="Script" path="res://Pages/Song/net_data_parsing_controller.gd" id="5_gpe0a"]
+[ext_resource type="Script" path="res://Pages/Song/data_controller.gd" id="6_gue32"]
+
+[node name="Song" type="Node" node_paths=PackedStringArray("Net", "Data")]
+script = ExtResource("1_0nhxl")
+StartPage = ExtResource("2_3w26m")
+Net = NodePath("Controller/NetController")
+Data = NodePath("Controller/DataController")
+
+[node name="View" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Controller" type="Node" parent="."]
+
+[node name="NetController" type="Node" parent="Controller" node_paths=PackedStringArray("server", "receive")]
+script = ExtResource("3_co7fd")
+server = NodePath("NetConnectionController")
+receive = NodePath("NetDataParsingController")
+
+[node name="NetConnectionController" type="Node" parent="Controller/NetController"]
+script = ExtResource("4_jhfi1")
+host = "60.204.140.223"
+port = 1728
+
+[node name="NetDataParsingController" type="Node" parent="Controller/NetController"]
+script = ExtResource("5_gpe0a")
+
+[node name="DataController" type="Node" parent="Controller"]
+script = ExtResource("6_gue32")

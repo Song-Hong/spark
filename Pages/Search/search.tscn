@@ -1,0 +1,172 @@
+[gd_scene load_steps=11 format=3 uid="uid://pakfb8o0rjmf"]
+
+[ext_resource type="Script" path="res://Pages/Search/main_search.gd" id="1_j56hk"]
+[ext_resource type="Texture2D" uid="uid://bfcsx4s3vcolw" path="res://Assets/Logo/logo.svg" id="1_q4hr2"]
+[ext_resource type="Script" path="res://Pages/Search/search_controller.gd" id="3_tv4fd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fb4v1"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj4mc"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5ldl"]
+bg_color = Color(0.0980392, 0.564706, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3i5ju"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x3de1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqelq"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nerkn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Search" type="PanelContainer" node_paths=PackedStringArray("SearchInput", "SearchController")]
+script = ExtResource("1_j56hk")
+SearchInput = NodePath("MarginContainer/VBoxContainer/SearchInput")
+SearchController = NodePath("Controller/SearchController")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="PersonCard" type="Panel" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(340, 140)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fb4v1")
+
+[node name="Head" type="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PersonCard"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 80.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_q4hr2")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PersonCard"]
+layout_mode = 2
+offset_left = 22.0
+offset_top = 80.0
+offset_right = 72.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Song"
+
+[node name="Username" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PersonCard"]
+layout_mode = 2
+offset_left = 22.0
+offset_top = 100.0
+offset_right = 89.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.584314, 0.584314, 0.584314, 1)
+theme_override_font_sizes/font_size = 14
+text = "hongsong"
+vertical_alignment = 1
+
+[node name="Message" type="LineEdit" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PersonCard"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 32.0
+offset_right = 322.0
+offset_bottom = 72.0
+theme_override_colors/font_placeholder_color = Color(0.699653, 0.699653, 0.699653, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_pj4mc")
+placeholder_text = "Hello"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PersonCard"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 88.0
+offset_right = 320.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_w5ldl")
+text = "Add Friend"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_3i5ju")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_x3de1")
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pqelq")
+toggle_mode = true
+button_pressed = true
+text = "Person"
+
+[node name="SearchInput" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nerkn")
+
+[node name="Controller" type="Node" parent="."]
+
+[node name="SearchController" type="Node" parent="Controller"]
+script = ExtResource("3_tv4fd")

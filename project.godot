@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Spark"
-run/main_scene="res://Pages/LoginPage/LoginPage.tscn"
+run/main_scene="res://Pages/Song/Song.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Logo/Spark.svg"
 
 [input]
 
@@ -27,3 +27,4 @@ ui_text_line_feed={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

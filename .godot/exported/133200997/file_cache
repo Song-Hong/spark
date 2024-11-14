@@ -1,0 +1,8 @@
+res://Pages/LoginPage/LoginPage.tres::7a3e88e90dc54c9199dcfeee79316906::1730881528::res://.godot/exported/133200997/export-c939f8f526817ffe42a3528184f07694-LoginPage.res
+res://Pages/LoginPage/LoginPage.tscn::ab140af9ff41a35394b8479aa8993832::1731573875::res://.godot/exported/133200997/export-bb1c714f6d29620e94eee796c2a5b672-LoginPage.scn
+res://Pages/MainPage/left_tray_mode.tres::13d987cd58cb5b43d3130cf5bd677f89::1731050423::res://.godot/exported/133200997/export-fa4f1a2d17fd382ed0a79e5a00734780-left_tray_mode.res
+res://Pages/MainPage/MainPage.tscn::e79e8ef69b3121362b484566ebb95839::1731573875::res://.godot/exported/133200997/export-5ca7ff0c01ba84aafed2c17a2e294245-MainPage.scn
+res://Pages/Main_ChatsPage/Prefabs/chat_item.tscn::7bea52a3a523c096829bc01502d58f60::1731426771::res://.godot/exported/133200997/export-0edeec60aa8ebc9c29167a52d003e608-chat_item.scn
+res://Pages/Main_ChatsPage/Prefabs/friend_item.tscn::4169d991b9fa605d5fc250ce028799f8::1731573875::res://.godot/exported/133200997/export-233d0638ad9aee723ea138a4494aa9a6-friend_item.scn
+res://Pages/Main_ChatsPage/friend_item_group.tres::4a4dae93c9896b3787f1659d353662b7::1731566716::res://.godot/exported/133200997/export-08d1f32c53fccd0728efbc4fe819a3ab-friend_item_group.res
+res://Pages/Song/Song.tscn::8ecee50102f5080de9a3cdb91de974e0::1731573875::res://.godot/exported/133200997/export-d91d38a9ac35f302ced8c4a94aa10f9d-Song.scn
