@@ -6,6 +6,8 @@ var Net:Module_Net #网络服务器
 func _ready():
 	Net = Song.Module.Net
 	Net.receive.connect("friend_msg_receive",Callable(self,"_on_friend_msg_receive"))
+	Net.receive.connect("friend_add_receive",Callable(self,"_on_friend_add_receive"))
+	Net.receive.connect("friend_agree_receive",Callable(self,"_on_friend_agree_receive"))
 
 #发送消息
 func send_messgae(text):
@@ -28,6 +30,17 @@ func _on_friend_msg_receive(data):
 		pass
 	$"../FirendController".update_friend_last_message(data.SID,data.MSG)
 
+#接收到好友申请请求
+func _on_friend_add_receive(data):
+	#data.TID
+	$"../FirendController".new_friend_msg(data.SID,data.Name,data.MSG)
+
+#接收到新好友同意申请请求
+func _on_friend_agree_receive(data):
+	$"../FirendController".create_friend_item(data.SID,data.Name)
+
 ## TEST 退出场景时断开全部监听
 func _exit_tree():
 	Net.receive.disconnect("friend_msg_receive",Callable(self,"_on_friend_msg_receive"))
+	Net.receive.disconnect("friend_add_receive",Callable(self,"_on_friend_add_receive"))
+	Net.receive.disconnect("friend_agree_receive",Callable(self,"_on_friend_agree_receive"))

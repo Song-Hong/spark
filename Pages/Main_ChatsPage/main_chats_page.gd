@@ -14,5 +14,5 @@ extends HBoxContainer
 @export var TextView:ScrollContainer   #文本显示滚轮区域
 
 ## Search
-@export var SearchPanel:PanelContainer #搜索区域
+@export var SearchPanel:Button         #搜索区域
 @export var SearchButton:Button        #搜索按钮

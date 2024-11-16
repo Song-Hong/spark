@@ -1,10 +1,11 @@
-Node
-TextureRect
-LineEdit
-HSeparator
+HBoxContainer
 Button
 Label
+TextureRect
 Panel
+Node
+LineEdit
+HSeparator
 MarginContainer
 PanelContainer
 VSeparator

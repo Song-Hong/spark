@@ -25,7 +25,7 @@ func _on_text_edit_gui_input(_event):
 		scroll_bar_lowest()
 		
 		##发送消息
-		$"../MessageNet".send_messgae(msg_text)
+		$"../MessageNetController".send_messgae(msg_text)
 		
 		##更新最后消息
 		$"../FirendController".update_friend_last_message(Song.Module.Data.TargetID,msg_text)

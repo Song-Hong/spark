@@ -16,9 +16,9 @@ func login_request():
 #当获取到登陆请求回馈
 func _on_login_state_receive(data):
 	if data.S == 1: #登陆成功
-		print("登陆成功")
 		#将当前登陆ID存储至数据中
 		Song.Module.Data.SelfID = data.ID
+		Song.Module.Data.Name = data.Name
 		#切换场景至主场景
 		var view  = $"../..".get_parent()
 		var scene = load("res://Pages/MainPage/MainPage.tscn").instantiate()

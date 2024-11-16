@@ -44,3 +44,10 @@ func update_friend_last_message(id,msg):
 	var friend = FriendArea.get_node_or_null(str(id))
 	if friend != null:
 		friend.set_friend_last_message(msg)
+
+#新好友消息
+func new_friend_msg(friend_id,friend_name,friend_msg):
+	var friend = load("res://Pages/Main_ChatsPage/Prefabs/new_friend.tscn").instantiate()
+	FriendArea.add_child(friend)
+	friend.init(friend_id,friend_name,friend_msg)
+	friend.move_to_front()
