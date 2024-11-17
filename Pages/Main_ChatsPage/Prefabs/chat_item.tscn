@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dbn3srh14mamt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxlen"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.603922, 0.603922, 0.8, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -13,6 +13,6 @@ expand_margin_bottom = 8.0
 
 [node name="ChatItem" type="Label"]
 size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qxlen")
 text = "你好"

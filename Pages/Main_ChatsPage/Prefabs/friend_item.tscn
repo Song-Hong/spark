@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ywykaw3fhx46" path="res://Assets/Logo/Spark.svg" id="2_k86gu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp454"]
-bg_color = Color(0.752941, 0.941176, 1, 1)
+bg_color = Color(0.603922, 0.603922, 0.8, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -16,12 +16,12 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqkgf"]
-bg_color = Color(0.55, 0.895, 1, 1)
+bg_color = Color(0.529905, 0.52748, 0.742933, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
+border_color = Color(0.374195, 0.284075, 0.505232, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -35,9 +35,10 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="FriendItem" type="Button"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(180, 60)
 focus_mode = 0
 theme_override_styles/focus = SubResource("StyleBoxFlat_bp454")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bp454")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nqkgf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bp454")
 toggle_mode = true
@@ -62,7 +63,7 @@ offset_left = 60.0
 offset_top = 5.0
 offset_right = 92.0
 offset_bottom = 28.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "肖杰"
 vertical_alignment = 1
@@ -74,7 +75,7 @@ offset_left = 62.0
 offset_top = 28.0
 offset_right = 102.0
 offset_bottom = 58.0
-theme_override_colors/font_color = Color(0.277528, 0.277528, 0.277528, 1)
+theme_override_colors/font_color = Color(0.873298, 0.873298, 0.873298, 1)
 theme_override_font_sizes/font_size = 16
 text = "在吗"
 vertical_alignment = 1

@@ -8,4 +8,4 @@ extends Node
 
 #初始化
 func _ready():
-	pass
+	get_window().size = Vector2(600,400)

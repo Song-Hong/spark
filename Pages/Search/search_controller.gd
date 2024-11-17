@@ -10,7 +10,6 @@ func _ready():
 
 #断开监听
 func _exit_tree():
-	return
 	Song.Module.Net.receive.disconnect("friend_search_receive",Callable(self,"_on_friend_search_receive"))
 
 #当结束输入,发送好友查询

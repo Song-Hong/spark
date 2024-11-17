@@ -11,7 +11,7 @@ func _ready():
 
 #当按钮点击时
 func _on_pressed():
-	SearchArea.display()
+	SearchArea.display($"../..".SearchButton)
 
 #TEST 
 func _exit_tree():
