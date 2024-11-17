@@ -17,8 +17,10 @@ func _on_text_submitted(text):
 	# 清除搜索框
 	SearchInput.clear()
 	# 发送好友请求
-	var json = '{"App"  : "Spark","Type" : 10008,"Data" : {"U":"%s"}}'%text
-	Song.Module.Net.send(json)
+	var json    = NetJson.new()
+	json.Type   = 10008
+	json.Data.U = text
+	Song.Module.Net.send(json.to_json())
 
 #接收到搜索结果
 func _on_friend_search_receive(data):

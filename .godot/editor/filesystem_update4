@@ -12,3 +12,13 @@ res://Pages/Search/search_controller.gd
 res://Pages/LoginPage/login_page.gd
 res://Pages/MainPage/main_page.gd
 res://Pages/LoginPage/login_controller.gd
+res://Pages/MainPage/tray_controller.gd
+res://Utility/NetJson.gd
+res://Pages/Song/song.gd
+res://Pages/Main_ChatsPage/firend_controller.gd
+res://Pages/Main_ChatsPage/message_net.gd
+res://Pages/Main_ChatsPage/Prefabs/new_friend.gd
+res://Pages/LoginPage/choose_login_mode_controller.gd
+res://Pages/Song/net_data_parsing_controller.gd
+res://Pages/Search/Perfabs/person_card.gd
+res://Pages/Main_ChatsPage/text_edit_controller.gd

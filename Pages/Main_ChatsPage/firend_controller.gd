@@ -11,13 +11,18 @@ func _ready():
 	FriendAreaButtonGroup = $"../..".FriendAreaButtonGroup
 	
 	#获取好友列表
-	var json = '{"App"  : "Spark","Type" : 10003,"Data" : {"ID":%s}}'
-	json     = json%Song.Module.Data.SelfID
-	Song.Module.Net.send(json)
+	var json     = NetJson.new()
+	json.Type    = 10003
+	json.Data.ID = Song.Module.Data.SelfID
+	Song.Module.Net.send(json.to_json())
 	Song.Module.Net.receive.connect("friend_list_receive",Callable(self,"_on_friend_list_receive"))
 	
 	#订阅好友列表点击事件
 	FriendAreaButtonGroup.connect("pressed",Callable(self,"_on_friend_button_pressed"))
+
+#退出清空订阅
+func _exit_tree():
+	FriendAreaButtonGroup.disconnect("pressed",Callable(self,"_on_friend_button_pressed"))
 
 #接收到好友列表请求
 func _on_friend_list_receive(data):

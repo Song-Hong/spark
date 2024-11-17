@@ -17,6 +17,10 @@ func _ready():
 	search_input_pos    = SearchInput.global_position
 	search_input_size   = SearchInput.size
 
+#退出清空订阅
+func _exit_tree():
+	disconnect("pressed",Callable(self,"undisplay"))
+
 #显示
 func display(_serch_button=null):
 	self.visible = true

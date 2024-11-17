@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b7xw0idyjrlj"]
+[gd_scene load_steps=28 format=3 uid="uid://b7xw0idyjrlj"]
 
 [ext_resource type="Script" path="res://Pages/MainPage/main_page.gd" id="1_ux6rw"]
 [ext_resource type="ButtonGroup" uid="uid://yd3x5h3lkmxv" path="res://Pages/MainPage/left_tray_mode.tres" id="2_3umps"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://5co56ibkg0lp" path="res://Assets/Icon/search_white.svg" id="10_cyms0"]
 [ext_resource type="Script" path="res://Pages/Main_ChatsPage/search_button_controller.gd" id="10_w2wyg"]
 [ext_resource type="PackedScene" uid="uid://pakfb8o0rjmf" path="res://Pages/Search/search.tscn" id="11_7sm5u"]
+[ext_resource type="Script" path="res://Pages/MainPage/tray_controller.gd" id="17_m8qvq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gcq0"]
 bg_color = Color(0.603922, 0.603922, 0.8, 1)
@@ -131,6 +132,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Setting" type="Button" parent="MainPage/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -320,3 +322,6 @@ visible = false
 layout_mode = 2
 
 [node name="Controller" type="Node" parent="."]
+
+[node name="TrayController" type="Node" parent="Controller"]
+script = ExtResource("17_m8qvq")

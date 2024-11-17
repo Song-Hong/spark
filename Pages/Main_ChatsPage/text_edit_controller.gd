@@ -9,7 +9,11 @@ func _ready():
 	TextArea  = $"../..".TextArea
 	TextView  = $"../..".TextView
 	TextInput.connect("gui_input",Callable(self,"_on_text_edit_gui_input"))
-
+	
+#退出清空订阅
+func _exit_tree():
+	TextInput.disconnect("gui_input",Callable(self,"_on_text_edit_gui_input"))
+	
 #输入文本的UI事件
 func _on_text_edit_gui_input(_event):
 	if Input.is_action_just_released("ui_text_line_feed"): #换行 shift + enter
@@ -49,7 +53,3 @@ func create_msg_bubble(text,is_self = true):
 func scroll_bar_lowest():
 	await get_tree().process_frame
 	TextView.get_v_scroll_bar().ratio = 1
-
-## TEST 退出场景时断开全部监听
-func _exit_tree():
-	TextInput.disconnect("gui_input",Callable(self,"_on_text_edit_gui_input"))

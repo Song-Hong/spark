@@ -8,6 +8,7 @@ func _ready():
 	$HBoxContainer/Agree.connect("pressed",Callable(self,"_on_agree_pressed"))
 	$HBoxContainer/Reject.connect("pressed",Callable(self,"_on_reject_pressed"))
 
+#退出清空订阅
 func _exit_tree():
 	$HBoxContainer/Agree.disconnect("pressed",Callable(self,"_on_agree_pressed"))
 	$HBoxContainer/Reject.disconnect("pressed",Callable(self,"_on_reject_pressed"))
@@ -20,13 +21,19 @@ func init(friend_id,friend_name,friend_msg):
 
 #当按钮同意按钮点击时
 func _on_agree_pressed():
+	#var json  = '{"App" : "Spark","Type" : 10007,"Data" : {'
+	#json     += '"SID":%s'%str(Song.Module.Data.SelfID)
+	#json     += ',"Name":"%s"'%Song.Module.Data.Name
+	#json     += ',"TID":%s'%str(id)
+	#json     += "}}"
+	
 	#向服务器发送同意申请请求
-	var json  = '{"App" : "Spark","Type" : 10007,"Data" : {'
-	json     += '"SID":%s'%str(Song.Module.Data.SelfID)
-	json     += ',"Name":"%s"'%Song.Module.Data.Name
-	json     += ',"TID":%s'%str(id)
-	json     += "}}"
-	Song.Module.Net.send(json)
+	var json       = NetJson.new()
+	json.Type      = 10007
+	json.Data.SID  = Song.Module.Data.SelfID
+	json.Data.Name = Song.Module.Data.Name
+	json.Data.TID  = id
+	Song.Module.Net.send(json.to_json())
 	
 	#更新页面
 	$"../../../../../../Controller/FirendController".create_friend_item(id,$Name.text)

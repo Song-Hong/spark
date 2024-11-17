@@ -13,6 +13,10 @@ func _ready():
 	#消息接收监听
 	$"../NetConnectionController".connect("receive_data",Callable(self,"_on_receive_data"))
 
+#退出时断开全部订阅
+func _exit_tree():
+	$"../NetConnectionController".disconnect("receive_data",Callable(self,"_on_receive_data"))
+
 #消息接收
 func _on_receive_data(data):
 	print("接收到数据: "+data)
