@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8hnm4cbetssm"]
+[gd_scene load_steps=10 format=3 uid="uid://c8hnm4cbetssm"]
 
 [ext_resource type="Script" path="res://Pages/Song/song.gd" id="1_0nhxl"]
 [ext_resource type="PackedScene" uid="uid://cxo84sklosl5i" path="res://Pages/LoginPage/LoginPage.tscn" id="2_3w26m"]
@@ -6,18 +6,26 @@
 [ext_resource type="Script" path="res://Pages/Song/net_connection_controller.gd" id="4_jhfi1"]
 [ext_resource type="Script" path="res://Pages/Song/net_data_parsing_controller.gd" id="5_gpe0a"]
 [ext_resource type="Script" path="res://Pages/Song/data_controller.gd" id="6_gue32"]
+[ext_resource type="Script" path="res://Pages/Song/tip_controller.gd" id="7_lc1vg"]
+[ext_resource type="PackedScene" uid="uid://dc34vjkr6oxuk" path="res://Pages/Song/Perfabs/tip.tscn" id="8_bgguq"]
+[ext_resource type="Script" path="res://Pages/Song/animation_controller.gd" id="9_0oiqm"]
 
-[node name="Song" type="Node" node_paths=PackedStringArray("Net", "Data")]
+[node name="Song" type="Node" node_paths=PackedStringArray("Net", "Data", "Tip", "AnimationU")]
 script = ExtResource("1_0nhxl")
 StartPage = ExtResource("2_3w26m")
 Net = NodePath("Controller/NetController")
 Data = NodePath("Controller/DataController")
+Tip = NodePath("Controller/TipController")
+AnimationU = NodePath("Controller/AnimationController")
 
 [node name="View" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Controller" type="Node" parent="."]
 
@@ -36,3 +44,10 @@ script = ExtResource("5_gpe0a")
 
 [node name="DataController" type="Node" parent="Controller"]
 script = ExtResource("6_gue32")
+
+[node name="TipController" type="Node" parent="Controller"]
+script = ExtResource("7_lc1vg")
+TipPanel = ExtResource("8_bgguq")
+
+[node name="AnimationController" type="Node" parent="Controller"]
+script = ExtResource("9_0oiqm")

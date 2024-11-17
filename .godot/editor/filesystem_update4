@@ -22,3 +22,9 @@ res://Pages/LoginPage/choose_login_mode_controller.gd
 res://Pages/Song/net_data_parsing_controller.gd
 res://Pages/Search/Perfabs/person_card.gd
 res://Pages/Main_ChatsPage/text_edit_controller.gd
+res://Pages/LoginPage/signin_controller.gd
+res://Pages/Song/tip_controller.gd
+res://Pages/Song/Perfabs/tip.tscn
+res://Pages/Song/Perfabs/tip.gd
+res://Utility/Animtion.gd
+res://Pages/Song/animation_controller.gd

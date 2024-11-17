@@ -11,5 +11,10 @@ func _exit_tree():
 
 #模式切换
 func mode_change(btn):
-	print(btn.name)
-	pass
+	match btn.name:
+		"Login":
+			$"../..".LoginPnael.visible  = true
+			$"../..".SigninPanel.visible = false
+		"Signin":
+			$"../..".LoginPnael.visible  = false
+			$"../..".SigninPanel.visible = true
