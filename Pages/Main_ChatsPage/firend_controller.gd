@@ -28,9 +28,12 @@ func _exit_tree():
 func _on_friend_list_receive(data):
 	Song.Module.Net.receive.disconnect("friend_list_receive",Callable(self,"_on_friend_list_receive"))
 	for friend in data:
-		#friend.id friend.Name friend.Msg
 		# 创建好友
 		create_friend_item(friend.id,friend.Name)
+		
+		# 从本地更新好友的最新消息
+		var last_msg = Song.Module.Data.read_last_msg(friend.id)
+		update_friend_last_message(friend.id,last_msg)
 
 #创建好友
 func create_friend_item(id,friend_name):
@@ -41,8 +44,20 @@ func create_friend_item(id,friend_name):
 
 #好友列表按钮点击
 func _on_friend_button_pressed(btn):
-	Song.Module.Data.TargetID = btn.id
+	if btn.id != Song.Module.Data.TargetID:
+		$"../TextEditController".clear_all_text()
+	else:
+		return
+	
+	## 初始化当前的消息列表
+	Song.Module.Data.TargetID  = btn.id
 	$"../..".ChatPanel.visible = true
+	
+	# 读取好友消息
+	for md in Song.Module.Data.read_msg(btn.id):
+		md = md as MessageData
+		$"../TextEditController".create_msg_bubble(md.data,md.own)
+	$"../TextEditController".scroll_bar_lowest()
 
 #更新好友最后消息
 func update_friend_last_message(id,msg):

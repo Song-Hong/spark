@@ -53,3 +53,8 @@ func create_msg_bubble(text,is_self = true):
 func scroll_bar_lowest():
 	await get_tree().process_frame
 	TextView.get_v_scroll_bar().ratio = 1
+
+# 清空全部消息
+func clear_all_text():
+	for item in TextArea.get_children():
+		TextArea.remove_child(item)

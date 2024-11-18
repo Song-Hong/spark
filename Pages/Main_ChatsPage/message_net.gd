@@ -19,22 +19,36 @@ func _exit_tree():
 func send_messgae(text):
 	if Song.Module.Data.TargetID  == 0:return #纠错,防止目标ID为空
 	
+	#格式化消息
+	var md = MessageData.new().init(str(text).trim_suffix("\n"))
+	
 	#发送消息
 	var json      = NetJson.new()
 	json.Type     = 10004
 	json.Data.SID = Song.Module.Data.SelfID
 	json.Data.TID = Song.Module.Data.TargetID
-	json.Data.MSG = str(text).trim_suffix("\n")
+	json.Data.MSG = md.to_json()
 	Net.send(json.to_json())
+	
+	#存储消息
+	Song.Module.Data.save_msg(Song.Module.Data.TargetID,md) 
 
 #接收消息
 func _on_friend_msg_receive(data):
+
+	#格式化消息
+	var md = MessageData.new().parsing(data.MSG)
+	
 	#判断消息是否是当前聊天的对象
 	if data.SID == Song.Module.Data.TargetID:
-		$"../TextEditController"._on_friend_msg_receive(data.MSG)
-	else: #不是更新好友界面UI
-		pass
-	$"../FirendController".update_friend_last_message(data.SID,data.MSG)
+		$"../TextEditController"._on_friend_msg_receive(md.data)
+	
+	#存储消息
+	md.own = false
+	Song.Module.Data.save_msg(data.SID,md) #存储消息
+	
+	#更新好友界面消息
+	$"../FirendController".update_friend_last_message(data.SID,md.data)
 
 #接收到好友申请请求
 func _on_friend_add_receive(data):

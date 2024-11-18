@@ -17,6 +17,6 @@ func warring():
 	
 #创建提示
 func create_Tip(msg):
-	var tip = TipPanel.instantiate()
-	tip.text = msg
-	$"../../View".add_child(tip)
+	var _tip  = TipPanel.instantiate()
+	_tip.text = msg
+	$"../../View".add_child(_tip)

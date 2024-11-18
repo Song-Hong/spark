@@ -10,6 +10,10 @@ signal friend_add_receive    #10006 接收到好友申请
 signal friend_agree_receive  #10007 接收到同意好友请求
 signal friend_search_receive #10008 好友搜索请求
 
+#全部信号
+var signals:Dictionary
+
+#初始化
 func _ready():
 	#消息接收监听
 	$"../NetConnectionController".connect("receive_data",Callable(self,"_on_receive_data"))
@@ -22,6 +26,7 @@ func _exit_tree():
 func _on_receive_data(data):
 	print("接收到数据: "+data)
 	var json = JSON.parse_string(data) #解析接收到的消息
+	if !json.has("Type") : return
 	var type = json.Type #消息类型
 	match int(type):
 		10001: #登陆请求

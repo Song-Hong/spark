@@ -62,6 +62,9 @@ func _on_singin_state_receive(data):
 		Song.Module.Data.SelfID = data.ID
 		Song.Module.Data.Name   = $"../..".SigninName.text
 		
+		#更新用户
+		Song.Module.Data.update_firend_cache_path(str(data.ID))
+		
 		#切换场景
 		var view  = $"../..".get_parent()
 		var scene = load("res://Pages/MainPage/MainPage.tscn").instantiate()
