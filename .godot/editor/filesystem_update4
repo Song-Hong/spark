@@ -24,3 +24,4 @@ res://Pages/Main_ChatsPage/main_chats_page.gd
 res://Pages/Main_ChatsPage/firend_controller.gd
 res://Pages/Search/search.tscn
 res://Pages/Search/search_controller.gd
+res://Pages/Main_ChatsPage/text_edit_controller.gd

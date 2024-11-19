@@ -17,9 +17,10 @@ func _exit_tree():
 #输入文本的UI事件
 func _on_text_edit_gui_input(_event):
 	if Input.is_action_just_released("ui_text_line_feed"): #换行 shift + enter
+		print("shift + enter")
 		TextInput.text+="\n"
 		TextInput.set_caret_line(TextInput.get_line_count())
-	elif Input.is_action_just_released("ui_accept"):       #发送 enter
+	elif Input.is_action_just_released("ui_text_submit"):       #发送 enter
 		## 生成消息气泡,并清空输入区
 		var msg_text = TextInput.text
 		create_msg_bubble(msg_text)
