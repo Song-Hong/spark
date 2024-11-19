@@ -1,0 +1,27 @@
+keys,en,zh_Hans_CN
+Universal,Universal,通用
+Cache,Cache,缓存
+Info,Info,信息
+Language,Language,语言
+Version,Version,版本
+Login,Login,登陆
+Signin,Signin,注册
+Enter Username,Enter Username,输入账号
+Enter Password,Enter Password,输入密码
+Enter Name,Enter Name,输入昵称
+Chat and File,Chat and File,聊天消息和文件
+Clear,Clear,清空
+Account duplication,Account duplication,账号已注册
+The name cannot be empty,The name cannot be empty,昵称不能为空
+Name number must be greater than 4 digits,Name number must be greater than 4 digits,昵称必须大于四位
+The username cannot be empty,The username cannot be empty,账号不能为空
+Username number must be greater than 8 digits,Username number must be greater than 8 digits,账号必须大于八位
+The password cannot be empty,The password cannot be empty,密码不能为空
+Password number must be greater than 8 digits,Password number must be greater than 8 digits,密码必须大于八位
+The account or password is incorrect,The account or password is incorrect,账号或密码错误
+Cannot add yourself,Cannot add yourself,不能添加自己
+Reject,Reject,拒绝
+Agree,Agree,同意
+Add Friend,Add Friend,添加好友
+Added,Added,已添加
+Self,Self,自己

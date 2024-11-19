@@ -20,6 +20,10 @@ func update_firend_cache_path(path:String):
 	if !DirAccess.dir_exists_absolute(DataSaveDir+FriendCache):
 		DirAccess.make_dir_absolute(DataSaveDir+FriendCache)
 
+#更新好友消息存储位置
+func get_friend_cache_path()->String:
+	return DataSaveDir+FriendCache
+
 #读取指定用户当天的聊天数据
 func read_msg(id)->Array:
 	var array_mds = []

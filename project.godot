@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Spark"
+config/tags=PackedStringArray("app")
 run/main_scene="res://Pages/Song/Song.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.14, 0.14, 0.14, 0)
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://Assets/Logo/Spark.svg"
 
 [input]
@@ -22,6 +27,10 @@ ui_text_line_feed={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Assets/localization/localization.en.translation", "res://Assets/localization/localization.zh_Hans_CN.translation")
 
 [rendering]
 

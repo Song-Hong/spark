@@ -16,3 +16,16 @@ extends HBoxContainer
 ## Search
 @export var SearchPanel:Button         #搜索区域
 @export var SearchButton:Button        #搜索按钮
+
+
+#查找好友
+func find_friend(id):
+	return $Controller/FirendController.find_friend(id)
+
+#清除全部好友最后消息
+func clear_all_friend_last_message():
+	$Controller/FirendController.clear_all_friend_last_message()
+
+#清除当前聊天的全部消息
+func clear_all_text():
+	$Controller/TextEditController.clear_all_text()

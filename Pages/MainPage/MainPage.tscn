@@ -1,20 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://b7xw0idyjrlj"]
+[gd_scene load_steps=17 format=3 uid="uid://b7xw0idyjrlj"]
 
 [ext_resource type="Script" path="res://Pages/MainPage/main_page.gd" id="1_ux6rw"]
 [ext_resource type="ButtonGroup" uid="uid://yd3x5h3lkmxv" path="res://Pages/MainPage/left_tray_mode.tres" id="2_3umps"]
-[ext_resource type="Script" path="res://Pages/Main_ChatsPage/main_chats_page.gd" id="3_knxx7"]
 [ext_resource type="Theme" uid="uid://ccikxmml71k2o" path="res://Pages/MainPage/main_page_left.tres" id="3_xcofr"]
 [ext_resource type="Texture2D" uid="uid://bfcsx4s3vcolw" path="res://Assets/Logo/logo.svg" id="4_k6lyv"]
-[ext_resource type="ButtonGroup" uid="uid://c087wss6fec0u" path="res://Pages/Main_ChatsPage/friend_item_group.tres" id="4_knx3o"]
-[ext_resource type="Script" path="res://Pages/Main_ChatsPage/text_edit_controller.gd" id="4_pagv0"]
-[ext_resource type="Texture2D" uid="uid://dq2t5geycnvr6" path="res://Assets/Icon/emoji_icon.png" id="5_8f04f"]
 [ext_resource type="Texture2D" uid="uid://bnmcmhxyi5usm" path="res://Assets/Icon/chats.svg" id="5_n6q5u"]
 [ext_resource type="Texture2D" uid="uid://cjs62p3n7cg7p" path="res://Assets/Icon/setting.svg" id="6_hbsvf"]
-[ext_resource type="Script" path="res://Pages/Main_ChatsPage/firend_controller.gd" id="6_vg7y3"]
-[ext_resource type="Script" path="res://Pages/Main_ChatsPage/message_net.gd" id="6_wj6jr"]
 [ext_resource type="Texture2D" uid="uid://dc1xwnblu431k" path="res://Assets/Icon/exit.svg" id="7_0rco2"]
-[ext_resource type="Texture2D" uid="uid://5co56ibkg0lp" path="res://Assets/Icon/search_white.svg" id="10_cyms0"]
-[ext_resource type="Script" path="res://Pages/Main_ChatsPage/search_button_controller.gd" id="10_w2wyg"]
+[ext_resource type="PackedScene" uid="uid://lvgdw3te2pj2" path="res://Pages/Main_ChatsPage/main_chats_page.tscn" id="8_7v1ga"]
+[ext_resource type="PackedScene" uid="uid://hgqcui4il5ay" path="res://Pages/Main_Setting/main_setting_page.tscn" id="9_efrp0"]
 [ext_resource type="PackedScene" uid="uid://pakfb8o0rjmf" path="res://Pages/Search/search.tscn" id="11_7sm5u"]
 [ext_resource type="Script" path="res://Pages/MainPage/tray_controller.gd" id="17_m8qvq"]
 
@@ -26,53 +20,16 @@ texture = ExtResource("4_k6lyv")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w48yl"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_su6wl"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_bottom_left = 12
-shadow_color = Color(1, 1, 1, 0.6)
-shadow_size = 2
+[sub_resource type="ButtonGroup" id="ButtonGroup_xj8yp"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pm3ib"]
-bg_color = Color(0.603922, 0.603922, 0.8, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_top = 4.0
-expand_margin_bottom = 4.0
+[sub_resource type="ButtonGroup" id="ButtonGroup_27g2i"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tavsm"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-shadow_color = Color(1, 1, 1, 0.6)
-shadow_size = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3k8j0"]
-bg_color = Color(0.65098, 0.917647, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 2.0
-expand_margin_right = 2.0
-shadow_color = Color(1, 1, 1, 0.6)
-shadow_size = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g23yk"]
-bg_color = Color(0.603922, 0.603922, 0.8, 1)
-expand_margin_left = 11.0
-expand_margin_top = 4.0
-expand_margin_right = 11.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0vbp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wol56"]
-
-[node name="MainPage" type="Node"]
+[node name="MainPage" type="Node" node_paths=PackedStringArray("MainPageArea", "Main_ChatsPage", "Main_SettingPage")]
 script = ExtResource("1_ux6rw")
 LeftTrayMode = ExtResource("2_3umps")
+MainPageArea = NodePath("MainPage/MarginContainer/HBoxContainer")
+Main_ChatsPage = NodePath("MainPage/MarginContainer/HBoxContainer/Main_ChatsPage")
+Main_SettingPage = NodePath("MainPage/MarginContainer/HBoxContainer/Main_SettingPage")
 
 [node name="MainPage" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -132,7 +89,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Setting" type="Button" parent="MainPage/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -165,157 +121,15 @@ expand_icon = true
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_w48yl")
 
-[node name="Main_ChatsPage" type="HBoxContainer" parent="MainPage/MarginContainer/HBoxContainer" node_paths=PackedStringArray("FriendArea", "ChatPanel", "TextInput", "TextArea", "TextView", "SearchPanel", "SearchButton")]
+[node name="Main_ChatsPage" parent="MainPage/MarginContainer/HBoxContainer" node_paths=PackedStringArray("SearchPanel") instance=ExtResource("8_7v1ga")]
 layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_knxx7")
-FriendAreaButtonGroup = ExtResource("4_knx3o")
-FriendArea = NodePath("Middle/VBoxContainer/Friends/ScrollContainer/FriendArea")
-ChatPanel = NodePath("Content/ChatPanel")
-TextInput = NodePath("Content/ChatPanel/VBoxContainer/TextInputArea/TextEdit")
-TextArea = NodePath("Content/ChatPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer")
-TextView = NodePath("Content/ChatPanel/VBoxContainer/ScrollContainer")
+FriendAreaButtonGroup = SubResource("ButtonGroup_xj8yp")
 SearchPanel = NodePath("../../../Search")
-SearchButton = NodePath("Middle/VBoxContainer/MarginContainer/Search")
 
-[node name="Middle" type="PanelContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_su6wl")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 14
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 14
-
-[node name="Search" type="Button" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(0, 26)
-layout_mode = 2
-focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/hover = SubResource("StyleBoxFlat_pm3ib")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pm3ib")
-theme_override_styles/normal = SubResource("StyleBoxFlat_pm3ib")
-expand_icon = true
-
-[node name="TextureRect" type="TextureRect" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer/MarginContainer/Search"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 6.0
-offset_top = 4.0
-offset_right = 26.0
-offset_bottom = 24.0
-texture = ExtResource("10_cyms0")
-expand_mode = 1
-
-[node name="Friends" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="ScrollContainer" type="ScrollContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer/Friends"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="FriendArea" type="VBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Middle/VBoxContainer/Friends/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Content" type="PanelContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_tavsm")
-
-[node name="ChatPanel" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content"]
+[node name="Main_SettingPage" parent="MainPage/MarginContainer/HBoxContainer" instance=ExtResource("9_efrp0")]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="NowChatTarget" type="Label" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-
-[node name="ScrollContainer" type="ScrollContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-follow_focus = true
-horizontal_scroll_mode = 3
-vertical_scroll_mode = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer/ScrollContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 26
-
-[node name="Tools" type="HBoxContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-
-[node name="Button" type="Button" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer/Tools"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_3k8j0")
-icon = ExtResource("5_8f04f")
-icon_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxFlat_g23yk")
-
-[node name="TextInputArea" type="PanelContainer" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_h0vbp")
-
-[node name="TextEdit" type="TextEdit" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Content/ChatPanel/VBoxContainer/TextInputArea"]
-custom_minimum_size = Vector2(0, 160)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/caret_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wol56")
-
-[node name="Controller" type="Node" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage"]
-
-[node name="TextEditController" type="Node" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Controller"]
-script = ExtResource("4_pagv0")
-
-[node name="FirendController" type="Node" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Controller"]
-script = ExtResource("6_vg7y3")
-
-[node name="MessageNetController" type="Node" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Controller"]
-script = ExtResource("6_wj6jr")
-
-[node name="SearchButtonController" type="Node" parent="MainPage/MarginContainer/HBoxContainer/Main_ChatsPage/Controller"]
-script = ExtResource("10_w2wyg")
+SettingPageBtns = SubResource("ButtonGroup_27g2i")
 
 [node name="Search" parent="MainPage" instance=ExtResource("11_7sm5u")]
 visible = false

@@ -71,3 +71,12 @@ func new_friend_msg(friend_id,friend_name,friend_msg):
 	FriendArea.add_child(friend)
 	friend.init(friend_id,friend_name,friend_msg)
 	friend.move_to_front()
+
+#查找好友
+func find_friend(id):
+	return FriendArea.get_node_or_null(str(id))
+	
+#清空所有好友最后发送的聊天消息
+func clear_all_friend_last_message():
+	for friend in FriendArea.get_children():
+		friend.set_friend_last_message("")

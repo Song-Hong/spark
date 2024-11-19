@@ -20,9 +20,17 @@ func _on_pressed(btn):
 			Song.Module.Net.send(json.to_json())
 			
 			#切换场景
-			var view  = $"../..".get_parent()
-			var scene = load("res://Pages/LoginPage/LoginPage.tscn").instantiate()
-			view.add_child(scene)
-			view.remove_child($"../..")
+			show_login_page()
 		"Chats":
-			print("Chats")
+			$"../..".Main_ChatsPage.visible   = true
+			$"../..".Main_SettingPage.visible = false
+		"Setting":
+			$"../..".Main_ChatsPage.visible   = false
+			$"../..".Main_SettingPage.visible = true
+
+#显示登陆场景
+func show_login_page():
+	var view  = $"../..".get_parent()
+	var scene = load("res://Pages/LoginPage/LoginPage.tscn").instantiate()
+	view.add_child(scene)
+	view.remove_child($"../..")

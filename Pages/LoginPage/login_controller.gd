@@ -35,4 +35,4 @@ func _on_login_state_receive(data):
 		view.add_child(scene)
 		view.remove_child($"../..")
 	else:           #登陆失败
-		print("登陆失败")
+		Song.Module.Tip.tip("The account or password is incorrect")

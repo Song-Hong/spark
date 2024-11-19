@@ -21,11 +21,9 @@ func init(friend_id,friend_name,friend_msg):
 
 #当按钮同意按钮点击时
 func _on_agree_pressed():
-	#var json  = '{"App" : "Spark","Type" : 10007,"Data" : {'
-	#json     += '"SID":%s'%str(Song.Module.Data.SelfID)
-	#json     += ',"Name":"%s"'%Song.Module.Data.Name
-	#json     += ',"TID":%s'%str(id)
-	#json     += "}}"
+	if $Name.text == Song.Module.Data.Name:
+		Song.Module.Tip.tip("Cannot add yourself")
+		return
 	
 	#向服务器发送同意申请请求
 	var json       = NetJson.new()

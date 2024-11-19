@@ -9,14 +9,28 @@ func init(person_id,person_name,person_username):
 	id             = person_id
 	$Name.text     = person_name
 	$Username.text = person_username
+	if Main.Module.Main_ChatsPage.find_friend(id) != null:
+		$Message.visible = false
+		$Button.text = "Added"
+		$Button.disabled = true
+	elif id == Song.Module.Data.SelfID:
+		$Message.visible = false
+		$Button.text = "Self"
+		$Button.disabled = true
 	
 #初始化
 func _ready():
 	$Button.connect("pressed",Callable(self,"_on_pressed"))
 
+#退出时取消订阅
+func _exit_tree():
+	$Button.disconnect("pressed",Callable(self,"_on_pressed"))
+
 #当按钮点击时
 func _on_pressed():
-	$Button.disconnect("pressed",Callable(self,"_on_pressed"))
+	if $Name.text == Song.Module.Data.Name:
+		Song.Module.Tip.tip("Cannot add yourself")
+		return
 	
 	## 发送好友申请请求
 	#SID:自身ID;Name:自身名称;TID:接受者ID；MSG:验证消息
