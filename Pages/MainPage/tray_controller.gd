@@ -19,6 +19,10 @@ func _on_pressed(btn):
 			json.Data.ID = Song.Module.Data.SelfID
 			Song.Module.Net.send(json.to_json())
 			
+			#设置配置文件
+			Song.Module.Config.logined = false
+			Song.Module.Data.save_core()
+			
 			#切换场景
 			show_login_page()
 		"Chats":

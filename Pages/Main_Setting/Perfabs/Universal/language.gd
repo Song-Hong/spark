@@ -27,3 +27,7 @@ func _on_pressed(btn):
 		"English":
 			TranslationServer.set_locale("en")
 	local_lang_name = btn.name
+	
+	#设置配置文件
+	Song.Module.Config.language = TranslationServer.get_locale()
+	Song.Module.Data.save_core()

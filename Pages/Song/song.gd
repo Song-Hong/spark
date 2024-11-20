@@ -11,6 +11,8 @@ func _init():Module=self
 @export var Tip:Module_Tip              #提示模块
 @export var AnimationU:Module_Aniamtion #动画模块
 
+var Config:AppConfig                    #软件配置
+
 func _ready():
 	## 初始化加载场景
 	$View.add_child(StartPage.instantiate())

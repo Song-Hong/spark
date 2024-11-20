@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://lvgdw3te2pj2"]
+[gd_scene load_steps=22 format=3 uid="uid://lvgdw3te2pj2"]
 
 [ext_resource type="Script" path="res://Pages/Main_ChatsPage/main_chats_page.gd" id="1_8y3eq"]
 [ext_resource type="ButtonGroup" uid="uid://c087wss6fec0u" path="res://Pages/Main_ChatsPage/friend_item_group.tres" id="2_qvqxd"]
@@ -32,16 +32,16 @@ corner_radius_bottom_right = 12
 shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3k8j0"]
-bg_color = Color(0.65098, 0.917647, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 2.0
-expand_margin_right = 2.0
-shadow_color = Color(1, 1, 1, 0.6)
-shadow_size = 2
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b5dt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tg60"]
+bg_color = Color(0.603922, 0.603922, 0.8, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 6.0
+expand_margin_right = 6.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g23yk"]
 bg_color = Color(0.603922, 0.603922, 0.8, 1)
@@ -52,6 +52,21 @@ expand_margin_right = 11.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0vbp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wol56"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djwoi"]
+bg_color = Color(0.821789, 0.821789, 0.821788, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqb1v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n521d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxoil"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_njssj"]
 
 [node name="Main_ChatsPage" type="HBoxContainer" node_paths=PackedStringArray("FriendArea", "ChatPanel", "TextInput", "TextArea", "TextView", "SearchButton")]
 anchors_preset = 15
@@ -170,11 +185,18 @@ visible = false
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Content/ChatPanel/VBoxContainer/Tools"]
+[node name="VSeparator" type="VSeparator" parent="Content/ChatPanel/VBoxContainer/Tools"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7b5dt")
+
+[node name="Emoji" type="Button" parent="Content/ChatPanel/VBoxContainer/Tools"]
+layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_3k8j0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3tg60")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3tg60")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3tg60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3tg60")
 icon = ExtResource("4_wmc0r")
 icon_alignment = 1
 
@@ -193,6 +215,40 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/caret_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wol56")
+
+[node name="EmojiPnael" type="MarginContainer" parent="Content"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="Background" type="PanelContainer" parent="Content/EmojiPnael"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_djwoi")
+
+[node name="MarginContainer" type="MarginContainer" parent="Content/EmojiPnael/Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="Content/EmojiPnael/Background/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 18
+columns = 4
+
+[node name="DogFace" type="Button" parent="Content/EmojiPnael/Background/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bqb1v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n521d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oxoil")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_njssj")
 
 [node name="Controller" type="Node" parent="."]
 

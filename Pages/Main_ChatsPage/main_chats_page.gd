@@ -17,7 +17,6 @@ extends HBoxContainer
 @export var SearchPanel:Button         #搜索区域
 @export var SearchButton:Button        #搜索按钮
 
-
 #查找好友
 func find_friend(id):
 	return $Controller/FirendController.find_friend(id)

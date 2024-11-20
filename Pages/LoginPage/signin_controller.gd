@@ -65,6 +65,12 @@ func _on_singin_state_receive(data):
 		#更新用户
 		Song.Module.Data.update_firend_cache_path(str(data.ID))
 		
+		#设置并存储配置文件
+		Song.Module.Config.logined = true
+		Song.Module.Config.user_username = $"../..".SigninUsername.text
+		Song.Module.Config.user_password = $"../..".SigninPassword.text
+		Song.Module.Data.save_core()
+		
 		#切换场景
 		var view  = $"../..".get_parent()
 		var scene = load("res://Pages/MainPage/MainPage.tscn").instantiate()
