@@ -5,8 +5,8 @@ func _ready():
 	$"../..".LoginBtn.connect("pressed",Callable(self,"login_request"))
 	Song.Module.Net.receive.connect("login_state_receive",Callable(self,"_on_login_state_receive"))
 	
-	await get_tree().create_timer(0.02).timeout
 	#当已登陆时将自动登陆
+	await get_tree().create_timer(0.02).timeout
 	if Song.Module.Config.logined:
 		$"../..".Username.text = Song.Module.Config.user_username
 		$"../..".Password.text = Song.Module.Config.user_password
@@ -49,7 +49,7 @@ func _on_login_state_receive(data):
 		Song.Module.Config.user_username = $"../..".Username.text
 		Song.Module.Config.user_password = $"../..".Password.text
 		Song.Module.Data.save_core()
-
+		
 		#切换场景至主场景
 		var view  = $"../..".get_parent()
 		var scene = load("res://Pages/MainPage/MainPage.tscn").instantiate()

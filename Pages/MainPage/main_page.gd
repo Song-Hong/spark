@@ -14,4 +14,4 @@ func _init():Module=self
 @export var Main_SettingPage :HBoxContainer #主界面设置界面
 
 func _ready():
-	get_window().size = Vector2(1152,648)
+	Song.Module.set_window_size(1152,648)

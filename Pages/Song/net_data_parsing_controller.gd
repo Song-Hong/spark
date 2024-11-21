@@ -24,7 +24,7 @@ func _exit_tree():
 
 #消息接收
 func _on_receive_data(data):
-	print("接收到数据: "+data)
+	#print("接收到数据: "+data)
 	var json = JSON.parse_string(data) #解析接收到的消息
 	if !json.has("Type") : return
 	var type = json.Type #消息类型

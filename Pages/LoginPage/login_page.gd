@@ -16,4 +16,5 @@ extends Node
 
 #初始化
 func _ready():
-	get_window().size = Vector2(800,500)
+	#get_window().size = Vector2(800,500)
+	Song.Module.set_window_size(800,500)

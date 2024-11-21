@@ -44,12 +44,12 @@ ChooseMode = ExtResource("2_47xag")
 LoginPnael = NodePath("PanelContainer/MarginContainer/View/LoginPanel")
 Username = NodePath("PanelContainer/MarginContainer/View/LoginPanel/VBoxContainer/Username")
 Password = NodePath("PanelContainer/MarginContainer/View/LoginPanel/VBoxContainer/Password")
-LoginBtn = NodePath("PanelContainer/MarginContainer/View/LoginPanel/VBoxContainer/Button")
+LoginBtn = NodePath("PanelContainer/MarginContainer/View/LoginPanel/VBoxContainer/Login")
 SigninPanel = NodePath("PanelContainer/MarginContainer/View/SigninPanel")
 SigninName = NodePath("PanelContainer/MarginContainer/View/SigninPanel/VBoxContainer/Name")
 SigninUsername = NodePath("PanelContainer/MarginContainer/View/SigninPanel/VBoxContainer/Username")
 SigninPassword = NodePath("PanelContainer/MarginContainer/View/SigninPanel/VBoxContainer/Password")
-SigninLoginBtn = NodePath("PanelContainer/MarginContainer/View/SigninPanel/VBoxContainer/Button")
+SigninLoginBtn = NodePath("PanelContainer/MarginContainer/View/SigninPanel/VBoxContainer/Signin")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -169,17 +169,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jcxrl")
 placeholder_text = "Enter Password"
 secret = true
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/View/LoginPanel/VBoxContainer"]
+[node name="Login" type="Button" parent="PanelContainer/MarginContainer/View/LoginPanel/VBoxContainer"]
+auto_translate_mode = 1
 custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_d6xcu")
-text = "Login
-"
+text = "Login"
 
 [node name="SigninPanel" type="MarginContainer" parent="PanelContainer/MarginContainer/View"]
+auto_translate_mode = 1
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
@@ -233,15 +234,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jcxrl")
 placeholder_text = "Enter Username"
 secret = true
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/View/SigninPanel/VBoxContainer"]
+[node name="Signin" type="Button" parent="PanelContainer/MarginContainer/View/SigninPanel/VBoxContainer"]
 custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_d6xcu")
-text = "Signin
-"
+text = "Signin"
 
 [node name="Controller" type="Node" parent="."]
 

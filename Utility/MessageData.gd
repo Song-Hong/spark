@@ -50,6 +50,17 @@ func parsing(msg)->MessageData:
 		own = msg.own
 	return self
 
+#解析
+static func static_parsing(msg)->MessageData:
+	var md  = MessageData.new()
+	md.data = msg.data
+	md.id   = msg.id
+	md.time = msg.time
+	md.type = msg.type
+	if msg.has("own"):
+		md.own = msg.own
+	return md
+
 #获取时间
 func get_time()->Dictionary:
 	return Time.get_datetime_dict_from_datetime_string(time,true)

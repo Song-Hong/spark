@@ -31,6 +31,15 @@ func _on_friend_list_receive(data):
 		# 创建好友
 		create_friend_item(friend.id,friend.Name)
 		
+		#更新离线消息
+		if friend.Msg != "" or friend.Msg != null:
+			var msg_str = '{"msgs":[%s]}'%str(friend.Msg).trim_suffix(",")
+			var json    = JSON.parse_string(msg_str)
+			for chat in json.msgs:
+				var server_md = MessageData.static_parsing(chat)
+				server_md.own = false #设置为对方发送
+				Song.Module.Data.save_msg(friend.id,server_md)
+		
 		# 从本地更新好友的最新消息
 		var last_msg = Song.Module.Data.read_last_msg(friend.id)
 		update_friend_last_message(friend.id,last_msg)
@@ -44,6 +53,7 @@ func create_friend_item(id,friend_name):
 
 #好友列表按钮点击
 func _on_friend_button_pressed(btn):
+	#清空消息
 	if btn.id != Song.Module.Data.TargetID:
 		$"../TextEditController".clear_all_text()
 	else:

@@ -7,10 +7,11 @@ res://Pages/Song/Perfabs/tip.tscn
 res://Pages/Main_ChatsPage/main_chats_page.tscn
 res://Pages/Main_ChatsPage/Prefabs/chat_item.tscn
 res://Pages/Main_ChatsPage/Prefabs/friend_item.tscn
-res://Pages/Song/data_controller.gd
-res://Pages/Song/AppConfig.gd
 res://Pages/Song/song.gd
+res://Pages/LoginPage/login_page.gd
+res://Pages/MainPage/main_page.gd
 res://Pages/LoginPage/login_controller.gd
-res://Pages/LoginPage/signin_controller.gd
+res://Pages/Main_ChatsPage/firend_controller.gd
+res://Pages/Song/net_data_parsing_controller.gd
+res://Utility/MessageData.gd
 res://Pages/MainPage/tray_controller.gd
-res://Pages/Main_Setting/Perfabs/Universal/language.gd

@@ -23,6 +23,9 @@ func _on_pressed(btn):
 			Song.Module.Config.logined = false
 			Song.Module.Data.save_core()
 			
+			#清空配置
+			Song.Module.Data.TargetID  = 0
+			
 			#切换场景
 			show_login_page()
 		"Chats":
