@@ -127,13 +127,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_0412h")
 
-[node name="FriendAreaButtonGroup" type="Button" parent="Middle/VBoxContainer/Friends/ScrollContainer/FriendArea"]
-visible = false
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("3_stcwc")
-script = ExtResource("2_0412h")
-
 [node name="Content" type="PanelContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -251,12 +244,14 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_n521d")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_oxoil")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_njssj")
 
-[node name="Controller" type="Node" parent="."]
+[node name="ButtonGroup" type="Node" parent="."]
 
-[node name="TextEditController" type="Node" parent="Controller"]
-
-[node name="FirendController" type="Node" parent="Controller"]
-
-[node name="MessageNetController" type="Node" parent="Controller"]
-
-[node name="SearchButtonController" type="Node" parent="Controller"]
+[node name="FriendAreaButtonGroup" type="Button" parent="ButtonGroup"]
+visible = false
+offset_left = 8.0
+offset_top = 66.0
+offset_right = 16.0
+offset_bottom = 74.0
+toggle_mode = true
+button_group = ExtResource("3_stcwc")
+script = ExtResource("2_0412h")

@@ -26,6 +26,11 @@ func start():
 		ComponentArray.Q("MainPage",[
 		MainPage_TrayComponent.new() #托盘管理
 	]))
+	
+	# 获取缓存消息
+	await Process.init.get_tree().create_timer(0.5).timeout
+	get_cache_command.new()
+	SparkServer.init.self_cache_receive.connect(Callable(self,"on_cache_reveive"),4)
 
 # 流程结束
 func exit():
@@ -37,3 +42,18 @@ func exit():
 	Blackboard.init.del_blackboard("MainPage")
 	#移除当前场景
 	Scene.init.remove_scene("MainPage")
+
+#获取缓存消息
+func on_cache_reveive(data):
+	data = str(data)
+	data = data.replace("[","")
+	data = data.replace("]","")
+	data = data.trim_suffix(",")
+	data = JSON.parse_string(data).msg
+	data = data.trim_suffix(",")
+	for item in str(data).split("}},"):
+		var json_str = item
+		if !item.ends_with("}}"):
+			json_str = item + "}}" 
+		if json_str == "}}":continue
+		SparkServer.init.on_data_received(json_str)

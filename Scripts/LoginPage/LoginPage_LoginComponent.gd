@@ -8,7 +8,7 @@ func start():
 	SparkServer.init.login_state_receive.connect(Callable(self, "on_login_state_receive"))
 	
 	#检查是否登陆,如登陆则直接登陆
-	await Core.init.get_tree().create_timer(0.1).timeout
+	await Core.init.get_tree().create_timer(0.5).timeout
 	var ac = DB.init.read_core()
 	if ac.logined:
 		Blackboard.init.get_data("LoginPanel_Username").text = ac.user_username

@@ -25,13 +25,13 @@ func start():
 	SparkServer.init.friend_agree_receive.connect(Callable(self,"on_friend_agree_receive"))
 	
 	#监听服务器新消息
-	SparkServer.init.friend_msg_receive.connect(Callable(self,"_on_friend_msg_receive"))
+	SparkServer.init.friend_msg_receive.connect(Callable(self,"on_friend_msg_receive"))
 
 #结束时断开全部连接
 func exit():
 	button_group.disconnect("pressed",Callable(self,"on_frined_item_pressed"))
 	#取消监听好友消息
-	SparkServer.init.friend_msg_receive.disconnect(Callable(self,"_on_friend_msg_receive"))
+	SparkServer.init.friend_msg_receive.disconnect(Callable(self,"on_friend_msg_receive"))
 	#取消监听服务器新好友请求
 	SparkServer.init.friend_add_receive.disconnect(Callable(self,"on_friend_add_receive"))
 	#取消监听服务器新好友同意
@@ -44,10 +44,12 @@ func on_friend_list_recive(friends):
 		create_friend_item(friend.id,friend.Name)
 		
 		#更新离线消息
-		if friend.Msg != "" or friend.Msg != null:
+		if friend.Msg != "" or friend.Msg != null  or friend.Msg != "null":
 			var msg_str = '{"msgs":[%s]}'%str(friend.Msg).trim_suffix(",")
-			var json    = JSON.parse_string(msg_str)
-			for chat in json.msgs:
+			var json = JSON.new()
+			var error = json.parse(msg_str)
+			if error != OK:continue
+			for chat in json.data.msgs:
 				var server_md = MessageData.static_parsing(chat)
 				server_md.own = false #设置为对方发送
 				#存储至本地
@@ -59,7 +61,7 @@ func on_friend_list_recive(friends):
 		update_friend_last_message_command.new(friend.id,last_msg)
 
 #当接收到好友消息
-func _on_friend_msg_receive(_data):
+func on_friend_msg_receive(_data):
 	var friend = friend_area.get_node_or_null(str(_data.SID))
 	if friend == null: return
 	#解析消息
@@ -71,11 +73,11 @@ func _on_friend_msg_receive(_data):
 	DB.init.save_md(_data.SID,md)
 
 #接收到好友申请请求
-func _on_friend_add_receive(_data):
+func on_friend_add_receive(_data):
 	create_new_friend_item(_data.SID,_data.Name,_data.MSG)
 
 #接收到新好友同意申请请求
-func _on_friend_agree_receive(_data):
+func on_friend_agree_receive(_data):
 	create_friend_item(_data.SID,_data.Name)
 
 #创建好友
@@ -91,7 +93,7 @@ func on_frined_item_pressed(btn):
 
 #创建新好友申请
 func create_new_friend_item(friend_id,friend_name,friend_msg):
-	var friend = load("res://Pages/Main_ChatsPage/Prefabs/new_friend.tscn").instantiate()
+	var friend = Scene.init.load_scene("/prefabs/new_friend")
 	friend_area.add_child(friend)
 	friend.init(friend_id,friend_name,friend_msg)
 	friend.move_to_front()

@@ -51,3 +51,9 @@ res://Scripts/Data/Global.gd
 res://Scripts/Data/Config.gd
 res://Scripts/Data/AppConfig.gd
 res://Scripts/MainPage/MainPage_ExitState.gd
+res://Scripts/MainPage_Chats/Commands/clear_all_friend_last_msg_command.gd
+res://Scripts/MainPage_Chats/Commands/clear_now_chats_command.gd
+res://Scripts/Data/MessageData.gd
+res://SongG/Module/CoreModule.gd
+res://Scripts/Module/ServerModule/Commands/get_cache_command.gd
+res://Scripts/MainPage/MainPageProcess.gd

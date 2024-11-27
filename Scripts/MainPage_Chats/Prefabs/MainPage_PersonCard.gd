@@ -36,7 +36,7 @@ func _on_pressed():
 	send_add_friend_command.new(id,$Message.text)
 	
 	## 显示提示
-	Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"已发送请求"))
+	Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"Sent request"))
 	
 	## 销毁自己
 	get_parent().remove_child(self)

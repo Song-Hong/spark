@@ -17,6 +17,11 @@ func exit():
 
 #当清理按钮点击时
 func on_pressed():
+	#清除缓存
 	Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"Cleared"))
 	var dir_path = DB.init.NowUserPath
 	DB.init.delete_folder_contents(dir_path,dir_path)
+	#清除全部好友的最后消息
+	clear_all_friend_last_msg_command.new()
+	#清除当前聊天消息
+	clear_now_chats_command.new()
