@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bylpd6qykn7gq"]
+
+[ext_resource type="Theme" uid="uid://dxu4ylxcaosr7" path="res://SongG/SongGExtend/EvenState/Styles/def.tres" id="1_8l6lj"]
+[ext_resource type="Texture2D" uid="uid://cik6yg0s5i8gk" path="res://SongG/SongGExtend/EvenState/Icons/Timer.svg" id="1_ddnk7"]
+
+[node name="timer" type="Button"]
+clip_contents = true
+offset_right = 60.0
+offset_bottom = 22.0
+focus_mode = 0
+theme = ExtResource("1_8l6lj")
+
+[node name="icon" type="TextureRect" parent="."]
+modulate = Color(0.992157, 0.470588, 0.223529, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = ExtResource("1_ddnk7")
+
+[node name="number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 1.0
+offset_right = 60.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "20:20"
+horizontal_alignment = 1
+vertical_alignment = 1

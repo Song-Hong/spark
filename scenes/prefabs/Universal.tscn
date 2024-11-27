@@ -1,0 +1,127 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsdm0k2a2lwdw"]
+
+[ext_resource type="ButtonGroup" uid="uid://cobjp7hfqv3nn" path="res://Scripts/MainPage_Setting/Prefabs/language_controller.tres" id="1_tth81"]
+[ext_resource type="Script" path="res://SongG/ToolScripts/ItemBind.gd" id="2_rhbms"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gre01"]
+bg_color = Color(0.873298, 0.873298, 0.873298, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Universal" type="VBoxContainer"]
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Info" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Info"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Info"
+
+[node name="Panel2" type="PanelContainer" parent="Info"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gre01")
+
+[node name="MarginContainer" type="MarginContainer" parent="Info/Panel2"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Info/Panel2/MarginContainer"]
+layout_mode = 2
+
+[node name="Version" type="Label" parent="Info/Panel2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Version"
+
+[node name="Middle" type="Label" parent="Info/Panel2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " : "
+
+[node name="VersionNumber" type="Label" parent="Info/Panel2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.0.01 beta"
+
+[node name="Language" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Language"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Language"
+
+[node name="Panel" type="PanelContainer" parent="Language"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gre01")
+
+[node name="MarginContainer" type="MarginContainer" parent="Language/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="LanguageArea" type="HBoxContainer" parent="Language/Panel/MarginContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("2_rhbms")
+
+[node name="SimplifiedChinese" type="Button" parent="Language/Panel/MarginContainer/LanguageArea"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_tth81")
+text = " 简体中文 "
+
+[node name="TraditionalChinese" type="Button" parent="Language/Panel/MarginContainer/LanguageArea"]
+visible = false
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_tth81")
+text = " 繁体中文 "
+
+[node name="English" type="Button" parent="Language/Panel/MarginContainer/LanguageArea"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_tth81")
+text = " English "
+
+[node name="Japanese" type="Button" parent="Language/Panel/MarginContainer/LanguageArea"]
+visible = false
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_tth81")
+text = " 日语"
+
+[node name="Korean" type="Button" parent="Language/Panel/MarginContainer/LanguageArea"]
+visible = false
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_tth81")
+text = " 韩语  "
+
+[node name="Esperanto" type="Button" parent="Language/Panel/MarginContainer/LanguageArea"]
+visible = false
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_tth81")
+text = " 世界语  "
+
+[node name="Langueage_Button_Group" type="Button" parent="Language/Panel/MarginContainer/LanguageArea"]
+visible = false
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_tth81")
+text = " 世界语  "
+script = ExtResource("2_rhbms")

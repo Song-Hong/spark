@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn6wrtyvlo6kb"]
+
+[ext_resource type="Script" path="res://Scripts/MainPage_Chats/Prefabs/MainPage_PersonCard.gd" id="1_xhxnx"]
+[ext_resource type="Texture2D" uid="uid://bfcsx4s3vcolw" path="res://Assets/Logo/logo.svg" id="2_watmb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fb4v1"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj4mc"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5ldl"]
+bg_color = Color(0.0980392, 0.564706, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[node name="PersonCard" type="Panel"]
+custom_minimum_size = Vector2(340, 140)
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fb4v1")
+script = ExtResource("1_xhxnx")
+
+[node name="Head" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 80.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_watmb")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+offset_left = 22.0
+offset_top = 80.0
+offset_right = 72.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Song"
+
+[node name="Username" type="Label" parent="."]
+layout_mode = 2
+offset_left = 22.0
+offset_top = 100.0
+offset_right = 89.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.584314, 0.584314, 0.584314, 1)
+theme_override_font_sizes/font_size = 14
+text = "hongsong"
+vertical_alignment = 1
+
+[node name="Message" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 32.0
+offset_right = 322.0
+offset_bottom = 72.0
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.699653, 0.699653, 0.699653, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_pj4mc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pj4mc")
+placeholder_text = "Hello"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 88.0
+offset_right = 320.0
+offset_bottom = 120.0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_w5ldl")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_w5ldl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w5ldl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w5ldl")
+text = "Add Friend"

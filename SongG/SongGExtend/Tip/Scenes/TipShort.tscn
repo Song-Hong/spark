@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://brkpxql48uul3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_velo6"]
+bg_color = Color(0.545152, 0.442155, 0.703635, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="top_tip" type="Panel"]
+offset_right = 240.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_velo6")
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="content" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1

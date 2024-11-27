@@ -12,13 +12,31 @@ config_version=5
 
 config/name="Spark"
 config/tags=PackedStringArray("app")
-run/main_scene="res://Pages/Song/Song.tscn"
+run/main_scene="res://SongG/Others/Scenes/core.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.14, 0.14, 0.14, 0)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://Assets/Logo/Spark.svg"
+
+[autoload]
+
+Global="*res://Scripts/Data/Global.gd"
+
+[display]
+
+window/size/transparent=true
+window/per_pixel_transparency/allowed=true
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "teal",
+"res://Scripts/": "pink",
+"res://SongG/": "blue",
+"res://scenes/": "orange"
+}
 
 [input]
 

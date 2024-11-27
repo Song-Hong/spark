@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://hu0ivll5noxd"]
+
+[ext_resource type="Texture2D" uid="uid://8s41np6amgx7" path="res://SongG/SongGExtend/StatusBar/Icons/disabled.png" id="1_gdw21"]
+[ext_resource type="Texture2D" uid="uid://dhjbri1qdmqku" path="res://SongG/SongGExtend/StatusBar/Icons/max nomal.png" id="2_072bh"]
+[ext_resource type="Texture2D" uid="uid://cd2aym0c7moor" path="res://SongG/SongGExtend/StatusBar/Icons/max.png" id="3_spryf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tdys0"]
+texture = ExtResource("1_gdw21")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2cml4"]
+texture = ExtResource("2_072bh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jmvrr"]
+texture = ExtResource("3_spryf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpiqc"]
+texture = ExtResource("2_072bh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wpw2"]
+texture = ExtResource("2_072bh")
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_tdys0")
+Button/styles/focus = SubResource("StyleBoxTexture_2cml4")
+Button/styles/hover = SubResource("StyleBoxTexture_jmvrr")
+Button/styles/normal = SubResource("StyleBoxTexture_qpiqc")
+Button/styles/pressed = SubResource("StyleBoxTexture_3wpw2")

@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://pakfb8o0rjmf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyors"]
+bg_color = Color(0.537011, 0.537011, 0.537011, 0.392157)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2iqe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lhhcs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nerkn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x3de1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqelq"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2e2p"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[node name="Search" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxFlat_wyors")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_h2iqe")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_h2iqe")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_h2iqe")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lhhcs")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_wyors")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyors")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_h2iqe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h2iqe")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_h2iqe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wyors")
+
+[node name="SearchInput" type="LineEdit" parent="."]
+layout_mode = 2
+offset_left = 276.0
+offset_top = 20.0
+offset_right = 876.0
+offset_bottom = 60.0
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_nerkn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nerkn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_x3de1")
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_pqelq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_g2e2p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g2e2p")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pqelq")
+toggle_mode = true
+text = "Person"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="SearchArea" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
