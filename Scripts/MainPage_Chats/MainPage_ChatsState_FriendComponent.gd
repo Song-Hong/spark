@@ -52,6 +52,13 @@ func on_friend_list_recive(friends):
 			for chat in json.data.msgs:
 				var server_md = MessageData.static_parsing(chat)
 				server_md.own = false #设置为对方发送
+				#检测接收到的消息类型
+				if server_md.type != 0:
+					var save_path = DB.init.NowUserPath+"/"+str(friend.id)+"/"+server_md.data
+					download_file_from_server_command.new(
+					server_md.data,
+					save_path)
+					server_md.data = save_path
 				#存储至本地
 				DB.init.save_off_line_md(friend.id,server_md)
 			
@@ -68,6 +75,14 @@ func on_friend_msg_receive(_data):
 	var md     = MessageData.static_parsing(_data.MSG)
 	var msg    = format_receive_md(md)
 	friend.set_friend_last_message(msg)
+	#检测消息类型,当类型不为纯文本消息时,从服务器下载资源
+	if md.type != 0:
+		await Core.init.get_tree().create_timer(0.3).timeout
+		var save_path = DB.init.NowUserPath+"/"+str(_data.SID)+"/"+md.data
+		download_file_from_server_command.new(
+		md.data,
+		save_path)
+		md.data = save_path
 	#存储到本地
 	md.own = false
 	DB.init.save_md(_data.SID,md)
@@ -105,4 +120,14 @@ func format_receive_md(md:MessageData)->String:
 	match str(md.type):
 		'0': #消息
 			msg = md.data
+		'1':
+			msg = "[表情]"
+		'2':
+			msg = "[图片]"
+		'3':
+			msg = "[语音]"
+		'4':
+			msg = "[文件]"
+		'5':
+			msg = "[链接]"
 	return msg

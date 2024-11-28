@@ -15,6 +15,7 @@ signal self_cache_receive    #10010 缓存消息请求
 
 #服务器
 var server_tcp: ServerTCP
+var server_http:HTTPRequest
 
 # 初始化
 func _ready():
@@ -22,6 +23,10 @@ func _ready():
 	server_tcp = Server.init.create_tcps("spark", "60.204.140.223", 1728)
 	server_tcp.connect("receive_data", Callable(self, "on_data_received"))
 	server_tcp.connect_server()
+	
+	#创建http服务器
+	server_http  = HTTPRequest.new()
+	add_child(server_http)
 
 # 数据接收
 func on_data_received(data: String):
@@ -56,3 +61,17 @@ func on_data_received(data: String):
 # 发送数据
 func send(data: String):
 	server_tcp.send_data(data)
+
+#当接收到服务器数据时
+func on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
+	if result != HTTPRequest.RESULT_SUCCESS:
+		print("请求失败")
+		return
+		
+	match response_code:
+		200:
+			print("文件下载成功")
+		404:
+			print("文件未找到")
+		500:
+			print("服务器错误")

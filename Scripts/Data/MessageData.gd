@@ -6,7 +6,6 @@ var data #消息内容
 var id   #消息id
 var time #消息的接收时间
 var type #消息类型 0_文本 1_表情 2_图片 3_语音 4_文件 5_链接
-#特殊消息类型 10006 好友申请
 
 #region 静态方法
 # 0 文本消息
@@ -17,32 +16,37 @@ static func Text(_text)->MessageData:
 # 1 表情
 static func Emoji(_id)->MessageData:
 	var md = MessageData.new()
+	md.init(_id)
 	md.type = 1
-	return md.init(_id)
+	return md
 
 # 2 图片
 static func Img(_img)->MessageData:
 	var md = MessageData.new()
+	md.init(_img)
 	md.type = 2
-	return md.init(_img)
+	return md
 
 # 3 语音
 static func Aud(_aud)->MessageData:
 	var md = MessageData.new()
+	md.init(_aud)
 	md.type = 3
-	return md.init(_aud)
+	return md
 
 # 4 文件
 static func File(_file)->MessageData:
 	var md = MessageData.new()
+	md.init(_file)
 	md.type = 4
-	return md.init(_file)
+	return md
 
 # 5 链接
 static func Link(_link)->MessageData:
 	var md = MessageData.new()
+	md.init(_link)
 	md.type = 5
-	return md.init(_link)
+	return md
 #endregion
 
 #初始化并返回字符串
@@ -102,3 +106,8 @@ static func static_parsing(msg)->MessageData:
 #获取时间
 func get_time()->Dictionary:
 	return Time.get_datetime_dict_from_datetime_string(time,true)
+
+#生成唯一id
+func gen_only_id():
+	var _time = Time.get_datetime_dict_from_system()
+	return str(_time.year)+"_"+str(_time.month)+"_"+str(_time.day)+"_"+str(id)

@@ -107,6 +107,15 @@ func save_text_append(file_path,content):
 	var save_content = file_content+"\n"+content
 	save_content     = save_content.trim_suffix("\n").trim_prefix("\n")
 	file.store_string(save_content)
+
+#转存缓存文件
+func copy_file(source_path:String,target_path:String):
+	if !FileAccess.file_exists(source_path):return
+	# 读取源文件
+	var content = FileAccess.get_file_as_bytes(source_path)
+	# 写入新文件
+	var file = FileAccess.open(target_path, FileAccess.WRITE)
+	file.store_buffer(content)
 #endregion
 
 #region 删除文件

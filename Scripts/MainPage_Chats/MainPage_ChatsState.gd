@@ -14,7 +14,8 @@ func _init():
 	chat_state_components = ComponentArray.Q("MainPage_ChatsState",[
 		MainPage_ChatsState_FriendComponent.new(), #好友管理
 		MainPage_ChatsState_ChatComponent.new(),   #消息管理
-		MainPage_ChatsState_SearchComponent.new()  #搜索管理
+		MainPage_ChatsState_SearchComponent.new(), #搜索管理
+		MainPage_ChatsState_FileComponent.new()
 	])
 
 #当流程切换时,清空全部

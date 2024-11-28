@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1k4jbkxon534"]
+
+[ext_resource type="Texture2D" uid="uid://bfcsx4s3vcolw" path="res://Assets/Logo/logo.svg" id="1_yn1k2"]
+[ext_resource type="Script" path="res://Scripts/MainPage_Chats/Prefabs/MainPage_ImgItem.gd" id="2_a5u8n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp78a"]
+bg_color = Color(0.603922, 0.603922, 0.8, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[node name="img_item" type="Button"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxFlat_wp78a")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_wp78a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wp78a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wp78a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wp78a")
+icon = ExtResource("1_yn1k2")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_a5u8n")

@@ -1,3 +1,4 @@
+HBoxContainer
 Button
 PanelContainer
 Blackboard
@@ -9,6 +10,5 @@ GridContainer
 VSeparator
 Node
 LineEdit
-HBoxContainer
 VBoxContainer
 Container

@@ -53,9 +53,12 @@ func _on_message_input_event(_event):
 
 #当从网络接收到好友消息时
 func _on_friend_msg_receive(_data):
-	if data.TID != Global.SelfID:return
+	if _data.TID != Global.SelfID:return
 	var md = MessageData.static_parsing(_data.MSG) #解析消息
 	md.own = false #将消息设置为对方发送
+	if md.type != 0:
+		create_item(md,true) #创建消息气泡
+		return
 	create_item(md) #创建消息气泡
 	scroll_bar_lowest() #滚动消息
 
@@ -77,10 +80,36 @@ func scroll_bar_lowest():
 	ChatContentScroll.get_v_scroll_bar().ratio = 1
 
 #创建item
-func create_item(md:MessageData):
+func create_item(md:MessageData,wait_load = false):
+	var item = null
 	match str(md.type):
 		'0': #文本消息
-			create_text_item(md.data,md.own) #创建好友消息
+			item = Scene.init.load_scene("/prefabs/chat_item")
+			item.text = md.data
+		'1':
+			pass
+		'2': #图片消息
+			if wait_load:
+				item = Scene.init.load_scene("/prefabs/img_item")
+				item.img_path  = DB.init.NowUserPath+"/"+str(Global.TargetID)+"/"+md.data
+				item.wait_load_img()
+			elif FileAccess.file_exists(md.data):
+				item = Scene.init.load_scene("/prefabs/img_item")
+				var img = Image.load_from_file(md.data)
+				item.icon = ImageTexture.create_from_image(img)
+			else:
+				item = Scene.init.load_scene("/prefabs/chat_item")
+				item.text = "[图片丢失]"
+		'3':
+			pass
+	if item == null:return
+	#将气泡添加至场景
+	ChatContentArea.add_child(item)
+	#设置气泡的位置
+	if md.own:
+		item.size_flags_horizontal = Control.SIZE_SHRINK_END
+	else:
+		item.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
 
 #创建文本消息
 func create_text_item(_text,is_self=true):
