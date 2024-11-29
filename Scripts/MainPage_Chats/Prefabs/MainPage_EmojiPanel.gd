@@ -8,13 +8,13 @@ extends MarginContainer
 func _ready():
 	button_group.pressed.connect(Callable(self,"on_btn_pressed"))
 	#Blackboard.init.get_data("ContentArea").gui_input.connect(Callable(self,"on_gui_input"))
-	Blackboard.init.get_data("Main_ChatsPage").gui_input.connect(Callable(self,"on_gui_input"))
+	gui_input.connect(Callable(self,"on_gui_input"))
 	 
 #当退出场景时
 func _exit_tree():
 	button_group.pressed.disconnect(Callable(self,"on_btn_pressed"))
 	#Blackboard.init.get_data("ContentArea").gui_input.disconnect(Callable(self,"on_gui_input"))
-	Blackboard.init.get_data("Main_ChatsPage").gui_input.disconnect(Callable(self,"on_gui_input"))
+	gui_input.disconnect(Callable(self,"on_gui_input"))
 
 #当按钮点击时
 func on_btn_pressed(btn):
