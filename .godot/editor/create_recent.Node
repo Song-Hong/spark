@@ -1,3 +1,4 @@
+Node
 Button
 MarginContainer
 TextureRect
@@ -9,6 +10,5 @@ RichTextLabel
 Label
 GridContainer
 VSeparator
-Node
 LineEdit
 VBoxContainer

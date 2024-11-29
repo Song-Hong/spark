@@ -76,7 +76,8 @@ func on_target_change(_id):
 
 #滚动至最底部
 func scroll_bar_lowest():
-	await Process.init.get_tree().process_frame
+	#await Process.init.get_tree().process_frame
+	await Process.init.get_tree().create_timer(0.1).timeout
 	ChatContentScroll.get_v_scroll_bar().ratio = 1
 
 #创建item

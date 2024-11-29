@@ -24,11 +24,6 @@ config/icon="res://Assets/Logo/Spark.svg"
 
 Global="*res://Scripts/Data/Global.gd"
 
-[display]
-
-window/size/transparent=true
-window/per_pixel_transparency/allowed=true
-
 [file_customization]
 
 folder_colors={

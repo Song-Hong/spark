@@ -161,6 +161,7 @@ script = ExtResource("2_0412h")
 [node name="Tools" type="HBoxContainer" parent="Content/ChatPanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="VSeparator" type="VSeparator" parent="Content/ChatPanel/VBoxContainer/Tools"]
 layout_mode = 2
@@ -175,6 +176,23 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_3tg60")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3tg60")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3tg60")
 icon = ExtResource("4_wmc0r")
+icon_alignment = 1
+script = ExtResource("2_0412h")
+
+[node name="VSeparator2" type="VSeparator" parent="Content/ChatPanel/VBoxContainer/Tools"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7b5dt")
+
+[node name="MainChat_Emoji_Button2" type="Button" parent="Content/ChatPanel/VBoxContainer/Tools"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_3tg60")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3tg60")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3tg60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3tg60")
 icon_alignment = 1
 script = ExtResource("2_0412h")
 

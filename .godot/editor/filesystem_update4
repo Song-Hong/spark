@@ -12,3 +12,9 @@ res://scenes/LoginPage.tscn
 res://scenes/MainPage_ChatsPage.tscn
 res://scenes/MainPage.tscn
 res://scenes/prefabs/emoji_panel.tscn
+res://SongG/SongGExtend/StatusBar/Scenes/winStatus.tscn
+res://SongG/Process/SongGProcess.gd
+res://Scripts/Module/DynamicAssets/DynamicAssets.gd
+res://scenes/prefabs/emoji_item.tscn
+res://Scripts/MainPage_Chats/Prefabs/emoji_item.gd
+res://Scripts/MainPage_Chats/MainPage_ChatsState_ChatComponent.gd
