@@ -1,7 +1,13 @@
-res://SongG/Others/Scenes/core.tscn
+res://scenes/prefabs/img_item.tscn
 res://Scripts/MainPage/main_page_left.tres
+res://SongG/Others/Scenes/core.tscn
 res://scenes/LoginPage.tscn
 res://scenes/MainPage_ChatsPage.tscn
 res://scenes/prefabs/chat_item.tscn
 res://SongG/SongGExtend/Tip/Scenes/TipShort.tscn
 res://scenes/MainPage.tscn
+res://SongG/SongGExtend/EvenState/Styles/def.tres
+res://SongG/SongGExtend/Tip/Styles/TipPanel.tres
+res://Scripts/MainPage_Chats/Prefabs/MainPage_ImgItem.gd
+res://Scripts/MainPage_Chats/MainPage_ChatsState_ChatComponent.gd
+res://Scripts/MainPage_Chats/Commands/create_chat_item_command.gd

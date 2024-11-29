@@ -13,8 +13,7 @@ func _init(md:MessageData):
 			pass
 		'2': #图片消息
 			item = Scene.init.load_scene("/prefabs/img_item")
-			var img = Image.load_from_file(md.data)
-			item.icon = ImageTexture.create_from_image(img)
+			item.set_img_from_file(md.data)
 		'3':
 			pass
 	if item == null:return

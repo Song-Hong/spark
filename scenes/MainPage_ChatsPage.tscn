@@ -1,8 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://lvgdw3te2pj2"]
+[gd_scene load_steps=20 format=3 uid="uid://lvgdw3te2pj2"]
 
 [ext_resource type="Script" path="res://SongG/ToolScripts/ItemBind.gd" id="2_0412h"]
 [ext_resource type="Texture2D" uid="uid://5co56ibkg0lp" path="res://Assets/Icon/search_white.svg" id="3_7hjx1"]
+[ext_resource type="PackedScene" uid="uid://c1k4jbkxon534" path="res://scenes/prefabs/img_item.tscn" id="3_g4i17"]
 [ext_resource type="ButtonGroup" uid="uid://c087wss6fec0u" path="res://Scripts/MainPage_Chats/friend_item_group.tres" id="3_stcwc"]
+[ext_resource type="Texture2D" uid="uid://0qiif5luvrog" path="res://Assets/Logo/截屏2024-11-29 10.18.02.png" id="4_vcntj"]
 [ext_resource type="Texture2D" uid="uid://dq2t5geycnvr6" path="res://Assets/Icon/emoji_icon.png" id="4_wmc0r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_su6wl"]
@@ -133,7 +135,6 @@ size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_tavsm")
 
 [node name="ChatPanel" type="MarginContainer" parent="Content"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
@@ -172,6 +173,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 26
 script = ExtResource("2_0412h")
+
+[node name="img_item" parent="Content/ChatPanel/VBoxContainer/ChatContentScroll/MarginContainer/ChatContentArea" instance=ExtResource("3_g4i17")]
+visible = false
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+texture = ExtResource("4_vcntj")
+expand_mode = 1
 
 [node name="Tools" type="HBoxContainer" parent="Content/ChatPanel/VBoxContainer"]
 visible = false

@@ -95,8 +95,7 @@ func create_item(md:MessageData,wait_load = false):
 				item.wait_load_img()
 			elif FileAccess.file_exists(md.data):
 				item = Scene.init.load_scene("/prefabs/img_item")
-				var img = Image.load_from_file(md.data)
-				item.icon = ImageTexture.create_from_image(img)
+				item.set_img_from_file(md.data)
 			else:
 				item = Scene.init.load_scene("/prefabs/chat_item")
 				item.text = "[图片丢失]"

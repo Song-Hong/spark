@@ -1,5 +1,6 @@
-HBoxContainer
+TextureRect
 Button
+HBoxContainer
 PanelContainer
 Blackboard
 CanvasLayer
@@ -11,4 +12,3 @@ VSeparator
 Node
 LineEdit
 VBoxContainer
-Container
