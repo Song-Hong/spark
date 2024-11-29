@@ -53,7 +53,7 @@ func on_friend_list_recive(friends):
 				var server_md = MessageData.static_parsing(chat)
 				server_md.own = false #设置为对方发送
 				#检测接收到的消息类型
-				if server_md.type != 0:
+				if server_md.type > 1:
 					var save_path = DB.init.NowUserPath+"/"+str(friend.id)+"/"+server_md.data
 					download_file_from_server_command.new(
 					server_md.data,
@@ -76,7 +76,7 @@ func on_friend_msg_receive(_data):
 	var msg    = format_receive_md(md)
 	friend.set_friend_last_message(msg)
 	#检测消息类型,当类型不为纯文本消息时,从服务器下载资源
-	if md.type != 0:
+	if md.type > 1:
 		await Core.init.get_tree().create_timer(0.3).timeout
 		var save_path = DB.init.NowUserPath+"/"+str(_data.SID)+"/"+md.data
 		download_file_from_server_command.new(

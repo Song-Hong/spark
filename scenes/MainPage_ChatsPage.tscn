@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://lvgdw3te2pj2"]
+[gd_scene load_steps=13 format=3 uid="uid://lvgdw3te2pj2"]
 
 [ext_resource type="Script" path="res://SongG/ToolScripts/ItemBind.gd" id="2_0412h"]
 [ext_resource type="Texture2D" uid="uid://5co56ibkg0lp" path="res://Assets/Icon/search_white.svg" id="3_7hjx1"]
@@ -48,21 +48,6 @@ expand_margin_right = 11.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0vbp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wol56"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djwoi"]
-bg_color = Color(0.821789, 0.821789, 0.821788, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqb1v"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n521d"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxoil"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_njssj"]
 
 [node name="Main_ChatsPage" type="HBoxContainer"]
 anchors_preset = 15
@@ -174,7 +159,6 @@ theme_override_constants/separation = 26
 script = ExtResource("2_0412h")
 
 [node name="Tools" type="HBoxContainer" parent="Content/ChatPanel/VBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
@@ -182,7 +166,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_7b5dt")
 
-[node name="Emoji" type="Button" parent="Content/ChatPanel/VBoxContainer/Tools"]
+[node name="MainChat_Emoji_Button" type="Button" parent="Content/ChatPanel/VBoxContainer/Tools"]
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -192,6 +176,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3tg60")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3tg60")
 icon = ExtResource("4_wmc0r")
 icon_alignment = 1
+script = ExtResource("2_0412h")
 
 [node name="HSeparator" type="HSeparator" parent="Content/ChatPanel/VBoxContainer"]
 layout_mode = 2
@@ -209,40 +194,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/caret_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wol56")
 script = ExtResource("2_0412h")
-
-[node name="EmojiPnael" type="MarginContainer" parent="Content"]
-visible = false
-layout_mode = 2
-theme_override_constants/margin_left = 20
-
-[node name="Background" type="PanelContainer" parent="Content/EmojiPnael"]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_djwoi")
-
-[node name="MarginContainer" type="MarginContainer" parent="Content/EmojiPnael/Background"]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="GridContainer" type="GridContainer" parent="Content/EmojiPnael/Background/MarginContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 18
-theme_override_constants/v_separation = 18
-columns = 4
-
-[node name="DogFace" type="Button" parent="Content/EmojiPnael/Background/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(30, 30)
-layout_mode = 2
-focus_mode = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bqb1v")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_n521d")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_oxoil")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_njssj")
 
 [node name="ButtonGroup" type="Node" parent="."]
 

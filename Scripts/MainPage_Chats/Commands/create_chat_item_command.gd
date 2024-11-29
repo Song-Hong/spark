@@ -9,8 +9,9 @@ func _init(md:MessageData):
 		'0': #文本消息
 			item = Scene.init.load_scene("/prefabs/chat_item")
 			item.text = md.data
-		'1':
-			pass
+		'1': #表情
+			item = Scene.init.load_scene("/prefabs/emoji_item")
+			item.init(md.data)
 		'2': #图片消息
 			item = Scene.init.load_scene("/prefabs/img_item")
 			item.set_img_from_file(md.data)

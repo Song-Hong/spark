@@ -87,7 +87,8 @@ func create_item(md:MessageData,wait_load = false):
 			item = Scene.init.load_scene("/prefabs/chat_item")
 			item.text = md.data
 		'1':
-			pass
+			item = Scene.init.load_scene("/prefabs/emoji_item")
+			item.init(md.data)
 		'2': #图片消息
 			if wait_load:
 				item = Scene.init.load_scene("/prefabs/img_item")
