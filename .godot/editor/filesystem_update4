@@ -11,3 +11,6 @@ res://SongG/SongGExtend/Tip/Styles/TipPanel.tres
 res://Scripts/MainPage_Chats/Prefabs/MainPage_ImgItem.gd
 res://Scripts/MainPage_Chats/MainPage_ChatsState_ChatComponent.gd
 res://Scripts/MainPage_Chats/Commands/create_chat_item_command.gd
+res://Scripts/MainPage_Chats/MainPage_ChatsState_FileComponent.gd
+res://Scripts/MainPage_Chats/MainPage_ChatsState.gd
+res://Scripts/MainPage_Chats/Commands/chats_area_scroll_bar_lowest_command.gd

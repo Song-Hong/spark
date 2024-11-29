@@ -13,6 +13,8 @@ func exit():
 
 #当文件拖动导入
 func on_file_dropped(paths):
+	if Global.TargetID == 0:return
+	if !Blackboard.init.get_data("enable chat page"):return
 	for path in paths:
 		#创建消息类型
 		var md:MessageData
@@ -34,8 +36,6 @@ func on_file_dropped(paths):
 		upload_file_to_server_command.new(save_path)
 		#创建消息气泡
 		create_chat_item_command.new(md)
-		#滚动消息
-		chats_area_scroll_bar_lowest_command.new()
 		#更新最后消息
 		update_friend_last_message_command.new(Global.TargetID,last_msg)
 		#存储当前消息
@@ -43,3 +43,6 @@ func on_file_dropped(paths):
 		#发送消息
 		md.data = md.gen_only_id()+"."+file_type
 		send_md_command.new(md)
+		#滚动消息
+		await Core.init.get_tree().create_timer(0.1).timeout
+		chats_area_scroll_bar_lowest_command.new()

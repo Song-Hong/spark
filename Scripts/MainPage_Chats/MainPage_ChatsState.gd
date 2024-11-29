@@ -18,6 +18,15 @@ func _init():
 		MainPage_ChatsState_FileComponent.new()
 	])
 
+#当显示聊天窗口时
+func start():
+	Blackboard.init.set_data("enable chat page",true)
+
+#当关闭聊天窗口时
+func exit():
+	Blackboard.init.set_data("enable chat page",false)
+
 #当流程切换时,清空全部
 func _on_process_change():
 	chat_state_components.clear()
+	Blackboard.init.del_data("enable chat page")
