@@ -20,14 +20,12 @@ func _ready():
 func on_mouse_entered():
 	for btn in get_parent().get_children():
 		btn = btn as Button
-		#var theme = btn.get_theme_stylebox("hover")
 		btn.add_theme_stylebox_override("normal",btn.get_theme_stylebox("hover"))
 
 #当鼠标离开当前节点时
 func on_mouse_exited():
 	for btn in get_parent().get_children():
 		btn = btn as Button
-		#var theme = btn.get_theme_stylebox("pressed")
 		btn.add_theme_stylebox_override("normal",btn.get_theme_stylebox("pressed"))
 
 #退出软件
@@ -37,8 +35,12 @@ func quitApp():
 
 #最小化app
 func minApp():
-	#get_window().MODE_WINDOWED = 
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED)
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_TRANSPARENT, false)
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_MINIMIZED:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED)
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_TRANSPARENT, true)
 
 #最大化app
 func maxApp():
@@ -53,4 +55,3 @@ func _notification(what):
 		disabled = true
 	if what == MainLoop.NOTIFICATION_APPLICATION_FOCUS_IN:
 		disabled = false
-	

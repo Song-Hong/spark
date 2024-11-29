@@ -2,19 +2,19 @@
 extends MarginContainer
 
 #按钮组
-@export var button_group:ButtonGroup
+@export var emoji_button_group:ButtonGroup
 
 #初始化
 func _ready():
-	button_group.pressed.connect(Callable(self,"on_btn_pressed"))
-	#Blackboard.init.get_data("ContentArea").gui_input.connect(Callable(self,"on_gui_input"))
+	emoji_button_group.pressed.connect(Callable(self,"on_btn_pressed"))
 	gui_input.connect(Callable(self,"on_gui_input"))
+	Blackboard.init.get_data("FriendArea").gui_input.connect(Callable(self,"on_gui_input"))
 	 
 #当退出场景时
 func _exit_tree():
-	button_group.pressed.disconnect(Callable(self,"on_btn_pressed"))
-	#Blackboard.init.get_data("ContentArea").gui_input.disconnect(Callable(self,"on_gui_input"))
+	emoji_button_group.pressed.disconnect(Callable(self,"on_btn_pressed"))
 	gui_input.disconnect(Callable(self,"on_gui_input"))
+	Blackboard.init.get_data("FriendArea").gui_input.disconnect(Callable(self,"on_gui_input"))
 
 #当按钮点击时
 func on_btn_pressed(btn):
@@ -31,6 +31,7 @@ func on_btn_pressed(btn):
 	#滚动消息
 	await Core.init.get_tree().create_timer(0.1).timeout
 	chats_area_scroll_bar_lowest_command.new()
+
 
 func on_gui_input(_event):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):

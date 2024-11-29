@@ -1,9 +1,9 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1732869845
-export_presets.cfg::TextFile::-1::1732807701::0::1::::<><>::
+::res://::1732884150
+export_presets.cfg::TextFile::-1::1732884079::0::1::::<><>::
 README.md::TextFile::-1::1732544753::0::1::::<><>::
 ::res://Assets/::1732868309
-::res://Assets/Emoji/::1732871341
+::res://Assets/Emoji/::1732871344
 clown.svg::CompressedTexture2D::1709316165363549002::1732871105::1732871344::1::::<><>::
 cool.svg::CompressedTexture2D::6295747621207407676::1732870812::1732871344::1::::<><>::
 crazy.svg::CompressedTexture2D::1020625128631296041::1732870992::1732871344::1::::<><>::
@@ -33,17 +33,17 @@ Spark.svg::CompressedTexture2D::1731423658932409821::1732544753::1732544808::1::
 a1.png::CompressedTexture2D::3623340735677588469::1732810586::1732810651::1::::<><>::
 a2.png::CompressedTexture2D::5831728259092796088::1732810580::1732810651::1::::<><>::
 a3.png::CompressedTexture2D::3332220430413922503::1732810570::1732810651::1::::<><>::
-::res://scenes/::1732864754
-LoginPage.tscn::PackedScene::6418142469789885440::1732864754::0::1::::<><>::uid://dsyh40qrwa2jo::::res://Scripts/LoginPage/LoginPage.tres<>res://SongG/ToolScripts/ItemBind.gd
-MainPage.tscn::PackedScene::8712888099366961739::1732852763::0::1::::<><>::uid://ccikxmml71k2o::::res://Scripts/MainPage/main_page_left.tres<>uid://bfcsx4s3vcolw::::res://Assets/Logo/logo.svg<>uid://yd3x5h3lkmxv::::res://Scripts/MainPage/left_tray_buttons.tres<>uid://bnmcmhxyi5usm::::res://Assets/Icon/chats.svg<>uid://cjs62p3n7cg7p::::res://Assets/Icon/setting.svg<>res://SongG/ToolScripts/ItemBind.gd<>uid://dc1xwnblu431k::::res://Assets/Icon/exit.svg<>uid://lvgdw3te2pj2::::res://scenes/MainPage_ChatsPage.tscn
-MainPage_ChatsPage.tscn::PackedScene::815800071829849089::1732864754::0::1::::<><>::res://SongG/ToolScripts/ItemBind.gd<>uid://5co56ibkg0lp::::res://Assets/Icon/search_white.svg<>uid://c087wss6fec0u::::res://Scripts/MainPage_Chats/friend_item_group.tres<>uid://dq2t5geycnvr6::::res://Assets/Icon/emoji_icon.png
+::res://scenes/::1732883944
+LoginPage.tscn::PackedScene::6418142469789885440::1732883944::0::1::::<><>::uid://dsyh40qrwa2jo::::res://Scripts/LoginPage/LoginPage.tres<>res://SongG/ToolScripts/ItemBind.gd
+MainPage.tscn::PackedScene::8712888099366961739::1732883944::0::1::::<><>::uid://ccikxmml71k2o::::res://Scripts/MainPage/main_page_left.tres<>uid://bfcsx4s3vcolw::::res://Assets/Logo/logo.svg<>uid://yd3x5h3lkmxv::::res://Scripts/MainPage/left_tray_buttons.tres<>uid://bnmcmhxyi5usm::::res://Assets/Icon/chats.svg<>uid://cjs62p3n7cg7p::::res://Assets/Icon/setting.svg<>res://SongG/ToolScripts/ItemBind.gd<>uid://dc1xwnblu431k::::res://Assets/Icon/exit.svg<>uid://lvgdw3te2pj2::::res://scenes/MainPage_ChatsPage.tscn
+MainPage_ChatsPage.tscn::PackedScene::815800071829849089::1732883944::0::1::::<><>::res://SongG/ToolScripts/ItemBind.gd<>uid://5co56ibkg0lp::::res://Assets/Icon/search_white.svg<>uid://c087wss6fec0u::::res://Scripts/MainPage_Chats/friend_item_group.tres<>uid://dq2t5geycnvr6::::res://Assets/Icon/emoji_icon.png
 MainPage_Search.tscn::PackedScene::1053448857639754073::1732706554::0::1::::<><>::
 MainPage_SettingPage.tscn::PackedScene::504684279616881800::1732716036::0::1::::<><>::uid://i4nm1h6x3njl::::res://Scripts/MainPage_Setting/setting_theme.tres<>uid://t8p2exed28dp::::res://Scripts/MainPage_Setting/setting_group_buttons.tres<>res://SongG/ToolScripts/ItemBind.gd
-::res://scenes/prefabs/::1732866195
+::res://scenes/prefabs/::1732883944
 Cache.tscn::PackedScene::4031782122738694777::1732716047::0::1::::<><>::res://SongG/ToolScripts/ItemBind.gd
 chat_item.tscn::PackedScene::7258020930538991963::1732852763::0::1::::<><>::
-emoji_item.tscn::PackedScene::3131160665311177802::1732865707::0::1::::<><>::res://Scripts/MainPage_Chats/Prefabs/emoji_item.gd
-emoji_panel.tscn::PackedScene::5795023049331665085::1732866195::0::1::::<><>::res://Scripts/MainPage_Chats/Prefabs/MainPage_EmojiPanel.gd<>uid://c7bqq5caep4jj::::res://Scripts/MainPage_Chats/emoji_item_group.tres
+emoji_item.tscn::PackedScene::3131160665311177802::1732872404::0::1::::<><>::res://Scripts/MainPage_Chats/Prefabs/emoji_item.gd
+emoji_panel.tscn::PackedScene::5795023049331665085::1732883944::0::1::::<><>::res://Scripts/MainPage_Chats/Prefabs/MainPage_EmojiPanel.gd<>uid://c7bqq5caep4jj::::res://Scripts/MainPage_Chats/emoji_item_group.tres<>uid://dkxlh5506d0p7::::res://Assets/Emoji/smiling.svg<>uid://d2qv8xae5lwht::::res://Assets/Emoji/grinning.svg<>uid://b54tmajekppq6::::res://Assets/Emoji/joy.svg<>uid://dxemwpxwb1bsp::::res://Assets/Emoji/cry.svg<>uid://cvxybqj1arq1a::::res://Assets/Emoji/cool.svg<>uid://dfuun5sqswx53::::res://Assets/Emoji/downcast.svg<>uid://5s7fi1sapxkc::::res://Assets/Emoji/kiss.svg<>uid://osnsubugy7np::::res://Assets/Emoji/crazy.svg<>uid://cga5v3pyvaut7::::res://Assets/Emoji/poo.svg<>uid://ymagm04pqkgg::::res://Assets/Emoji/clown.svg<>uid://ctjbvka3quulj::::res://Assets/Emoji/skull.svg<>uid://38kyoorp7oxn::::res://Assets/Emoji/ghost.svg
 friend_item.tscn::PackedScene::7984279282757487458::1732701765::0::1::::<><>::res://Scripts/MainPage_Chats/Prefabs/MainPage_FriendItem.gd<>uid://ywykaw3fhx46::::res://Assets/Logo/Spark.svg
 img_item.tscn::PackedScene::6620172013486677749::1732852763::0::1::::<><>::res://Scripts/MainPage_Chats/Prefabs/MainPage_ImgItem.gd
 new_friend.tscn::PackedScene::5713791054859077145::1732706554::0::1::::<><>::res://Scripts/MainPage_Chats/Prefabs/MainPage_NewFriend.gd<>uid://bfcsx4s3vcolw::::res://Assets/Logo/logo.svg
@@ -63,19 +63,19 @@ LoginPageProcess.gd::GDScript::-1::1732716267::0::1::::LoginPageProcess<>AProces
 LoginPage_ChooseLoginModeComponent.gd::GDScript::-1::1732716172::0::1::::LoginPage_ChooseLoginModeComponent<>AComponent<>::
 LoginPage_LoginComponent.gd::GDScript::-1::1732729026::0::1::::LoginPage_LoginComponent<>AComponent<>::
 LoginPage_SigninComponent.gd::GDScript::-1::1732723340::0::1::::LoginPage_SigninComponent<>AComponent<>::
-::res://Scripts/MainPage/::1732845976
+::res://Scripts/MainPage/::1732883857
 left_tray_buttons.tres::ButtonGroup::1692468117433664659::1732544753::0::1::::<><>::
 MainPageProcess.gd::GDScript::-1::1732730722::0::1::::MainPageProcess<>AProcess<>::
 MainPage_ExitState.gd::GDScript::-1::1732723534::0::1::::MainPage_ExitState<>AState<>::
 MainPage_TrayComponent.gd::GDScript::-1::1732613166::0::1::::MainPage_TrayComponent<>AComponent<>::
-main_page_left.tres::Theme::4930382969243663868::1732845976::0::1::::<><>::
-::res://Scripts/MainPage_Chats/::1732865791
+main_page_left.tres::Theme::4930382969243663868::1732883857::0::1::::<><>::
+::res://Scripts/MainPage_Chats/::1732881182
 emoji_item_group.tres::ButtonGroup::7021950364940121831::1732864842::0::1::::<><>::
 friend_item_group.tres::ButtonGroup::6597670130097541182::1732544753::0::1::::<><>::
-MainPage_ChatsState.gd::GDScript::-1::1732864730::0::1::::MainPage_ChatsState<>AState<>::
+MainPage_ChatsState.gd::GDScript::-1::1732881182::0::1::::MainPage_ChatsState<>AState<>::
 MainPage_ChatsState_ChatComponent.gd::GDScript::-1::1732865791::0::1::::MainPage_ChatsState_ChatComponent<>AComponent<>::
 MainPage_ChatsState_FileComponent.gd::GDScript::-1::1732852762::0::1::::MainPage_ChatsState_FileComponent<>AComponent<>::
-MainPage_ChatsState_FriendComponent.gd::GDScript::-1::1732809568::0::1::::MainPage_ChatsState_FriendComponent<>AComponent<>::
+MainPage_ChatsState_FriendComponent.gd::GDScript::-1::1732872329::0::1::::MainPage_ChatsState_FriendComponent<>AComponent<>::
 MainPage_ChatsState_SearchComponent.gd::GDScript::-1::1732705915::0::1::::MainPage_ChatsState_SearchComponent<>AComponent<>::
 ::res://Scripts/MainPage_Chats/Commands/::1732865791
 chats_area_scroll_bar_lowest_command.gd::GDScript::-1::1732852757::0::1::::chats_area_scroll_bar_lowest_command<>ACommand<>::
@@ -84,9 +84,9 @@ clear_now_chats_command.gd::GDScript::-1::1732724618::0::1::::clear_now_chats_co
 create_chat_item_command.gd::GDScript::-1::1732865791::0::1::::create_chat_item_command<>ACommand<>::
 create_frient_item_command.gd::GDScript::-1::1732705712::0::1::::create_frient_item_command<>ACommand<>::
 update_friend_last_message_command.gd::GDScript::-1::1732700784::0::1::::update_friend_last_message_command<>ACommand<>::
-::res://Scripts/MainPage_Chats/Prefabs/::1732865749
-emoji_item.gd::GDScript::-1::1732865749::0::1::::<>Button<>::
-MainPage_EmojiPanel.gd::GDScript::-1::1732865328::0::1::::<>MarginContainer<>::
+::res://Scripts/MainPage_Chats/Prefabs/::1732881876
+emoji_item.gd::GDScript::-1::1732872398::0::1::::<>Button<>::
+MainPage_EmojiPanel.gd::GDScript::-1::1732881876::0::1::::<>MarginContainer<>::
 MainPage_FriendItem.gd::GDScript::-1::1732618083::0::1::::<>Button<>::
 MainPage_ImgItem.gd::GDScript::-1::1732849768::0::1::::<>TextureRect<>::
 MainPage_NewFriend.gd::GDScript::-1::1732730965::0::1::::<>Panel<>::
@@ -145,8 +145,8 @@ SourceHanSansCN-Heavy.otf::FontFile::7465916734423478434::1701934641::1732557077
 ::res://SongG/Others/Logo/::1732557078
 Logo.png::CompressedTexture2D::499167994660924498::1703689361::1732557078::1::::<><>::
 Logo.svg::CompressedTexture2D::2124737503852781342::1702807150::1732557077::1::::<><>::
-::res://SongG/Others/Scenes/::1732864754
-core.tscn::PackedScene::2337068259502026070::1732864754::0::1::::<><>::res://SongG/Module/CoreModule.gd<>res://SongG/Module/ProcessModule.gd<>res://SongG/Module/BlackboardModule.gd<>res://SongG/Module/SceneModule.gd<>res://SongG/SongGExtend/Server/Module/ServerModule.gd<>res://SongG/SongGExtend/Tip/Module/TipModule.gd<>res://SongG/SongGExtend/StatusBar/Module/StatusBarMoudle.gd<>res://SongG/SongGExtend/Window/Module/WindowModule.gd<>res://SongG/View/CustomModuleVIew.gd<>res://SongG/SongGExtend/Tip/View/TipsMoudleView.gd<>res://SongG/SongGExtend/EvenState/View/EvenStateView.gd<>res://SongG/SongGExtend/StatusBar/View/StatusBarView.gd
+::res://SongG/Others/Scenes/::1732883944
+core.tscn::PackedScene::2337068259502026070::1732883944::0::1::::<><>::res://SongG/Module/CoreModule.gd<>res://SongG/Module/ProcessModule.gd<>res://SongG/Module/BlackboardModule.gd<>res://SongG/Module/SceneModule.gd<>res://SongG/SongGExtend/Server/Module/ServerModule.gd<>res://SongG/SongGExtend/Tip/Module/TipModule.gd<>res://SongG/SongGExtend/StatusBar/Module/StatusBarMoudle.gd<>res://SongG/SongGExtend/Window/Module/WindowModule.gd<>res://SongG/View/CustomModuleVIew.gd<>res://SongG/SongGExtend/Tip/View/TipsMoudleView.gd<>res://SongG/SongGExtend/EvenState/View/EvenStateView.gd<>res://SongG/SongGExtend/StatusBar/View/StatusBarView.gd
 ::res://SongG/Process/::1732561143
 SongGProcess.gd::GDScript::-1::1732561143::0::1::::SongGProcess<>AProcess<>::
 ::res://SongG/SongGExtend/::1732718611
@@ -166,8 +166,8 @@ tip.tscn::PackedScene::8004391206066273755::1732557077::0::1::::<><>::uid://dxu4
 ::res://SongG/SongGExtend/EvenState/Scripts/::1701875987
 EvenStateTimer.gd::GDScript::-1::1701875972::0::1::::EvenStateTimer<>IEvenState<>::
 EvenStateTip.gd.gd::GDScript::-1::1701875987::0::1::::EvenStateTip<>IEvenState<>::
-::res://SongG/SongGExtend/EvenState/Styles/::1732846437
-def.tres::Theme::8816697275057984154::1732846437::0::1::::<><>::
+::res://SongG/SongGExtend/EvenState/Styles/::1732882256
+def.tres::Theme::8816697275057984154::1732882256::0::1::::<><>::
 ::res://SongG/SongGExtend/EvenState/View/::1703059551
 EvenStateView.gd::GDScript::-1::1703059551::0::1::::<>AGodot<>::
 ::res://SongG/SongGExtend/Server/::1702018488
@@ -192,17 +192,17 @@ min nomal.png::CompressedTexture2D::6607071544125360738::1696218053::1732557077:
 min.png::CompressedTexture2D::3605516286390043228::1696217944::1732557077::1::::<><>::
 ::res://SongG/SongGExtend/StatusBar/Module/::1703059658
 StatusBarMoudle.gd::GDScript::-1::1703059658::0::1::::StatusBar<>IModule<>::
-::res://SongG/SongGExtend/StatusBar/Scenes/::1732557077
-macStatus.tscn::PackedScene::3987716300255594748::1732557077::0::1::::<><>::uid://bve1hg2rfvx42::::res://SongG/SongGExtend/StatusBar/Styles/statusbg.tres<>res://SongG/SongGExtend/StatusBar/Scripts/windowDrag.gd<>uid://c5ijj8yxsvvye::::res://SongG/SongGExtend/StatusBar/Styles/mac_quit_theme.tres<>res://SongG/SongGExtend/StatusBar/Scripts/windowController.gd<>uid://bfp3765lpsbwx::::res://SongG/SongGExtend/StatusBar/Styles/mac_min_theme.tres<>uid://hu0ivll5noxd::::res://SongG/SongGExtend/StatusBar/Styles/mac_max_theme.tres
+::res://SongG/SongGExtend/StatusBar/Scenes/::1732884065
+macStatus.tscn::PackedScene::3987716300255594748::1732884065::0::1::::<><>::uid://bve1hg2rfvx42::::res://SongG/SongGExtend/StatusBar/Styles/statusbg.tres<>res://SongG/SongGExtend/StatusBar/Scripts/windowDrag.gd<>uid://c5ijj8yxsvvye::::res://SongG/SongGExtend/StatusBar/Styles/mac_quit_theme.tres<>res://SongG/SongGExtend/StatusBar/Scripts/windowController.gd<>uid://bfp3765lpsbwx::::res://SongG/SongGExtend/StatusBar/Styles/mac_min_theme.tres<>uid://hu0ivll5noxd::::res://SongG/SongGExtend/StatusBar/Styles/mac_max_theme.tres
 winStatus.tscn::PackedScene::3237326154312483248::1700127947::0::1::::<><>::
-::res://SongG/SongGExtend/StatusBar/Scripts/::1703319883
-windowController.gd::GDScript::-1::1703319883::0::1::::<>Button<>::
+::res://SongG/SongGExtend/StatusBar/Scripts/::1732884056
+windowController.gd::GDScript::-1::1732884005::0::1::::<>Button<>::
 windowDrag.gd::GDScript::-1::1699870376::0::1::::<>Button<>::
-::res://SongG/SongGExtend/StatusBar/Styles/::1732557077
-mac_max_theme.tres::Theme::534142792241432241::1732557077::0::1::::<><>::uid://8s41np6amgx7::::res://SongG/SongGExtend/StatusBar/Icons/disabled.png<>uid://dhjbri1qdmqku::::res://SongG/SongGExtend/StatusBar/Icons/max nomal.png<>uid://cd2aym0c7moor::::res://SongG/SongGExtend/StatusBar/Icons/max.png
-mac_min_theme.tres::Theme::2770089464485108327::1732557077::0::1::::<><>::uid://8s41np6amgx7::::res://SongG/SongGExtend/StatusBar/Icons/disabled.png<>uid://c1errdq7o3aqc::::res://SongG/SongGExtend/StatusBar/Icons/min nomal.png<>uid://brmsldnma5kpg::::res://SongG/SongGExtend/StatusBar/Icons/min.png
-mac_quit_theme.tres::Theme::6895585995055474096::1732557077::0::1::::<><>::uid://8s41np6amgx7::::res://SongG/SongGExtend/StatusBar/Icons/disabled.png<>uid://282q4wermaq5::::res://SongG/SongGExtend/StatusBar/Icons/close nomal.png<>uid://dyrgatu5jcn8a::::res://SongG/SongGExtend/StatusBar/Icons/close.png
-statusbg.tres::Theme::3870235411107039529::1700108263::0::1::::<><>::
+::res://SongG/SongGExtend/StatusBar/Styles/::1732883857
+mac_max_theme.tres::Theme::534142792241432241::1732883857::0::1::::<><>::uid://8s41np6amgx7::::res://SongG/SongGExtend/StatusBar/Icons/disabled.png<>uid://dhjbri1qdmqku::::res://SongG/SongGExtend/StatusBar/Icons/max nomal.png<>uid://cd2aym0c7moor::::res://SongG/SongGExtend/StatusBar/Icons/max.png
+mac_min_theme.tres::Theme::2770089464485108327::1732883857::0::1::::<><>::uid://8s41np6amgx7::::res://SongG/SongGExtend/StatusBar/Icons/disabled.png<>uid://c1errdq7o3aqc::::res://SongG/SongGExtend/StatusBar/Icons/min nomal.png<>uid://brmsldnma5kpg::::res://SongG/SongGExtend/StatusBar/Icons/min.png
+mac_quit_theme.tres::Theme::6895585995055474096::1732883857::0::1::::<><>::uid://8s41np6amgx7::::res://SongG/SongGExtend/StatusBar/Icons/disabled.png<>uid://282q4wermaq5::::res://SongG/SongGExtend/StatusBar/Icons/close nomal.png<>uid://dyrgatu5jcn8a::::res://SongG/SongGExtend/StatusBar/Icons/close.png
+statusbg.tres::Theme::3870235411107039529::1732883857::0::1::::<><>::
 ::res://SongG/SongGExtend/StatusBar/View/::1703059556
 StatusBarView.gd::GDScript::-1::1703059556::0::1::::<>AGodot<>::
 ::res://SongG/SongGExtend/Tip/::1702018457
@@ -216,8 +216,8 @@ TipShort.tscn::PackedScene::3601227489960545778::1732852763::0::1::::<><>::
 ::res://SongG/SongGExtend/Tip/Scripts/::1701876037
 TipPanel.gd::GDScript::-1::1703075716::0::1::::TipPanel<>ITip<>::
 TipShort.gd::GDScript::-1::1732559479::0::1::::TipShort<>ITip<>::
-::res://SongG/SongGExtend/Tip/Styles/::1732846437
-TipPanel.tres::Theme::5494886737062020142::1732846437::0::1::::<><>::
+::res://SongG/SongGExtend/Tip/Styles/::1732882256
+TipPanel.tres::Theme::5494886737062020142::1732882256::0::1::::<><>::
 ::res://SongG/SongGExtend/Tip/View/::1732546856
 TipsMoudleView.gd::GDScript::-1::1732546856::0::1::::<>AGodot<>::
 ::res://SongG/SongGExtend/Window/::1702377936
