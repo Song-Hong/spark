@@ -15,10 +15,14 @@ func _init(md:MessageData):
 		'2': #图片消息
 			item = Scene.init.load_scene("/prefabs/img_item")
 			item.set_img_from_file(md.data)
-		'3': #文件消息
-			pass
+		'3': #语音消息
+			item = Scene.init.load_scene("/prefabs/voice_item")
+			item.init(md.data)
 		'4': #文件消息
 			item = Scene.init.load_scene("/prefabs/file_item")
+			item.init(md.data)
+		'5': #链接消息
+			item = Scene.init.load_scene("/prefabs/link_item")
 			item.init(md.data)
 	if item == null:return
 	#将气泡添加至场景

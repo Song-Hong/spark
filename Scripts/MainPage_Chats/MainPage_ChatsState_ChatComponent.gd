@@ -104,7 +104,8 @@ func create_item(md:MessageData,wait_load = false):
 				item = Scene.init.load_scene("/prefabs/chat_item")
 				item.text = "[图片丢失]"
 		'3': #语音消息
-			pass
+			item = Scene.init.load_scene("/prefabs/voice_item")
+			item.init(md.data)
 		'4': #文件消息
 			item = Scene.init.load_scene("/prefabs/file_item")
 			item.init(md.data)

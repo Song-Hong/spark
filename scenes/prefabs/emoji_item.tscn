@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bku002br6rp27"]
 
-[ext_resource type="Script" path="res://Scripts/MainPage_Chats/Prefabs/emoji_item.gd" id="1_vfr6t"]
+[ext_resource type="Script" path="res://Scripts/MainPage_Chats/Prefabs/MainPage_EmojiItem.gd" id="1_vfr6t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8wox"]
 bg_color = Color(0.603922, 0.603922, 0.8, 1)

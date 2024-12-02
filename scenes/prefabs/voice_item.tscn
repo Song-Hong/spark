@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cygrxm424kgqw"]
+
+[ext_resource type="Texture2D" uid="uid://brfiu0mputc6y" path="res://Assets/Icon/voice.svg" id="1_ejah0"]
+[ext_resource type="Script" path="res://Scripts/MainPage_Chats/Prefabs/MainPage_VoiceItem.gd" id="2_avvyt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq2ca"]
+bg_color = Color(0.603922, 0.603922, 0.8, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[node name="VoiceItem" type="Button"]
+custom_minimum_size = Vector2(80, 32)
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_cq2ca")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cq2ca")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cq2ca")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cq2ca")
+text = "60''"
+icon = ExtResource("1_ejah0")
+expand_icon = true
+script = ExtResource("2_avvyt")

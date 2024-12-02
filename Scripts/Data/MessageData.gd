@@ -28,7 +28,7 @@ static func Img(_img)->MessageData:
 	return md
 
 # 3 语音
-static func Aud(_aud)->MessageData:
+static func Voice(_aud)->MessageData:
 	var md = MessageData.new()
 	md.init(_aud)
 	md.type = 3
