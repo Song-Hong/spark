@@ -15,8 +15,11 @@ func _init(md:MessageData):
 		'2': #图片消息
 			item = Scene.init.load_scene("/prefabs/img_item")
 			item.set_img_from_file(md.data)
-		'3':
+		'3': #文件消息
 			pass
+		'4': #文件消息
+			item = Scene.init.load_scene("/prefabs/file_item")
+			item.init(md.data)
 	if item == null:return
 	#将气泡添加至场景
 	Blackboard.init.get_data("ChatContentArea").add_child(item)

@@ -1,4 +1,6 @@
+AudioStreamPlayer
 Node
+Label
 Button
 MarginContainer
 TextureRect
@@ -7,8 +9,6 @@ PanelContainer
 Blackboard
 CanvasLayer
 RichTextLabel
-Label
 GridContainer
 VSeparator
 LineEdit
-VBoxContainer

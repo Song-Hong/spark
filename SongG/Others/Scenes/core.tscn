@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://8kdf40dsxf7k"]
+[gd_scene load_steps=15 format=3 uid="uid://8kdf40dsxf7k"]
 
 [ext_resource type="Script" path="res://SongG/Module/CoreModule.gd" id="1_vm38c"]
 [ext_resource type="Script" path="res://SongG/Module/ProcessModule.gd" id="2_38asg"]
@@ -12,19 +12,6 @@
 [ext_resource type="Script" path="res://SongG/SongGExtend/Tip/View/TipsMoudleView.gd" id="10_ir3u5"]
 [ext_resource type="Script" path="res://SongG/SongGExtend/EvenState/View/EvenStateView.gd" id="11_wwjj6"]
 [ext_resource type="Script" path="res://SongG/SongGExtend/StatusBar/View/StatusBarView.gd" id="12_hxkvl"]
-[ext_resource type="Script" path="res://Scripts/Module/DynamicAssets/DynamicAssets.gd" id="13_8mhbc"]
-[ext_resource type="Texture2D" uid="uid://ymagm04pqkgg" path="res://Assets/Emoji/clown.svg" id="14_mrcj4"]
-[ext_resource type="Texture2D" uid="uid://cvxybqj1arq1a" path="res://Assets/Emoji/cool.svg" id="15_h7m5g"]
-[ext_resource type="Texture2D" uid="uid://osnsubugy7np" path="res://Assets/Emoji/crazy.svg" id="16_teild"]
-[ext_resource type="Texture2D" uid="uid://dxemwpxwb1bsp" path="res://Assets/Emoji/cry.svg" id="17_gbskd"]
-[ext_resource type="Texture2D" uid="uid://dfuun5sqswx53" path="res://Assets/Emoji/downcast.svg" id="18_oth5w"]
-[ext_resource type="Texture2D" uid="uid://38kyoorp7oxn" path="res://Assets/Emoji/ghost.svg" id="19_04x4v"]
-[ext_resource type="Texture2D" uid="uid://d2qv8xae5lwht" path="res://Assets/Emoji/grinning.svg" id="20_56iqe"]
-[ext_resource type="Texture2D" uid="uid://b54tmajekppq6" path="res://Assets/Emoji/joy.svg" id="21_ldycx"]
-[ext_resource type="Texture2D" uid="uid://5s7fi1sapxkc" path="res://Assets/Emoji/kiss.svg" id="22_aj8fr"]
-[ext_resource type="Texture2D" uid="uid://cga5v3pyvaut7" path="res://Assets/Emoji/poo.svg" id="23_wdioy"]
-[ext_resource type="Texture2D" uid="uid://ctjbvka3quulj" path="res://Assets/Emoji/skull.svg" id="24_c18ov"]
-[ext_resource type="Texture2D" uid="uid://dkxlh5506d0p7" path="res://Assets/Emoji/smiling.svg" id="25_jf58s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ev0f4"]
 bg_color = Color(1, 1, 1, 1)
@@ -96,20 +83,3 @@ script = ExtResource("11_wwjj6")
 
 [node name="StatusBar" type="Node" parent="Scenes/UI"]
 script = ExtResource("12_hxkvl")
-
-[node name="DynamicAssets" type="Node" parent="."]
-script = ExtResource("13_8mhbc")
-emojis = {
-"clown": ExtResource("14_mrcj4"),
-"cool": ExtResource("15_h7m5g"),
-"crazy": ExtResource("16_teild"),
-"cry": ExtResource("17_gbskd"),
-"downcast": ExtResource("18_oth5w"),
-"ghost": ExtResource("19_04x4v"),
-"grinning": ExtResource("20_56iqe"),
-"joy": ExtResource("21_ldycx"),
-"kiss": ExtResource("22_aj8fr"),
-"poo": ExtResource("23_wdioy"),
-"skull": ExtResource("24_c18ov"),
-"smiling": ExtResource("25_jf58s")
-}

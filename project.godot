@@ -20,6 +20,11 @@ boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://Assets/Logo/Spark.svg"
 
+[audio]
+
+driver/enable_input=true
+driver/mix_rate=48000
+
 [autoload]
 
 Global="*res://Scripts/Data/Global.gd"

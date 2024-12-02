@@ -15,7 +15,8 @@ func _init():
 		MainPage_ChatsState_FriendComponent.new(), #好友管理
 		MainPage_ChatsState_ChatComponent.new(),   #消息管理
 		MainPage_ChatsState_SearchComponent.new(), #搜索管理
-		MainPage_ChatsState_FileComponent.new()
+		MainPage_ChatsState_FileComponent.new(),   #文件管理
+		MainPage_ChatsState_VoiceComponent.new()   #语音管理
 	])
 	
 	#Emoji按钮点击

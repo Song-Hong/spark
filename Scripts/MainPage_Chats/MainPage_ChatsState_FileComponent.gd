@@ -30,6 +30,9 @@ func on_file_dropped(paths):
 		#生成存储文件位置
 		var save_path = DB.init.NowUserPath+"/"+md.gen_only_id()+"."+file_type
 		md.data = save_path
+		#如果为文件类型,则保留其原有名称
+		if md.type == 4:
+			md.data = "[%s]"%path.get_file()+md.data
 		#将文件缓存到缓存文件夹中
 		DB.init.copy_file(path,save_path)
 		#向服务器发送图片
