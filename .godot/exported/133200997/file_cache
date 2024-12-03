@@ -15,10 +15,10 @@ res://SongG/SongGExtend/Tip/Scenes/TipPanel.tscn::3baa2514dc421b003ad7a642050cb2
 res://SongG/SongGExtend/Tip/Scenes/TipShort.tscn::f8f708cd233bdc506290d006449b7db0::1733147907::res://.godot/exported/133200997/export-042f4fea1f377b89e6da0600df686b4d-TipShort.scn
 res://SongG/SongGExtend/Tip/Styles/TipPanel.tres::18439354477ddc8c746cad719bff0b62::1733207397::res://.godot/exported/133200997/export-d9b6302cccebae37f9a1820feeb80277-TipPanel.res
 res://scenes/prefabs/chat_item.tscn::276fffe7fb596074914e1bdbd7f1abe0::1732852763::res://.godot/exported/133200997/export-75566cab1d6cf0c2b9ae1634324e6597-chat_item.scn
-res://scenes/prefabs/friend_item.tscn::44c20997e1b04e9efb8b083b537f1fce::1732701765::res://.godot/exported/133200997/export-87d046f01bac81142afe8576c4a68d47-friend_item.scn
+res://scenes/prefabs/friend_item.tscn::709acc7bc7fae0576a784169c939682a::1733231347::res://.godot/exported/133200997/export-87d046f01bac81142afe8576c4a68d47-friend_item.scn
 res://scenes/prefabs/new_friend.tscn::1653e037568a69c89b1c75900c3f1b0f::1732706554::res://.godot/exported/133200997/export-f52fa9d569127e6673c10d179eafa406-new_friend.scn
 res://scenes/LoginPage.tscn::ae98b2de22b358f18da740a39e7f037a::1733149762::res://.godot/exported/133200997/export-1b34572813f029bbe37966b497cfb288-LoginPage.scn
-res://scenes/MainPage.tscn::e1fb11c3fdd5d25f140ff605663c512c::1733226139::res://.godot/exported/133200997/export-cae8725ded18569cb3c096357fe14af2-MainPage.scn
+res://scenes/MainPage.tscn::e1fb11c3fdd5d25f140ff605663c512c::1733231347::res://.godot/exported/133200997/export-cae8725ded18569cb3c096357fe14af2-MainPage.scn
 res://scenes/MainPage_ChatsPage.tscn::e1628985e18de95eae200bac8e528722::1733148744::res://.godot/exported/133200997/export-966932c6f7c37f3219630177e36f72f9-MainPage_ChatsPage.scn
 res://scenes/prefabs/Cache.tscn::958c8d700d30dc839b1ff1b00e0f05cd::1732716047::res://.godot/exported/133200997/export-2e3479f30f447ad8cea3a4d9117c2cf5-Cache.scn
 res://scenes/prefabs/img_item.tscn::573dd41364d32f03e58bc08f1bc6f422::1733041380::res://.godot/exported/133200997/export-b8d2185afe71dd619af178f5b9e855fe-img_item.scn
@@ -33,11 +33,11 @@ res://Scripts/MainPage_Setting/setting_theme.tres::fc7790e1005d8cc93d05a87d68aea
 res://scenes/prefabs/emoji_item.tscn::f763ecb2fc2b96531fc8730c3dae99f6::1733133575::res://.godot/exported/133200997/export-fddc401216784e4ed827d82c2ed1155b-emoji_item.scn
 res://scenes/prefabs/emoji_panel.tscn::3943d31b164319c741a2e73b68ceedfb::1732884511::res://.godot/exported/133200997/export-2759da4e770b4ae07e005318050c3da0-emoji_panel.scn
 res://Scripts/MainPage_Chats/emoji_item_group.tres::2447741204f0a9b36638b9faca3d680a::1732864842::res://.godot/exported/133200997/export-8a4c2cfadcb779eaa7aab8a8b167c186-emoji_item_group.res
-res://addons/HTTPManager/progress/progress.tscn::c460040d2c35344c56cdca96dd5ddfae::1733226139::res://.godot/exported/133200997/export-446587e52b2169430836296b108cb4d9-progress.scn
+res://addons/HTTPManager/progress/progress.tscn::c460040d2c35344c56cdca96dd5ddfae::1733231347::res://.godot/exported/133200997/export-446587e52b2169430836296b108cb4d9-progress.scn
 res://scenes/prefabs/file_item.tscn::0464cd43f63af7d1041ff74d69843a0a::1733148744::res://.godot/exported/133200997/export-54fd1771ab36492b8e96b1fe1e2abeed-file_item.scn
-res://scenes/prefabs/link_item.tscn::1a447a59af8b3954a61009516eebaff7::1733226160::res://.godot/exported/133200997/export-61cce9ee8f62d742e643e054c9598f46-link_item.scn
+res://scenes/prefabs/link_item.tscn::1a447a59af8b3954a61009516eebaff7::1733231347::res://.godot/exported/133200997/export-61cce9ee8f62d742e643e054c9598f46-link_item.scn
 res://scenes/prefabs/voice_item.tscn::0a890f60d2a43e1071e93923d930d174::1733137267::res://.godot/exported/133200997/export-33aca7e5a534693f700677307101798c-voice_item.scn
-res://Scripts/Extends/EvenState/download.tscn::c660882ccf96a4f55eba31ba663ab122::1733226139::res://.godot/exported/133200997/export-b70e176a8b599862c42db11f4fbfc44a-download.scn
+res://Scripts/Extends/EvenState/download.tscn::c660882ccf96a4f55eba31ba663ab122::1733231347::res://.godot/exported/133200997/export-b70e176a8b599862c42db11f4fbfc44a-download.scn
 res://Scripts/Extends/Tip/TipChoosePanel.tscn::a9a48a3329688bac284cc5e65aedef34::1733149762::res://.godot/exported/133200997/export-6ee74f4b94648ac0fd35173b0c34f72b-TipChoosePanel.scn
 res://Scripts/Extends/Tip/TipTopShort.tscn::cfc4de78fbd203c73c8350c375a88ed3::1733148744::res://.godot/exported/133200997/export-9d6ec7ecb74c3fd30d1e24241a04e960-TipTopShort.scn
 res://default_bus_layout.tres::d36a3e74cc49525666db3f4889fa1d91::1733206770::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res

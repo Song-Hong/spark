@@ -18,3 +18,7 @@ res://Scripts/Extends/EvenState/download.tscn
 res://Scripts/Extends/EvenState/EventStateDownload.gd
 res://scenes/prefabs/link_item.tscn
 res://Scripts/MainPage_Chats/Prefabs/MainPage_VoiceItem.gd
+res://scenes/prefabs/friend_item.tscn
+res://scenes/prefabs/img_item.tscn
+res://Scripts/MainPage_Chats/Prefabs/MainPage_ImgItem.gd
+res://scenes/MainPage_ChatsPage.tscn

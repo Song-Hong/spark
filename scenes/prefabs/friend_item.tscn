@@ -35,6 +35,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="FriendItem" type="Button"]
+clip_contents = true
 custom_minimum_size = Vector2(180, 60)
 focus_mode = 0
 theme_override_styles/focus = SubResource("StyleBoxFlat_bp454")
@@ -74,12 +75,14 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 0
 offset_left = 62.0
 offset_top = 28.0
-offset_right = 102.0
+offset_right = 174.0
 offset_bottom = 58.0
 theme_override_colors/font_color = Color(0.873298, 0.873298, 0.873298, 1)
 theme_override_font_sizes/font_size = 16
 text = "在吗"
 vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
 
 [node name="MessageState" type="Panel" parent="."]
 visible = false

@@ -33,5 +33,11 @@ func set_img_from_file(file_path):
 	var img = Image.load_from_file(file_path)
 	var tex = ImageTexture.create_from_image(img)
 	var siz = img.get_size()
-	custom_minimum_size = Vector2(siz.x/2,siz.y/2)
+	var sizf = Vector2(siz.x,siz.y)
+	#设置缩放比例
+	var scale_size = 2
+	while sizf.x> 500:
+		sizf /= scale_size
+		scale_size += 0.1
+	custom_minimum_size = sizf
 	texture = tex

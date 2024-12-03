@@ -8,13 +8,13 @@
 
 ##### 聊天界面
 
-![](./readme/a3.png)
+![](./readme/a1.png)
 
 ##### 本地化
 
 ![](./readme/a2.png)
 
-![](./readme/a1.png)
+
 
 ##### 使用到的扩展包
 
