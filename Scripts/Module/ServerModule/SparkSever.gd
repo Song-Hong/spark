@@ -63,12 +63,12 @@ func send(data: String):
 	server_tcp.send_data(data)
 
 #当接收到服务器数据时
-func on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
-	if result != HTTPRequest.RESULT_SUCCESS:
+func on_request_completed(_result: int,_response_code: int,_headers: PackedStringArray,_body: PackedByteArray):
+	if _result != HTTPRequest.RESULT_SUCCESS:
 		print("请求失败")
 		return
 		
-	match response_code:
+	match _response_code:
 		200:
 			print("文件下载成功")
 		404:

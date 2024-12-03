@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://brkpxql48uul3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wiygo"]
-bg_color = Color(0.545098, 0.443137, 0.701961, 1)
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -21,6 +21,7 @@ layout_mode = 2
 [node name="content" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_wiygo")
 horizontal_alignment = 1
 vertical_alignment = 1

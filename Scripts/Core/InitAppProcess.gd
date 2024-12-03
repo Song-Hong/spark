@@ -7,6 +7,7 @@ func start():
 	# 添加自定义模块
 	Core.init.add_CustomModule(SparkServer.new()) # Spark服务器
 	Core.init.add_CustomModule(DB.new()) #数据库
+	Core.init.add_CustomModule(UpdateModule.new()) #软件更新模块
 	# 读取配置文件设置
 	var ac = DB.init.read_core()
 	TranslationServer.set_locale(ac.language)

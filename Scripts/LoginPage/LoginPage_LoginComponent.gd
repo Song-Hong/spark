@@ -28,10 +28,10 @@ func on_login_btn_pressed():
 
 	# 判断用户名和密码是否为空
 	if username == "" or username == null:
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP, "The username cannot be empty"))
+		Tip.init.create_tip(TipTopShort.new("The username cannot be empty"))
 		return
 	if password == "" or password == null:
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP, "The password cannot be empty"))
+		Tip.init.create_tip(TipTopShort.new("The password cannot be empty"))
 		return
 
 	# 向服务器发送登陆请求
@@ -58,4 +58,4 @@ func on_login_state_receive(_data):
 		Process.init.change_process(MainPageProcess.new())
 
 	else: # 登陆失败
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP, "The account or password is incorrect"))
+		Tip.init.create_tip(TipTopShort.new("The account or password is incorrect"))

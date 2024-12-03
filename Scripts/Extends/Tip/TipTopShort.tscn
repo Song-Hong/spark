@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://5vsamfbt05vc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ot28"]
+bg_color = Color(0.509903, 0.506788, 0.725374, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[node name="TipTopShort" type="Label"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_right = 0.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5ot28")

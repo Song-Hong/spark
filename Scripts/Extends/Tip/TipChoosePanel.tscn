@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq3pgfgo24ej1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfl1d"]
+bg_color = Color(0.509804, 0.505882, 0.72549, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gv7uu"]
+bg_color = Color(0.466681, 0.364335, 0.618112, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="TipPanel" type="Panel"]
+offset_right = 300.0
+offset_bottom = 300.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qfl1d")
+
+[node name="DragArea" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
+
+[node name="Title" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "通知"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Content" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "这是一条通知"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="Cancel" type="Button" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 250.0
+offset_right = 130.0
+offset_bottom = 286.0
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxFlat_gv7uu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gv7uu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gv7uu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gv7uu")
+text = "取消"
+
+[node name="Agree" type="Button" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 250.0
+offset_right = 270.0
+offset_bottom = 286.0
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxFlat_gv7uu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gv7uu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gv7uu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gv7uu")
+text = "确定"
+
+[node name="Close" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 20.0
+offset_bottom = 20.0
+focus_mode = 0

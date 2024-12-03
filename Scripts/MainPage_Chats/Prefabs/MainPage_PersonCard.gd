@@ -29,14 +29,14 @@ func _exit_tree():
 #当按钮点击时
 func _on_pressed():
 	if $Name.text == Global.Name:
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"Cannot add yourself"))
+		Tip.init.create_tip(TipTopShort.new("Cannot add yourself"))
 		return
 	
 	## 发送好友申请请求
 	send_add_friend_command.new(id,$Message.text)
 	
 	## 显示提示
-	Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"Sent request"))
+	Tip.init.create_tip(TipTopShort.new("Sent request"))
 	
 	## 销毁自己
 	get_parent().remove_child(self)

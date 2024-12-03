@@ -1,3 +1,4 @@
+#灵动状态栏 时间
 extends IEvenState
 class_name EvenStateTimer
 

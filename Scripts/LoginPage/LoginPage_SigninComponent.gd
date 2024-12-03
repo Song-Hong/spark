@@ -21,31 +21,31 @@ func _on_pressed():
 	
 	#用户名检测
 	if new_name == "" or new_name.length()<1:
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"The name cannot be empty"))
+		Tip.init.create_tip(TipTopShort.new("The name cannot be empty"))
 		shake(Blackboard.init.get_data("SigninPanel_Name"))
 		return
 	elif new_name.length() < 4:
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"Name number must be greater than 4 digits"))
+		Tip.init.create_tip(TipTopShort.new("Name number must be greater than 4 digits"))
 		shake(Blackboard.init.get_data("SigninPanel_Name"))
 		return
 	
 	#账号检测
 	if username == "":
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"The username cannot be empty"))
+		Tip.init.create_tip(TipTopShort.new("The username cannot be empty"))
 		shake(Blackboard.init.get_data("SigninPanel_Username"))
 		return
 	elif username.length() < 8:
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"Username number must be greater than 8 digits"))
+		Tip.init.create_tip(TipTopShort.new("Username number must be greater than 8 digits"))
 		shake(Blackboard.init.get_data("SigninPanel_Username"))
 		return
 	
 	#密码检测
 	if password == "":
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"The password cannot be empty"))
+		Tip.init.create_tip(TipTopShort.new("The password cannot be empty"))
 		shake(Blackboard.init.get_data("SigninPanel_Password"))
 		return
 	elif password.length() < 8:
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"Password number must be greater than 8 digits"))
+		Tip.init.create_tip(TipTopShort.new("Password number must be greater than 8 digits"))
 		shake(Blackboard.init.get_data("SigninPanel_Password"))
 		return
 	
@@ -71,7 +71,7 @@ func _on_singin_state_receive(_data):
 		#切换场景
 		Process.init.change_process(MainPageProcess.new())
 	else:
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"Account duplication"))
+		Tip.init.create_tip(TipTopShort.new("Account duplication"))
 		Wnd.init.Jitter()
 
 ## TODO 单独列为模块

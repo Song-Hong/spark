@@ -1,3 +1,4 @@
+# 灵动状态栏
 extends IModule
 class_name EvenState
 static var init:EvenState
@@ -6,7 +7,7 @@ func _init():init = self
 signal update
 
 var even_states:Array[IEvenState]
-var width = 80
+var width = 2
 var area
 
 func create(evenState:IEvenState):
@@ -17,7 +18,7 @@ func create(evenState:IEvenState):
 	evenState.connect("destory",Callable(self,"on_destory"))
 	var w = evenState.scene.size.x
 	area.add_child(evenState.scene)
-	evenState.scene.position = Vector2(width+10,8)
+	evenState.scene.position = Vector2(width+10,2)
 	width += w +10
 	evenState.showAnimation(get_tree().create_tween())
 

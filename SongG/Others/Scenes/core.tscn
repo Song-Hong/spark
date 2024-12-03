@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://8kdf40dsxf7k"]
+[gd_scene load_steps=16 format=3 uid="uid://8kdf40dsxf7k"]
 
 [ext_resource type="Script" path="res://SongG/Module/CoreModule.gd" id="1_vm38c"]
 [ext_resource type="Script" path="res://SongG/Module/ProcessModule.gd" id="2_38asg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://SongG/SongGExtend/Server/Module/ServerModule.gd" id="5_nkm8f"]
 [ext_resource type="Script" path="res://SongG/SongGExtend/Tip/Module/TipModule.gd" id="6_kcyl3"]
 [ext_resource type="Script" path="res://SongG/SongGExtend/StatusBar/Module/StatusBarMoudle.gd" id="8_0qan0"]
+[ext_resource type="Script" path="res://SongG/SongGExtend/EvenState/Module/EvenStateModule.gd" id="8_7m4tn"]
 [ext_resource type="Script" path="res://SongG/SongGExtend/Window/Module/WindowModule.gd" id="8_fpn2i"]
 [ext_resource type="Script" path="res://SongG/View/CustomModuleVIew.gd" id="9_lvoy5"]
 [ext_resource type="Script" path="res://SongG/SongGExtend/Tip/View/TipsMoudleView.gd" id="10_ir3u5"]
@@ -53,7 +54,7 @@ script = ExtResource("6_kcyl3")
 script = ExtResource("8_0qan0")
 
 [node name="EvenStateModule" type="Node" parent="Moudle/Extend"]
-script = ExtResource("8_0qan0")
+script = ExtResource("8_7m4tn")
 
 [node name="WndModule" type="Node" parent="Moudle/Extend"]
 script = ExtResource("8_fpn2i")

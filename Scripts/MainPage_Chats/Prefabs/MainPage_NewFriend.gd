@@ -31,7 +31,7 @@ func init(friend_id,friend_name,friend_msg):
 #当按钮同意按钮点击时
 func _on_agree_pressed():
 	if id == Global.SelfID:
-		Tip.init.create_tip(TipShort.new(TipShort.PO.TOP,"Cannot add yourself"))
+		Tip.init.create_tip(TipTopShort.new("Cannot add yourself"))
 		return
 	
 	#向服务器发送同意申请请求

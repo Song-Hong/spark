@@ -12,7 +12,7 @@ func _init(_file_name,_save_path):
 	var url = "http://60.204.140.223:17281/download/"+str(_file_name)
 	save_path = _save_path
 	http_request = HTTPRequest.new()
-	http_request.request_completed.connect(Callable(self,"on_request_completed"))
+	http_request.request_completed.connect(Callable(self,"on_request_completed"),4)
 	add_child(http_request)
 	Core.init.add_child(self)
 	http_request.request(url)
