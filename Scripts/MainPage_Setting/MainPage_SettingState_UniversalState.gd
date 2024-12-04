@@ -9,6 +9,10 @@ var local_lang_name
 
 #初始化
 func start():
+	#设置版本信息
+	Blackboard.init.get_data("VersionNumber").text = ProjectSettings.get_setting("application/config/version")
+	
+	#监听按钮
 	Langueage_Button_Group = Blackboard.init.get_data("Langueage_Button_Group").button_group
 	Langueage_Button_Group.connect("pressed",Callable(self,"_on_pressed"))
 	match TranslationServer.get_locale():

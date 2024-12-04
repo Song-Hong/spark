@@ -50,7 +50,7 @@ text = " : "
 [node name="VersionNumber" type="Label" parent="Info/Panel2/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "0.0.01 beta"
+script = ExtResource("2_rhbms")
 
 [node name="Language" type="VBoxContainer" parent="."]
 layout_mode = 2
