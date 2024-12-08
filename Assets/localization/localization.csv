@@ -29,3 +29,13 @@ Cleared,Cleared,已清除
 Sent request,Sent request,已发送请求
 Loading...,Loading...,加载中...
 Recording,Recording,录制中...
+UserInfo,UserInfo,用户信息
+Drag the picture to the current area to modify the profile picture,Drag the picture to the current area to modify the profile picture,拖动图片到该区域修改头像
+Click Change,Click Change,点击修改
+Username,Username,用户名
+Password,Password,密码
+Name,Name,昵称
+Save,Save,保存
+Disconnect from the server,Disconnect from the server,与服务器断开连接
+Reconnect failure,Reconnect failure,重新连接失败
+Reconnect successfully,Reconnect successfully,重新连接成功

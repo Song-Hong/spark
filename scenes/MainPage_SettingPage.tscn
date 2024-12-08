@@ -54,12 +54,20 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Universal" type="Button" parent="Middle/MarginContainer/VBoxContainer"]
+[node name="UserInfo" type="Button" parent="Middle/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 focus_mode = 0
 toggle_mode = true
 button_pressed = true
+button_group = ExtResource("2_keh8a")
+text = "UserInfo"
+
+[node name="Universal" type="Button" parent="Middle/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
 button_group = ExtResource("2_keh8a")
 text = "Universal"
 

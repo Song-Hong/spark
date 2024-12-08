@@ -43,6 +43,7 @@ func on_login_state_receive(_data):
 		#将当前登陆ID存储至数据中
 		Global.SelfID = _data.ID
 		Global.Name = _data.Name
+		Global.Username = Blackboard.init.get_data("LoginPanel_Username").text
 		
 		#更新用户
 		DB.init.set_user(_data.ID)

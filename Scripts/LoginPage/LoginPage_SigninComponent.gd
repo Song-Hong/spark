@@ -52,11 +52,13 @@ func _on_pressed():
 	#向服务器发送注册请求
 	send_signin_command.new(username,password,new_name)
 
+#当注册返回时
 func _on_singin_state_receive(_data):
 	#S:是否注册成功;ID:用户ID(只会在注册成功时返回)
 	if _data.S == 1: #注册成功
 		Global.SelfID = _data.ID
 		Global.Name   = Blackboard.init.get_data("SigninPanel_Name").text
+		Global.Username = Blackboard.init.get_data("LoginPanel_Username").text
 		
 		#更新用户
 		DB.init.set_user(_data.ID)

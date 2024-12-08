@@ -1,21 +1,57 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwet82di8vgut"]
+[gd_scene load_steps=21 format=3 uid="uid://dwet82di8vgut"]
 
 [ext_resource type="Theme" uid="uid://ccikxmml71k2o" path="res://Scripts/MainPage/main_page_left.tres" id="1_p03n2"]
-[ext_resource type="Texture2D" uid="uid://bfcsx4s3vcolw" path="res://Assets/Logo/logo.svg" id="2_wbfjy"]
 [ext_resource type="ButtonGroup" uid="uid://yd3x5h3lkmxv" path="res://Scripts/MainPage/left_tray_buttons.tres" id="3_d4nb7"]
 [ext_resource type="Texture2D" uid="uid://bnmcmhxyi5usm" path="res://Assets/Icon/chats.svg" id="4_0r602"]
 [ext_resource type="Texture2D" uid="uid://cjs62p3n7cg7p" path="res://Assets/Icon/setting.svg" id="5_2t5qd"]
 [ext_resource type="Script" path="res://SongG/ToolScripts/ItemBind.gd" id="5_4coo2"]
 [ext_resource type="Texture2D" uid="uid://dc1xwnblu431k" path="res://Assets/Icon/exit.svg" id="6_4bfi8"]
 [ext_resource type="PackedScene" uid="uid://lvgdw3te2pj2" path="res://scenes/MainPage_ChatsPage.tscn" id="8_11w67"]
+[ext_resource type="Shader" path="res://shader/FriendAvatar.gdshader" id="9_7gevo"]
+[ext_resource type="Texture2D" uid="uid://b6ia4moqd7ytt" path="res://Assets/Logo/avatar.jpg" id="10_x2gsb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gcq0"]
 bg_color = Color(0.603922, 0.603922, 0.8, 1)
+border_color = Color(0.984314, 0.388235, 0.356863, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8au8"]
-texture = ExtResource("2_wbfjy")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlvgt"]
+shader = ExtResource("9_7gevo")
+shader_parameter/corner_radius = 600.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xc2n7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_boner"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yjixy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jum1h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w48yl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elrrx"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_la4hg"]
+bg_color = Color(0.984314, 0.388235, 0.356863, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dk5ds"]
+shader = ExtResource("9_7gevo")
+shader_parameter/corner_radius = 120.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ec6jb"]
+bg_color = Color(0.25098, 0.815686, 0.294118, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="MainPage" type="PanelContainer"]
 anchors_preset = 15
@@ -42,6 +78,7 @@ script = ExtResource("5_4coo2")
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
@@ -50,12 +87,20 @@ layout_mode = 2
 theme = ExtResource("1_p03n2")
 theme_override_constants/separation = 36
 
-[node name="Logo" type="Panel" parent="MarginContainer/ContentArea/MarginContainer/Tray"]
-custom_minimum_size = Vector2(38, 38)
+[node name="UserAvatar" type="Button" parent="MarginContainer/ContentArea/MarginContainer/Tray"]
+material = SubResource("ShaderMaterial_nlvgt")
+clip_contents = true
+custom_minimum_size = Vector2(46, 46)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_r8au8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xc2n7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_boner")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yjixy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jum1h")
+toggle_mode = true
+icon = ExtResource("10_x2gsb")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("5_4coo2")
 
 [node name="TopHSeparator" type="HSeparator" parent="MarginContainer/ContentArea/MarginContainer/Tray"]
 layout_mode = 2
@@ -108,13 +153,100 @@ expand_icon = true
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_w48yl")
 
-[node name="TrayButtonGroup" type="Button" parent="MarginContainer/ContentArea/MarginContainer/Tray"]
-visible = false
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("3_d4nb7")
-script = ExtResource("5_4coo2")
-
 [node name="Main_ChatsPage" parent="MarginContainer/ContentArea" instance=ExtResource("8_11w67")]
 layout_mode = 2
+script = ExtResource("5_4coo2")
+
+[node name="FriendInfo" type="PanelContainer" parent="MarginContainer/ContentArea"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_elrrx")
+
+[node name="Close" type="MarginContainer" parent="MarginContainer/ContentArea/FriendInfo"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="Button" type="Button" parent="MarginContainer/ContentArea/FriendInfo/Close"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_la4hg")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ContentArea/FriendInfo"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ContentArea/FriendInfo/MarginContainer"]
+layout_mode = 2
+
+[node name="FriendAvatar" type="TextureRect" parent="MarginContainer/ContentArea/FriendInfo/MarginContainer/VBoxContainer"]
+material = SubResource("ShaderMaterial_dk5ds")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_x2gsb")
+expand_mode = 1
+
+[node name="FriendState" type="Panel" parent="MarginContainer/ContentArea/FriendInfo/MarginContainer/VBoxContainer/FriendAvatar"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ec6jb")
+
+[node name="FriendName" type="Label" parent="MarginContainer/ContentArea/FriendInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Song"
+horizontal_alignment = 1
+
+[node name="FriendTag" type="Label" parent="MarginContainer/ContentArea/FriendInfo/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.581033, 0.581033, 0.581033, 1)
+text = "帅b"
+horizontal_alignment = 1
+
+[node name="FriendName3" type="Label" parent="MarginContainer/ContentArea/FriendInfo/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Song"
+horizontal_alignment = 1
+
+[node name="FriendName4" type="Label" parent="MarginContainer/ContentArea/FriendInfo/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Song"
+horizontal_alignment = 1
+
+[node name="DeleteFriend" type="Button" parent="MarginContainer/ContentArea/FriendInfo/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Delete Friend"
+
+[node name="ButtonGroup" type="Node" parent="."]
+
+[node name="TrayButtonGroup" type="Button" parent="ButtonGroup"]
+visible = false
+offset_left = 12.0
+offset_top = 40.0
+offset_right = 20.0
+offset_bottom = 48.0
+toggle_mode = true
+button_group = ExtResource("3_d4nb7")
 script = ExtResource("5_4coo2")

@@ -74,6 +74,9 @@ func on_target_change(_id):
 	for md in DB.init.read_md_today(_id):
 		md = md as MessageData
 		create_item(md)
+	#设置当聊天好友昵称
+	Blackboard.init.get_data("NowChatTarget").text = Global.TargetName
+	#滚动
 	scroll_bar_lowest()
 
 #滚动至最底部

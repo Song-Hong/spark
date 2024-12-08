@@ -26,6 +26,9 @@ func start():
 	
 	#监听服务器新消息
 	SparkServer.init.friend_msg_receive.connect(Callable(self,"on_friend_msg_receive"))
+	
+	#监听当点击好友名称时显示详细信息
+	Blackboard.init.get_data("NowChatTitle").pressed.connect(Callable(self,"on_now_chat_title_pressed"))
 
 #结束时断开全部连接
 func exit():
@@ -36,6 +39,8 @@ func exit():
 	SparkServer.init.friend_add_receive.disconnect(Callable(self,"on_friend_add_receive"))
 	#取消监听服务器新好友同意
 	SparkServer.init.friend_agree_receive.disconnect(Callable(self,"on_friend_agree_receive"))
+	#取消监听当点击好友名称时显示详细信息
+	Blackboard.init.get_data("NowChatTitle").pressed.disconnect(Callable(self,"on_now_chat_title_pressed"))
 
 #当接收到好友列表请求
 func on_friend_list_recive(friends):
@@ -104,6 +109,9 @@ func create_friend_item(friend_id,friend_name):
 
 #当好友列表点击时
 func on_frined_item_pressed(btn):
+	#设置当前聊天对象昵称
+	Global.TargetName = btn.friend_name
+	#设置当前聊天对象id
 	Global.set_target_id(btn.id)
 
 #创建新好友申请
@@ -131,3 +139,9 @@ func format_receive_md(md:MessageData)->String:
 		'5':
 			msg = "[链接]"
 	return msg
+
+#region 显示好友详细信息
+#显示好友详细信息
+func on_now_chat_title_pressed():
+	pass
+#endregion

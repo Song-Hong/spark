@@ -10,6 +10,9 @@ signal target_id_change(id)
 var SelfID: int = 0 # 当前登陆用户ID
 var TargetID: int = 0 # 当前聊天用户ID
 var Name: String # 当前用户昵称
+var TargetName:String #当前聊天对象昵称
+var Username = "" #当前用户账号
+var Heartbeat = 3 #心跳
 #endregion
 
 #region 公用方法

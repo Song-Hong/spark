@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://lvgdw3te2pj2"]
+[gd_scene load_steps=16 format=3 uid="uid://lvgdw3te2pj2"]
 
 [ext_resource type="Script" path="res://SongG/ToolScripts/ItemBind.gd" id="2_0412h"]
 [ext_resource type="Texture2D" uid="uid://5co56ibkg0lp" path="res://Assets/Icon/search_white.svg" id="3_7hjx1"]
@@ -29,6 +29,14 @@ corner_radius_bottom_right = 12
 shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 2
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4vte8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g23yk"]
+bg_color = Color(0.603922, 0.603922, 0.8, 1)
+expand_margin_left = 11.0
+expand_margin_top = 4.0
+expand_margin_right = 11.0
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b5dt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tg60"]
@@ -39,12 +47,6 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 expand_margin_left = 6.0
 expand_margin_right = 6.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g23yk"]
-bg_color = Color(0.603922, 0.603922, 0.8, 1)
-expand_margin_left = 11.0
-expand_margin_top = 4.0
-expand_margin_right = 11.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0vbp"]
 
@@ -133,9 +135,34 @@ script = ExtResource("2_0412h")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="NowChatTarget" type="Label" parent="Content/ChatPanel/VBoxContainer"]
+[node name="NowChatTitle" type="Button" parent="Content/ChatPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4vte8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4vte8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4vte8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4vte8")
+alignment = 0
+script = ExtResource("2_0412h")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/ChatPanel/VBoxContainer/NowChatTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NowChatTarget" type="Label" parent="Content/ChatPanel/VBoxContainer/NowChatTitle/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+script = ExtResource("2_0412h")
+
+[node name="HSeparator2" type="HSeparator" parent="Content/ChatPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxFlat_g23yk")
 
 [node name="ChatContentScroll" type="ScrollContainer" parent="Content/ChatPanel/VBoxContainer"]
 layout_mode = 2

@@ -31,11 +31,12 @@ func start():
 	
 	#创建状态机
 	setting_finite = Finite.new(self)
+	setting_finite.add_state("UserInfo",MainPage_SettingState_UserInfoState.new())
 	setting_finite.add_state("Universal",MainPage_SettingState_UniversalState.new())
 	setting_finite.add_state("Cache",MainPage_SettingState_CacheState.new())
 	
 	#初始化设置界面
-	change_setting_page("Universal")
+	change_setting_page("UserInfo")
 
 #退出时清空注册
 func exit():
