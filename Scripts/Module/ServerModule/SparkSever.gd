@@ -69,7 +69,9 @@ func on_data_received(data: String):
 			self_cache_receive.emit(json.Data)
 		10011: #查询好友详细信息
 			search_friend_info.emit(json.Data)
-		99999:
+		10012: #更新个人信息
+			pass
+		99999: #心跳检测
 			on_heartbeat_received()
 
 # 发送数据

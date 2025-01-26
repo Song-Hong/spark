@@ -165,4 +165,35 @@ func append_file_extend_name(file_name):
 func get_now_date()->String:
 	var time = Time.get_datetime_dict_from_system()
 	return str(time.year)+"_"+str(time.month)+"_"+str(time.day)
+
+#获取自身用户头像
+func get_self_avatar_img()->ImageTexture:
+	return get_avatar_img(Global.SelfID)
+
+#获取用户头像
+func get_avatar_img(id)->ImageTexture:
+	var img_path = find_avatar_path(id)
+	if FileAccess.file_exists(img_path):
+		return ImageTexture.create_from_image(Image.load_from_file(img_path))
+	else:
+		return null
+
+#获取自己用户头像路径
+func find_self_avatar_path()->String:
+	return find_avatar_path(Global.SelfID)
+
+#获取用户路径头像路径
+func find_avatar_path(id)->String:
+	var file_name = str(id)+"_avatar"
+	var img_path = ""
+	for item in DirAccess.get_files_at(NowUserPath):
+		var file_type = item.get_extension()
+		var file_path = NowUserPath+"/"+item.replace("."+file_type,"")
+		if file_path.ends_with(file_name):
+			img_path = file_path + "." +file_type
+	return img_path
+
+#获取用户路径,不带扩展名
+func get_avatar_path_name(id)->String:
+	return NowUserPath+"/"+str(id)+"_avatar"
 #endregion

@@ -1,9 +1,9 @@
-#上传文件至服务器
+#上传头像至服务器
 extends ACommand
-class_name upload_file_to_server_command
+class_name upload_avatar_command
 
 func _init(_file_path):
-	var url = "http://60.204.140.223:17281/upload"
+	var url = "http://60.204.140.223:17281/upload_avatar"
 	var file = FileAccess.open(_file_path, FileAccess.READ)
 	var file_data = file.get_buffer(file.get_length())
 	
@@ -27,5 +27,5 @@ func _init(_file_path):
 	#向服务器发送数据
 	SparkServer.init.server_http.request_raw(
 		url, headers, HTTPClient.METHOD_POST, body)
-	
+		
 	exec_finshed()

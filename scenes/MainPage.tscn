@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dc1xwnblu431k" path="res://Assets/Icon/exit.svg" id="6_4bfi8"]
 [ext_resource type="PackedScene" uid="uid://lvgdw3te2pj2" path="res://scenes/MainPage_ChatsPage.tscn" id="8_11w67"]
 [ext_resource type="Shader" path="res://shader/FriendAvatar.gdshader" id="9_7gevo"]
-[ext_resource type="Texture2D" uid="uid://b6ia4moqd7ytt" path="res://Assets/Logo/avatar.jpg" id="10_x2gsb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gcq0"]
 bg_color = Color(0.603922, 0.603922, 0.8, 1)
@@ -45,6 +44,9 @@ corner_radius_bottom_left = 20
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dk5ds"]
 shader = ExtResource("9_7gevo")
 shader_parameter/corner_radius = 120.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tjktt"]
+load_path = "res://.godot/imported/avatar.jpg-e19a3c43cc1b0781aa4aa56c02a84cc7.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ec6jb"]
 bg_color = Color(0.25098, 0.815686, 0.294118, 1)
@@ -97,7 +99,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_boner")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_yjixy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jum1h")
 toggle_mode = true
-icon = ExtResource("10_x2gsb")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("5_4coo2")
@@ -189,7 +190,7 @@ material = SubResource("ShaderMaterial_dk5ds")
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("10_x2gsb")
+texture = SubResource("CompressedTexture2D_tjktt")
 expand_mode = 1
 
 [node name="FriendState" type="Panel" parent="MarginContainer/ContentArea/FriendInfo/MarginContainer/VBoxContainer/FriendAvatar"]
