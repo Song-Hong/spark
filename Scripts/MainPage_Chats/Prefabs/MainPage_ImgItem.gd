@@ -4,8 +4,7 @@ extends TextureRect
 var img_path
 
 func _ready():
-	#pressed.connect(Callable(self,"on_pressed"))
-	pass
+	$Button.pressed.connect(Callable(self,"on_pressed"))
 
 #延迟加载
 func wait_load_img():
@@ -22,7 +21,10 @@ func _exit_tree():
 	
 #当图片点击时
 func on_pressed():
-	print(1)
+	var img_preview = Scene.init.load_scene("prefabs/ImagePreview")
+	Blackboard.init.get_data("ViewArea").add_child(img_preview)
+	img_preview.get_child(1).texture = texture
+	img_preview._init_animation(self)
 
 #设置图片
 func set_img(img):
@@ -36,7 +38,7 @@ func set_img_from_file(file_path):
 	var sizf = Vector2(siz.x,siz.y)
 	#设置缩放比例
 	var scale_size = 2
-	while sizf.x> 500:
+	while sizf.x> 300:
 		sizf /= scale_size
 		scale_size += 0.1
 	custom_minimum_size = sizf

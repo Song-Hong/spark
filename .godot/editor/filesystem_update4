@@ -11,3 +11,9 @@ res://Scripts/Module/DBModule/DB.gd
 res://scenes/prefabs/friend_item.tscn
 res://Scripts/MainPage_Chats/Prefabs/MainPage_FriendItem.gd
 res://Scripts/MainPage_Setting/MainPage_SettingState_UserInfoState.gd
+res://scenes/prefabs/chat_item.tscn
+res://scenes/prefabs/img_item.tscn
+res://Scripts/MainPage_Chats/Prefabs/MainPage_ImgItem.gd
+res://scenes/prefabs/ImagePreview.tscn
+res://Scripts/MainPage_Chats/Prefabs/MainPage_image_preview.gd
+res://scenes/prefabs/emoji_panel.tscn

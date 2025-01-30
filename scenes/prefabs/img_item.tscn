@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1k4jbkxon534"]
+[gd_scene load_steps=3 format=3 uid="uid://c1k4jbkxon534"]
 
 [ext_resource type="Script" path="res://Scripts/MainPage_Chats/Prefabs/MainPage_ImgItem.gd" id="2_a5u8n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bbqxy"]
 
 [node name="img_item" type="TextureRect"]
 custom_minimum_size = Vector2(32, 32)
@@ -11,3 +13,22 @@ size_flags_vertical = 4
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("2_a5u8n")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bbqxy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_bbqxy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bbqxy")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_bbqxy")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bbqxy")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bbqxy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bbqxy")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_bbqxy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bbqxy")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_bbqxy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bbqxy")

@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://cu315rc727kgr"]
+
+[ext_resource type="Script" path="res://Scripts/MainPage_Chats/Prefabs/MainPage_image_preview.gd" id="1_fthh8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4m6ku"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ypdvm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dx4og"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ics5"]
+bg_color = Color(0, 0, 0, 0.862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pkhk"]
+bg_color = Color(0.400698, 0.400698, 0.400698, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsq3o"]
+bg_color = Color(0.299547, 0.299547, 0.299547, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[node name="ImagePreview" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4m6ku")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ypdvm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dx4og")
+script = ExtResource("1_fthh8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ics5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 1102.0
+offset_right = 1152.0
+offset_bottom = 50.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="Button" type="Button" parent="MarginContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_3pkhk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dsq3o")
+text = "X"
