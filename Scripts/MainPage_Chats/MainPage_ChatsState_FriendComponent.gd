@@ -44,10 +44,17 @@ func exit():
 
 #当接收到好友列表请求
 func on_friend_list_recive(friends):
+	#订阅好友信息获取信息
+	SparkServer.init.search_friend_info.connect(Callable(self,"on_user_info_request"))
+	#从服务器获取自身详细数据
+	get_user_info_command.new(Global.SelfID)
+	#发送全部好友信息获取
+	for friend in friends:
+		await Core.init.get_tree().create_timer(0.1).timeout
+		get_user_info_command.new(friend.id)
+	
 	#创建全部好友列表
 	for friend in friends:
-		create_friend_item(friend.id,friend.Name)
-		
 		#更新离线消息
 		if friend.Msg != "" or friend.Msg != null  or friend.Msg != "null":
 			var msg_str = '{"msgs":[%s]}'%str(friend.Msg).trim_suffix(",")
@@ -66,11 +73,37 @@ func on_friend_list_recive(friends):
 					server_md.data = save_path
 				#存储至本地
 				DB.init.save_off_line_md(friend.id,server_md)
-			
+
+#异步加载好友数据
+func on_user_info_request(data):
+	var frined_item = null
+	if data.id != Global.SelfID:
+		#创建好友组件
+		frined_item = create_friend_item(data.id,data.Name)
 		# 从本地更新好友的最新消息
-		var last_md  = DB.init.read_today_last_md(friend.id)
+		var last_md  = DB.init.read_today_last_md(data.id)
 		var last_msg = format_receive_md(last_md)
-		update_friend_last_message_command.new(friend.id,last_msg)
+		update_friend_last_message_command.new(data.id,last_msg)
+	##判断服务器用户是否设置头像
+	if data.Avatar == null || data.Avatar == "null" || data.Avatar == "":
+		return
+	##与本地头像数据比对
+	if DB.init.avatar_exists(data.Avatar):
+		##当文件已存在,则直接创建当前好友信息
+		if frined_item != null:
+			frined_item.set_friend_head(DB.init.get_avatar_img(data.id))
+	else: 
+		##文件不存在,则从服务器下在当前文件
+		download_avatar_command.new(data.Avatar,DB.init.join_avatar_path(data.Avatar))
+		await Core.init.get_tree().create_timer(0.24).timeout
+		var img = DB.init.comparison_get_avatar_img_with_path(data.id,data.Avatar)
+		if img != null: #头像下载成功
+			if frined_item != null: #设置好友头像
+				frined_item.set_friend_head(img)
+			else: #设置自身头像
+				Blackboard.init.get_data("UserAvatar").icon = img 
+		else: #文件下载失败
+			return
 
 #当接收到好友消息
 func on_friend_msg_receive(_data):
@@ -101,11 +134,12 @@ func on_friend_agree_receive(_data):
 	create_friend_item(_data.SID,_data.Name)
 
 #创建好友
-func create_friend_item(friend_id,friend_name):
+func create_friend_item(friend_id,friend_name)->Node:
 	var friend_item = Scene.init.load_scene("/prefabs/friend_item")
 	friend_item.init(friend_id,friend_name)
 	friend_item.button_group = button_group
 	friend_area.add_child(friend_item)
+	return friend_item
 
 #当好友列表点击时
 func on_frined_item_pressed(btn):

@@ -56,7 +56,7 @@ func on_user_name_change(_new_text):
 #当存储按钮点击时
 func on_save_btn_pressed():
 	#设置路径
-	var path = DB.init.get_avatar_path_name(Global.SelfID) +"."+new_avatar_path.get_extension()
+	var path = DB.init.get_avatar_path_name(Global.SelfID) +"."+str(Time.get_ticks_usec())+"."+new_avatar_path.get_extension()
 	#头像修改
 	if avatar.get_child(0).icon != Blackboard.init.get_data("UserAvatar").icon:
 		#修改本地头像

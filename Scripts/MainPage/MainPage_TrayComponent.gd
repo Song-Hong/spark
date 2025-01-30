@@ -11,10 +11,10 @@ func start():
 	var img = DB.init.get_self_avatar_img()
 	if img != null: #文件存在则更新本地头像
 		Blackboard.init.get_data("UserAvatar").icon = img
-	else :
-		#从服务器获取自身详细数据
-		SparkServer.init.search_friend_info.connect(Callable(self,"on_search_friend_info"),4)
-		get_user_info_command.new(Global.SelfID)
+	#else :
+		##从服务器获取自身详细数据
+		#SparkServer.init.search_friend_info.connect(Callable(self,"on_search_friend_info"),4)
+		#get_user_info_command.new(Global.SelfID)
 
 #退出时清空订阅
 func exit():
@@ -28,6 +28,8 @@ func _on_tray_pressed(btn):
 
 #当获取到自身详细数据
 func on_search_friend_info(json):
+	if json.Avatar == null || json.Avatar == "null" || json.Avatar == "":
+		return
 	var dac = download_avatar_command.new(json.Avatar,DB.init.NowUserPath+"/"+json.Avatar)
 	dac.download_finished.connect(Callable(self,"load_avatar"),4)
 

@@ -1,4 +1,4 @@
-#更新用户详细信息
+#获取用户详细信息
 extends ACommand
 class_name get_user_info_command
 

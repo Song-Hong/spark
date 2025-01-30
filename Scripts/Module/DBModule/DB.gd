@@ -178,6 +178,23 @@ func get_avatar_img(id)->ImageTexture:
 	else:
 		return null
 
+#从名称中获取头像,包含自动删除过时头像
+func comparison_get_avatar_img_with_path(id,name_path)->ImageTexture:
+	if FileAccess.file_exists(join_avatar_path(name_path)):
+		#一次比对
+		var jpath = join_avatar_path(name_path)
+		var fpath = find_avatar_path(id)
+		if jpath != fpath:
+			DirAccess.remove_absolute(fpath)
+		#二次比对
+		fpath = find_avatar_path(id)
+		if jpath != fpath:
+			DirAccess.remove_absolute(fpath)
+		#返回图像
+		return ImageTexture.create_from_image(Image.load_from_file(jpath))
+	else:
+		return null
+
 #获取自己用户头像路径
 func find_self_avatar_path()->String:
 	return find_avatar_path(Global.SelfID)
@@ -189,11 +206,21 @@ func find_avatar_path(id)->String:
 	for item in DirAccess.get_files_at(NowUserPath):
 		var file_type = item.get_extension()
 		var file_path = NowUserPath+"/"+item.replace("."+file_type,"")
-		if file_path.ends_with(file_name):
-			img_path = file_path + "." +file_type
+		file_path     = file_path.replace(file_path.substr(file_path.rfind(".")),"")
+		var _file     = file_path.get_file()
+		if _file == file_name:
+			img_path = NowUserPath+"/"+item
 	return img_path
 
 #获取用户路径,不带扩展名
 func get_avatar_path_name(id)->String:
 	return NowUserPath+"/"+str(id)+"_avatar"
+
+#头像文件路径
+func join_avatar_path(_path)->String:
+	return NowUserPath+"/"+str(_path)
+
+#判断头像文件是否存在
+func avatar_exists(_path)->bool:
+	return FileAccess.file_exists(join_avatar_path(_path))
 #endregion

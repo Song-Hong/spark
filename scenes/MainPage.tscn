@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://dwet82di8vgut"]
+[gd_scene load_steps=22 format=3 uid="uid://dwet82di8vgut"]
 
 [ext_resource type="Theme" uid="uid://ccikxmml71k2o" path="res://Scripts/MainPage/main_page_left.tres" id="1_p03n2"]
 [ext_resource type="ButtonGroup" uid="uid://yd3x5h3lkmxv" path="res://Scripts/MainPage/left_tray_buttons.tres" id="3_d4nb7"]
 [ext_resource type="Texture2D" uid="uid://bnmcmhxyi5usm" path="res://Assets/Icon/chats.svg" id="4_0r602"]
+[ext_resource type="Texture2D" uid="uid://bfcsx4s3vcolw" path="res://Assets/Logo/logo.svg" id="4_72ci8"]
 [ext_resource type="Texture2D" uid="uid://cjs62p3n7cg7p" path="res://Assets/Icon/setting.svg" id="5_2t5qd"]
 [ext_resource type="Script" path="res://SongG/ToolScripts/ItemBind.gd" id="5_4coo2"]
 [ext_resource type="Texture2D" uid="uid://dc1xwnblu431k" path="res://Assets/Icon/exit.svg" id="6_4bfi8"]
@@ -99,6 +100,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_boner")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_yjixy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jum1h")
 toggle_mode = true
+icon = ExtResource("4_72ci8")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("5_4coo2")

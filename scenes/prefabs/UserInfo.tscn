@@ -68,6 +68,7 @@ theme_override_colors/icon_pressed_color = Color(0.411765, 0.411765, 0.411765, 1
 theme_override_colors/icon_hover_color = Color(0.411765, 0.411765, 0.411765, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.411765, 0.411765, 0.411765, 1)
 theme_override_colors/icon_disabled_color = Color(0.411765, 0.411765, 0.411765, 1)
+theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hhtb1")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_hhtb1")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_hhtb1")
