@@ -23,3 +23,7 @@ func _process(delta):
 # 添加自定义模块
 func add_CustomModule(Module: IModule):
 	Blackboard.init.get_data("CustomModule").add_child(Module)
+
+#切换样式
+func change_theme(new_theme:Theme):
+	$Scenes/UI.theme = new_theme

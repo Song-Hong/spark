@@ -11,7 +11,7 @@ signal download_finished
 
 #从服务器下载文件
 func _init(_file_name,_save_path):
-	var url = "http://60.204.140.223:17281/download_avatar/"+str(_file_name)
+	var url = "http://49.235.238.251:17281/download_avatar/"+str(_file_name)
 	save_path = _save_path
 	http_request = HTTPRequest.new()
 	http_request.request_completed.connect(Callable(self,"on_request_completed"),4)

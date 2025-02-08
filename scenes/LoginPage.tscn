@@ -1,21 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxo84sklosl5i"]
+[gd_scene load_steps=4 format=3 uid="uid://cxo84sklosl5i"]
 
 [ext_resource type="ButtonGroup" uid="uid://dsyh40qrwa2jo" path="res://Scripts/LoginPage/LoginPage.tres" id="1_ymq84"]
 [ext_resource type="Script" path="res://SongG/ToolScripts/ItemBind.gd" id="2_liiqn"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxika"]
-bg_color = Color(0.603922, 0.603922, 0.8, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17m5m"]
-bg_color = Color(0.478708, 0.375359, 0.632119, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 6.0
-expand_margin_top = 6.0
-expand_margin_right = 6.0
-expand_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcxrl"]
 bg_color = Color(1, 1, 1, 1)
@@ -28,13 +14,6 @@ expand_margin_top = 8.0
 expand_margin_right = 8.0
 expand_margin_bottom = 8.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6xcu"]
-bg_color = Color(0.231373, 0.168627, 0.321569, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [node name="LoginPage" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,51 +22,56 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_jxika")
+theme_type_variation = &"Panel_Background"
 
-[node name="AppTitle" type="MarginContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="AppTitle" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 10
 
-[node name="Label" type="Label" parent="AppTitle"]
+[node name="Label" type="Label" parent="VBoxContainer/AppTitle"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
+theme_type_variation = &"Label_Theme"
+theme_override_font_sizes/font_size = 26
 text = "Spark"
 
-[node name="ChooseLoginMode" type="MarginContainer" parent="."]
+[node name="ChooseLoginMode" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_constants/margin_top = 80
 
-[node name="Background" type="PanelContainer" parent="ChooseLoginMode"]
+[node name="Background" type="PanelContainer" parent="VBoxContainer/ChooseLoginMode"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_17m5m")
+theme_type_variation = &"Panel_Tray"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ChooseLoginMode/Background"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ChooseLoginMode/Background"]
 layout_mode = 2
 
-[node name="Login" type="Button" parent="ChooseLoginMode/Background/HBoxContainer"]
+[node name="Login" type="Button" parent="VBoxContainer/ChooseLoginMode/Background/HBoxContainer"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 focus_mode = 0
+theme_type_variation = &"Button_Theme_Select"
 toggle_mode = true
 button_pressed = true
 button_group = ExtResource("1_ymq84")
 text = "Login"
 
-[node name="Signin" type="Button" parent="ChooseLoginMode/Background/HBoxContainer"]
+[node name="Signin" type="Button" parent="VBoxContainer/ChooseLoginMode/Background/HBoxContainer"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 focus_mode = 0
+theme_type_variation = &"Button_Theme_Select"
 toggle_mode = true
 button_group = ExtResource("1_ymq84")
 text = "Signin"
 
-[node name="QRCode" type="Button" parent="ChooseLoginMode/Background/HBoxContainer"]
+[node name="QRCode" type="Button" parent="VBoxContainer/ChooseLoginMode/Background/HBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
@@ -96,7 +80,7 @@ toggle_mode = true
 button_group = ExtResource("1_ymq84")
 text = "QRCode"
 
-[node name="ModeGroup" type="Button" parent="ChooseLoginMode/Background/HBoxContainer"]
+[node name="ModeGroup" type="Button" parent="VBoxContainer/ChooseLoginMode/Background/HBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
@@ -106,15 +90,14 @@ button_group = ExtResource("1_ymq84")
 text = "Forget"
 script = ExtResource("2_liiqn")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_top = 140
 
-[node name="View" type="VBoxContainer" parent="MarginContainer"]
+[node name="View" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="LoginPanel" type="MarginContainer" parent="MarginContainer/View"]
+[node name="LoginPanel" type="MarginContainer" parent="VBoxContainer/MarginContainer/View"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -124,11 +107,11 @@ theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 script = ExtResource("2_liiqn")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/View/LoginPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/View/LoginPanel"]
 layout_mode = 2
 theme_override_constants/separation = 36
 
-[node name="LoginPanel_Username" type="LineEdit" parent="MarginContainer/View/LoginPanel/VBoxContainer"]
+[node name="LoginPanel_Username" type="LineEdit" parent="VBoxContainer/MarginContainer/View/LoginPanel/VBoxContainer"]
 custom_minimum_size = Vector2(400, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -142,7 +125,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jcxrl")
 placeholder_text = "Enter Username"
 script = ExtResource("2_liiqn")
 
-[node name="LoginPanel_Password" type="LineEdit" parent="MarginContainer/View/LoginPanel/VBoxContainer"]
+[node name="LoginPanel_Password" type="LineEdit" parent="VBoxContainer/MarginContainer/View/LoginPanel/VBoxContainer"]
 custom_minimum_size = Vector2(400, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -157,18 +140,17 @@ placeholder_text = "Enter Password"
 secret = true
 script = ExtResource("2_liiqn")
 
-[node name="LoginPanel_Login" type="Button" parent="MarginContainer/View/LoginPanel/VBoxContainer"]
+[node name="LoginPanel_Login" type="Button" parent="VBoxContainer/MarginContainer/View/LoginPanel/VBoxContainer"]
 auto_translate_mode = 1
 custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_d6xcu")
+theme_type_variation = &"Button_Theme"
 text = "Login"
 script = ExtResource("2_liiqn")
 
-[node name="SigninPanel" type="MarginContainer" parent="MarginContainer/View"]
+[node name="SigninPanel" type="MarginContainer" parent="VBoxContainer/MarginContainer/View"]
 auto_translate_mode = 1
 visible = false
 layout_mode = 2
@@ -180,11 +162,11 @@ theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 script = ExtResource("2_liiqn")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/View/SigninPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/View/SigninPanel"]
 layout_mode = 2
 theme_override_constants/separation = 36
 
-[node name="SigninPanel_Name" type="LineEdit" parent="MarginContainer/View/SigninPanel/VBoxContainer"]
+[node name="SigninPanel_Name" type="LineEdit" parent="VBoxContainer/MarginContainer/View/SigninPanel/VBoxContainer"]
 custom_minimum_size = Vector2(400, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -198,7 +180,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jcxrl")
 placeholder_text = "Enter Name"
 script = ExtResource("2_liiqn")
 
-[node name="SigninPanel_Username" type="LineEdit" parent="MarginContainer/View/SigninPanel/VBoxContainer"]
+[node name="SigninPanel_Username" type="LineEdit" parent="VBoxContainer/MarginContainer/View/SigninPanel/VBoxContainer"]
 custom_minimum_size = Vector2(400, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -212,7 +194,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jcxrl")
 placeholder_text = "Enter Username"
 script = ExtResource("2_liiqn")
 
-[node name="SigninPanel_Password" type="LineEdit" parent="MarginContainer/View/SigninPanel/VBoxContainer"]
+[node name="SigninPanel_Password" type="LineEdit" parent="VBoxContainer/MarginContainer/View/SigninPanel/VBoxContainer"]
 custom_minimum_size = Vector2(400, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -227,12 +209,11 @@ placeholder_text = "Enter Username"
 secret = true
 script = ExtResource("2_liiqn")
 
-[node name="SigninPanel_Signin" type="Button" parent="MarginContainer/View/SigninPanel/VBoxContainer"]
+[node name="SigninPanel_Signin" type="Button" parent="VBoxContainer/MarginContainer/View/SigninPanel/VBoxContainer"]
 custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_d6xcu")
+theme_type_variation = &"Button_Theme"
 text = "Signin"
 script = ExtResource("2_liiqn")

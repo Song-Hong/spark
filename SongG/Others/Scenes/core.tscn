@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://8kdf40dsxf7k"]
+[gd_scene load_steps=17 format=3 uid="uid://8kdf40dsxf7k"]
 
 [ext_resource type="Script" path="res://SongG/Module/CoreModule.gd" id="1_vm38c"]
 [ext_resource type="Script" path="res://SongG/Module/ProcessModule.gd" id="2_38asg"]
@@ -11,15 +11,11 @@
 [ext_resource type="Script" path="res://SongG/SongGExtend/Window/Module/WindowModule.gd" id="8_fpn2i"]
 [ext_resource type="Script" path="res://SongG/View/CustomModuleVIew.gd" id="9_lvoy5"]
 [ext_resource type="Script" path="res://SongG/SongGExtend/Tip/View/TipsMoudleView.gd" id="10_ir3u5"]
+[ext_resource type="Theme" uid="uid://n4j4id2bwuca" path="res://Assets/Theme/lighting.tres" id="11_k8thw"]
 [ext_resource type="Script" path="res://SongG/SongGExtend/EvenState/View/EvenStateView.gd" id="11_wwjj6"]
 [ext_resource type="Script" path="res://SongG/SongGExtend/StatusBar/View/StatusBarView.gd" id="12_hxkvl"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ev0f4"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3vse"]
 
 [sub_resource type="GDScript" id="GDScript_mhphb"]
 script/source = "extends AGodot
@@ -71,9 +67,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ev0f4")
+theme = ExtResource("11_k8thw")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_m3vse")
 
-[node name="ViewArea" type="Node" parent="Scenes/UI"]
+[node name="ViewArea" type="Control" parent="Scenes/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = SubResource("GDScript_mhphb")
 
 [node name="Tips" type="Node" parent="Scenes/UI"]

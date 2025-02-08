@@ -3,7 +3,7 @@ extends ACommand
 class_name upload_file_to_server_command
 
 func _init(_file_path):
-	var url = "http://60.204.140.223:17281/upload"
+	var url = "http://49.235.238.251:17281/upload"
 	var file = FileAccess.open(_file_path, FileAccess.READ)
 	var file_data = file.get_buffer(file.get_length())
 	

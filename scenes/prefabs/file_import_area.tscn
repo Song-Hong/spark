@@ -8,6 +8,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_type_variation = &"Button_Area"
 script = ExtResource("1_i4dos")
 
 [node name="Label" type="Label" parent="."]
@@ -15,6 +16,7 @@ layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
 size_flags_vertical = 1
+theme_type_variation = &"Label_Theme"
 text = "Drop Area Import File"
 horizontal_alignment = 1
 vertical_alignment = 1

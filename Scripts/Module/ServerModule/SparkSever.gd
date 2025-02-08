@@ -21,7 +21,7 @@ var server_http:HTTPRequest
 # 初始化
 func _ready():
 	#创建TCP连接
-	server_tcp = Server.init.create_tcps("spark", "60.204.140.223", 1728)
+	server_tcp = Server.init.create_tcps("spark", "49.235.238.251", 1728)
 	server_tcp.connect("receive_data", Callable(self, "on_data_received"))
 	server_tcp.connect_server()
 	
@@ -125,7 +125,7 @@ func create_tcp_connect():
 	if spark != null:
 		spark.dislistener()
 		Server.init.destory_tcp("spark")
-	server_tcp = Server.init.create_tcps("spark", "60.204.140.223", 1728)
+	server_tcp = Server.init.create_tcps("spark", "49.235.238.251", 1728)
 	server_tcp.connect("receive_data", Callable(self, "on_data_received"))
 	server_tcp.connect_server()
 	await Core.init.get_tree().create_timer(0.5).timeout

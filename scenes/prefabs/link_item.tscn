@@ -1,28 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://kwr8mplxd4lh"]
+[gd_scene load_steps=2 format=3 uid="uid://kwr8mplxd4lh"]
 
 [ext_resource type="Script" path="res://Scripts/MainPage_Chats/Prefabs/MainPage_LinkItem.gd" id="2_tlset"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gepol"]
-bg_color = Color(0.603922, 0.603922, 0.8, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3e4n"]
-bg_color = Color(0.603922, 0.603922, 0.8, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 8.0
-expand_margin_top = 8.0
-expand_margin_right = 8.0
-expand_margin_bottom = 8.0
 
 [node name="LinkItem" type="Button"]
 custom_minimum_size = Vector2(32, 32)
@@ -31,12 +9,9 @@ offset_bottom = 31.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
 focus_mode = 0
+theme_type_variation = &"Button_Item"
 theme_override_colors/font_hover_color = Color(0, 0.382056, 0.582281, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/icon_max_width = 32
-theme_override_styles/focus = SubResource("StyleBoxFlat_gepol")
-theme_override_styles/hover = SubResource("StyleBoxFlat_gepol")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_o3e4n")
-theme_override_styles/normal = SubResource("StyleBoxFlat_o3e4n")
 text = "1.txt"
 script = ExtResource("2_tlset")

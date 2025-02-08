@@ -44,7 +44,7 @@ func _ready():
 #检查版本
 func check_version():
 	http_manager.job(
-		"http://60.204.140.223:17281/version/spark"
+		"http://49.235.238.251:17281/version/spark"
 	).charset("utf-8").on_success(
 		func(response): 
 			parsing_version(response.fetch())

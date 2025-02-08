@@ -9,6 +9,7 @@ func _ready():
 	emoji_button_group.pressed.connect(Callable(self,"on_btn_pressed"))
 	gui_input.connect(Callable(self,"on_gui_input"))
 	Blackboard.init.get_data("FriendArea").gui_input.connect(Callable(self,"on_gui_input"))
+	set_po() #设置显示位置
 	 
 #当退出场景时
 func _exit_tree():
@@ -32,7 +33,13 @@ func on_btn_pressed(btn):
 	await Core.init.get_tree().create_timer(0.1).timeout
 	chats_area_scroll_bar_lowest_command.new()
 
-
+#检测鼠标点击,鼠标点击后关闭
 func on_gui_input(_event):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		get_parent().remove_child(self)
+
+#设置显示位置
+func set_po():
+	#获取按钮位置
+	var btn = Blackboard.init.get_data("MainChat_Emoji_Button") as Button
+	pass

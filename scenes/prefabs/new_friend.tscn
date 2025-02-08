@@ -1,19 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnn2kljvnij5j"]
 
 [ext_resource type="Script" path="res://Scripts/MainPage_Chats/Prefabs/MainPage_NewFriend.gd" id="1_4x3xm"]
+[ext_resource type="Theme" uid="uid://n4j4id2bwuca" path="res://Assets/Theme/lighting.tres" id="1_85ts7"]
 [ext_resource type="Texture2D" uid="uid://bfcsx4s3vcolw" path="res://Assets/Logo/logo.svg" id="1_nv34b"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvb47"]
-bg_color = Color(0.603922, 0.603922, 0.8, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldol8"]
 bg_color = Color(0.984314, 0.388235, 0.356863, 1)
@@ -41,7 +30,10 @@ corner_radius_bottom_left = 8
 
 [node name="NewFriend" type="Panel"]
 custom_minimum_size = Vector2(0, 60)
-theme_override_styles/panel = SubResource("StyleBoxFlat_vvb47")
+offset_right = 203.0
+offset_bottom = 60.0
+theme = ExtResource("1_85ts7")
+theme_type_variation = &"Panel_Item"
 script = ExtResource("1_4x3xm")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -60,7 +52,7 @@ offset_left = 10.0
 offset_top = 35.0
 offset_right = 43.0
 offset_bottom = 55.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 text = "Song"
 horizontal_alignment = 1
@@ -72,7 +64,7 @@ offset_left = 52.0
 offset_top = 11.0
 offset_right = 173.0
 offset_bottom = 32.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.252028, 0.252028, 0.252028, 1)
 theme_override_font_sizes/font_size = 14
 text = "Hello"
 horizontal_alignment = 1

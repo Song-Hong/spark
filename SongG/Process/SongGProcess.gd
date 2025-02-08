@@ -9,5 +9,5 @@ class_name SongGProcess
 
 #软件的入口
 func start():
-	#StatusBar.init.show_stauts()
+	StatusBar.init.show_stauts()
 	change_process(InitAppProcess.new())

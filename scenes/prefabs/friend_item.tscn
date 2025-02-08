@@ -1,32 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dl0v6b0er7hla"]
+[gd_scene load_steps=6 format=3 uid="uid://dl0v6b0er7hla"]
 
 [ext_resource type="Script" path="res://Scripts/MainPage_Chats/Prefabs/MainPage_FriendItem.gd" id="1_lb13e"]
 [ext_resource type="Texture2D" uid="uid://ywykaw3fhx46" path="res://Assets/Logo/Spark.svg" id="2_li5vy"]
 [ext_resource type="Shader" path="res://shader/FriendAvatar.gdshader" id="2_tyj27"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp454"]
-bg_color = Color(0.603922, 0.603922, 0.8, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqkgf"]
-bg_color = Color(0.529905, 0.52748, 0.742933, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.374195, 0.284075, 0.505232, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_btm8j"]
 shader = ExtResource("2_tyj27")
@@ -43,10 +19,7 @@ corner_radius_bottom_left = 8
 clip_contents = true
 custom_minimum_size = Vector2(180, 60)
 focus_mode = 0
-theme_override_styles/focus = SubResource("StyleBoxFlat_bp454")
-theme_override_styles/hover = SubResource("StyleBoxFlat_bp454")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nqkgf")
-theme_override_styles/normal = SubResource("StyleBoxFlat_bp454")
+theme_type_variation = &"Button_Friend"
 toggle_mode = true
 script = ExtResource("1_lb13e")
 
@@ -68,22 +41,24 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 0
 offset_left = 60.0
 offset_top = 5.0
-offset_right = 92.0
-offset_bottom = 28.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
-text = "肖杰"
+offset_right = 169.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.219501, 0.219501, 0.219501, 1)
+theme_override_font_sizes/font_size = 18
+text = "Frienddadsadsa"
 vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
 
 [node name="LastMessage" type="Label" parent="."]
 auto_translate_mode = 2
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 0
-offset_left = 62.0
+offset_left = 60.0
 offset_top = 28.0
-offset_right = 174.0
+offset_right = 172.0
 offset_bottom = 58.0
-theme_override_colors/font_color = Color(0.873298, 0.873298, 0.873298, 1)
+theme_override_colors/font_color = Color(0.537012, 0.537011, 0.537011, 1)
 theme_override_font_sizes/font_size = 16
 text = "在吗"
 vertical_alignment = 1
@@ -92,7 +67,7 @@ text_overrun_behavior = 3
 
 [node name="MessageState" type="Panel" parent="."]
 visible = false
-custom_minimum_size = Vector2(10, 10)
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -104,3 +79,18 @@ offset_bottom = 18.0
 grow_horizontal = 0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c686c")
+
+[node name="Label" type="Label" parent="MessageState"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 5.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

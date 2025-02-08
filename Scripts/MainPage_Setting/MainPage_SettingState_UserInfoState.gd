@@ -49,6 +49,10 @@ func on_avatar_import(paths):
 func show_save_button():
 	save_btn.visible = true
 
+#取消显示存储按钮
+func disbale_save_button():
+	save_btn.visible = false
+
 #当用户名修改时
 func on_user_name_change(_new_text):
 	show_save_button()
@@ -67,3 +71,4 @@ func on_save_btn_pressed():
 		upload_avatar_command.new(path)
 	#数据更新
 	send_user_info_command.new(Global.SelfID,userinfo.get_child(2).text,path.get_file())
+	disbale_save_button()

@@ -48,16 +48,18 @@ func on_friend_list_recive(friends):
 	SparkServer.init.search_friend_info.connect(Callable(self,"on_user_info_request"))
 	#从服务器获取自身详细数据
 	get_user_info_command.new(Global.SelfID)
+	#return
 	#发送全部好友信息获取
 	for friend in friends:
+		#创建好友列表元素
+		create_friend_item(friend.id,friend.name)
 		await Core.init.get_tree().create_timer(0.1).timeout
 		get_user_info_command.new(friend.id)
-	
 	#创建全部好友列表
 	for friend in friends:
 		#更新离线消息
-		if friend.Msg != "" or friend.Msg != null  or friend.Msg != "null":
-			var msg_str = '{"msgs":[%s]}'%str(friend.Msg).trim_suffix(",")
+		if friend.msg != "" or friend.msg != null or friend.msg != "null":
+			var msg_str = '{"msgs":[%s]}'%str(friend.msg).trim_suffix(",")
 			var json = JSON.new()
 			var error = json.parse(msg_str)
 			if error != OK:continue
@@ -78,25 +80,28 @@ func on_friend_list_recive(friends):
 func on_user_info_request(data):
 	var frined_item = null
 	if data.id != Global.SelfID:
-		#创建好友组件
-		frined_item = create_friend_item(data.id,data.Name)
+		#获取好友组件
+		for item in friend_area.get_children():
+			if item.name == str(data.id):
+				frined_item = item
+				break
 		# 从本地更新好友的最新消息
 		var last_md  = DB.init.read_today_last_md(data.id)
 		var last_msg = format_receive_md(last_md)
 		update_friend_last_message_command.new(data.id,last_msg)
 	##判断服务器用户是否设置头像
-	if data.Avatar == null || data.Avatar == "null" || data.Avatar == "":
+	if data.avatar == null || data.avatar == "null" || data.avatar == "":
 		return
 	##与本地头像数据比对
-	if DB.init.avatar_exists(data.Avatar):
+	if DB.init.avatar_exists(data.avatar):
 		##当文件已存在,则直接创建当前好友信息
 		if frined_item != null:
 			frined_item.set_friend_head(DB.init.get_avatar_img(data.id))
-	else: 
+	else:
 		##文件不存在,则从服务器下在当前文件
-		download_avatar_command.new(data.Avatar,DB.init.join_avatar_path(data.Avatar))
-		await Core.init.get_tree().create_timer(0.24).timeout
-		var img = DB.init.comparison_get_avatar_img_with_path(data.id,data.Avatar)
+		download_avatar_command.new(data.avatar,DB.init.join_avatar_path(data.avatar))
+		await Core.init.get_tree().create_timer(0.26).timeout
+		var img = DB.init.comparison_get_avatar_img_with_path(data.id,data.avatar)
 		if img != null: #头像下载成功
 			if frined_item != null: #设置好友头像
 				frined_item.set_friend_head(img)
@@ -112,7 +117,10 @@ func on_friend_msg_receive(_data):
 	#解析消息
 	var md     = MessageData.static_parsing(_data.MSG)
 	var msg    = format_receive_md(md)
+	#设置好友最后消息
 	friend.set_friend_last_message(msg)
+	#设置好友未读
+	friend.set_friend_message_read_state(true,friend.unread_count+1)
 	#检测消息类型,当类型不为纯文本消息时,从服务器下载资源
 	if md.type > 1:
 		await Core.init.get_tree().create_timer(0.3).timeout
@@ -147,6 +155,8 @@ func on_frined_item_pressed(btn):
 	Global.TargetName = btn.friend_name
 	#设置当前聊天对象id
 	Global.set_target_id(btn.id)
+	#取消好友显示未读
+	btn.set_friend_message_read_state(false)
 
 #创建新好友申请
 func create_new_friend_item(friend_id,friend_name,friend_msg):

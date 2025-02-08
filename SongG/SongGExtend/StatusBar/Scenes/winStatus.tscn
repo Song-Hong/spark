@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmegj23keirmu"]
+[gd_scene load_steps=10 format=3 uid="uid://bmegj23keirmu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouhap"]
+[ext_resource type="Script" path="res://SongG/SongGExtend/StatusBar/Scripts/windowDrag.gd" id="1_0rwer"]
+[ext_resource type="Texture2D" uid="uid://csl5dw73s0dvt" path="res://SongG/SongGExtend/StatusBar/Icons/win_close.svg" id="2_5oewo"]
+[ext_resource type="Script" path="res://SongG/SongGExtend/StatusBar/Scripts/windowController.gd" id="2_nakiy"]
+[ext_resource type="Texture2D" uid="uid://b77i5ho018fkk" path="res://SongG/SongGExtend/StatusBar/Icons/win_max.svg" id="4_78iba"]
+[ext_resource type="Texture2D" uid="uid://crtlbqm7xj61u" path="res://SongG/SongGExtend/StatusBar/Icons/win_min.svg" id="5_r5msi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ijga"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vwpi2"]
+texture = ExtResource("2_5oewo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tfx2b"]
+texture = ExtResource("4_78iba")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4eqvh"]
+texture = ExtResource("5_r5msi")
 
 [node name="winStatus" type="Button"]
 anchors_preset = 10
@@ -8,8 +23,62 @@ anchor_right = 1.0
 offset_bottom = 40.0
 grow_horizontal = 2
 focus_mode = 0
-theme_override_styles/focus = SubResource("StyleBoxFlat_ouhap")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_ouhap")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ouhap")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ouhap")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ouhap")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7ijga")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7ijga")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7ijga")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7ijga")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7ijga")
+script = ExtResource("1_0rwer")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -26.0
+offset_top = 10.0
+offset_right = -12.0
+offset_bottom = 24.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vwpi2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vwpi2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vwpi2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vwpi2")
+script = ExtResource("2_nakiy")
+
+[node name="Max" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -59.0
+offset_top = 10.0
+offset_right = -45.0
+offset_bottom = 24.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_tfx2b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tfx2b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tfx2b")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tfx2b")
+script = ExtResource("2_nakiy")
+btn_type = 2
+
+[node name="Min" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -92.0
+offset_top = 10.0
+offset_right = -78.0
+offset_bottom = 24.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_4eqvh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4eqvh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4eqvh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4eqvh")
+script = ExtResource("2_nakiy")
+btn_type = 1

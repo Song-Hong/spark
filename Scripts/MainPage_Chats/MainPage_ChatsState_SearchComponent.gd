@@ -49,7 +49,7 @@ func _on_text_submitted(text):
 func on_search_receive(_data):
 	for item in _data:
 		#创建好友列表
-		create_person_card(item.id,item.Name,item.Username)
+		create_person_card(item.id,item.name,item.username)
 
 #创建好友卡片
 func create_person_card(_id,_name,_username):

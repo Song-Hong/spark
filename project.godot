@@ -30,6 +30,11 @@ driver/mix_rate=48000
 
 Global="*res://Scripts/Data/Global.gd"
 
+[display]
+
+window/size/transparent=true
+window/per_pixel_transparency/allowed=true
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/HTTPManager/plugin.cfg")

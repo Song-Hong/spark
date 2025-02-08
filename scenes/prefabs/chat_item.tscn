@@ -1,19 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbn3srh14mamt"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxlen"]
-bg_color = Color(0.603922, 0.603922, 0.8, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 8.0
-expand_margin_top = 8.0
-expand_margin_right = 8.0
-expand_margin_bottom = 8.0
+[gd_scene format=3 uid="uid://dbn3srh14mamt"]
 
 [node name="ChatItem" type="Label"]
 auto_translate_mode = 2
 size_flags_horizontal = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qxlen")
+theme_type_variation = &"Label_ChatItem"
 text = "你好"

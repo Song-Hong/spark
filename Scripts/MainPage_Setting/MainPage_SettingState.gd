@@ -11,6 +11,8 @@ var setting_finite:Finite
 
 #当前设置界面
 var now_setting_page
+#当前设置界面名称
+var now_setting_page_name
 
 func _init():
 	#监听当流程改变时
@@ -49,6 +51,8 @@ func exit():
 	now_setting_page = null
 	#清空状态机
 	setting_finite.clear()
+	#清空当前设置界面名称
+	now_setting_page_name = ""
 
 #当设置按钮点击时
 func on_setting_page_group_btn_pressed(btn):
@@ -56,6 +60,8 @@ func on_setting_page_group_btn_pressed(btn):
 
 #切换设置界面
 func change_setting_page(setting_name):
+	if now_setting_page_name == setting_name:return
+	else: now_setting_page_name = setting_name
 	#获取设置区域
 	var content_area = Blackboard.init.get_data("Setting_Content")
 	#设置当前设置名称
