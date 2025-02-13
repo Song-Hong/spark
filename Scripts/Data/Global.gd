@@ -13,7 +13,8 @@ var Name: String # 当前用户昵称
 var TargetName:String #当前聊天对象昵称
 var Username = "" #当前用户账号
 var Heartbeat = 3 #心跳
-var RightMenu:PanelContainer #右键
+var RightMenu:PanelContainer #右键菜单
+var NowThemeName:String = "Light" #当前主题名称
 #endregion
 
 #region 公用方法

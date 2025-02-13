@@ -33,7 +33,6 @@ layout_mode = 2
 focus_mode = 0
 theme_type_variation = &"Button_Theme_Select"
 toggle_mode = true
-button_pressed = true
 button_group = ExtResource("2_keh8a")
 text = "UserInfo"
 
@@ -43,6 +42,7 @@ layout_mode = 2
 focus_mode = 0
 theme_type_variation = &"Button_Theme_Select"
 toggle_mode = true
+button_pressed = true
 button_group = ExtResource("2_keh8a")
 text = "Universal"
 

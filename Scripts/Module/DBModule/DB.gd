@@ -48,7 +48,7 @@ func read_core()->AppConfig:
 	ac.user_username = json.user_username
 	ac.user_password = json.user_password
 	return ac
-		
+
 #读取今天消息
 func read_md_today(_id)->Array:
 	var array_mds = []
@@ -223,4 +223,9 @@ func join_avatar_path(_path)->String:
 #判断头像文件是否存在
 func avatar_exists(_path)->bool:
 	return FileAccess.file_exists(join_avatar_path(_path))
+#endregion
+
+#region [preview] latest DB loading opertion
+func read_md_last():
+	pass
 #endregion

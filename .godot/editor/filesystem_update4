@@ -1,12 +1,8 @@
 res://default_bus_layout.tres
-res://scenes/prefabs/emoji_panel.tscn
-res://Assets/Theme/lighting.tres
+res://scenes/MainPage_SettingPage.tscn
 res://shader/FriendAvatar.gdshader
-res://scenes/MainPage_ChatsPage.tscn
-res://scenes/prefabs/friend_item.tscn
-res://scenes/prefabs/file_item.tscn
-res://scenes/prefabs/RightMenu.tscn
-res://SongG/SongGExtend/EvenState/Styles/def.tres
-res://SongG/SongGExtend/Tip/Styles/TipPanel.tres
-res://Scripts/Prefabs/right_menu.gd
+res://scenes/prefabs/Universal.tscn
 res://scenes/MainPage.tscn
+res://scenes/prefabs/file_import_area.tscn
+res://Assets/Theme/lighting.tres
+res://README.md

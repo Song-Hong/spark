@@ -46,7 +46,7 @@ func init(right_menu_items:Array):
 #按钮点击
 func button_pressed(btn):
 	btn_click.emit(btn)
-	remove_self()
+	#remove_self()
 
 #设置位置
 func set_po():
@@ -56,4 +56,11 @@ func set_po():
 #销毁自身
 func remove_self():
 	Global.RightMenu = null
-	get_parent().remove_child(self)
+	if get_parent() != null:
+		get_parent().remove_child(self)
+
+#检测左键是否点击,点击将销毁物体
+func _process(delta):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		await get_tree().create_timer(0.1).timeout
+		remove_self()

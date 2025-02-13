@@ -6,13 +6,7 @@
 
 [基于SongG框架](https://github.com/Song-Hong/SongG)
 
-##### 聊天界面
-
 ![](./readme/a1.png)
-
-##### 本地化
-
-![](./readme/a2.png)
 
 
 

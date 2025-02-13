@@ -1,13 +1,13 @@
+TextureRect
 Button
-HSeparator
 Label
-MarginContainer
 VBoxContainer
+HSeparator
+MarginContainer
 PanelContainer
 Panel
 RichTextLabel
 Control
-TextureRect
 Node
 LineEdit
 HBoxContainer

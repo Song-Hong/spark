@@ -38,7 +38,8 @@ func start():
 	setting_finite.add_state("Cache",MainPage_SettingState_CacheState.new())
 	
 	#初始化设置界面
-	change_setting_page("UserInfo")
+	#await Core.init.get_tree().create_timer(0.1).timeout
+	change_setting_page("Universal")
 
 #退出时清空注册
 func exit():

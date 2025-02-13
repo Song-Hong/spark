@@ -1,48 +1,154 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsdm0k2a2lwdw"]
+[gd_scene load_steps=7 format=3 uid="uid://dsdm0k2a2lwdw"]
 
 [ext_resource type="ButtonGroup" uid="uid://cobjp7hfqv3nn" path="res://Scripts/MainPage_Setting/Prefabs/language_controller.tres" id="1_tth81"]
 [ext_resource type="Script" path="res://SongG/ToolScripts/ItemBind.gd" id="2_rhbms"]
+[ext_resource type="Texture2D" uid="uid://c2w85347bte8x" path="res://Assets/Theme/Light.svg" id="3_wnb0c"]
+[ext_resource type="Texture2D" uid="uid://ucntkkjmbqrm" path="res://Assets/Theme/Dark.svg" id="4_qgxbq"]
+[ext_resource type="Texture2D" uid="uid://blxk0goykt6i7" path="res://Assets/Theme/Auto.svg" id="5_10y7s"]
+[ext_resource type="ButtonGroup" uid="uid://cmb2dpbssfw5u" path="res://Scripts/MainPage_Setting/Prefabs/theme_controller.tres" id="6_yqt5a"]
 
 [node name="Universal" type="VBoxContainer"]
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="Info" type="VBoxContainer" parent="."]
+[node name="Theme" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="Info"]
+[node name="Label" type="Label" parent="Theme"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Info"
+text = "Theme (Preview)"
 
-[node name="Panel2" type="PanelContainer" parent="Info"]
+[node name="Panel" type="PanelContainer" parent="Theme"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_type_variation = &"Panel_Setting"
 
-[node name="MarginContainer" type="MarginContainer" parent="Info/Panel2"]
+[node name="MarginContainer" type="MarginContainer" parent="Theme/Panel"]
 layout_mode = 2
 theme_override_constants/margin_left = 6
 theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Info/Panel2/MarginContainer"]
+[node name="ThemeArea" type="HBoxContainer" parent="Theme/Panel/MarginContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("2_rhbms")
+
+[node name="Light" type="VBoxContainer" parent="Theme/Panel/MarginContainer/ThemeArea"]
+custom_minimum_size = Vector2(162, 127)
 layout_mode = 2
 
-[node name="Version" type="Label" parent="Info/Panel2/MarginContainer/HBoxContainer"]
+[node name="Light" type="Button" parent="Theme/Panel/MarginContainer/ThemeArea/Light"]
+custom_minimum_size = Vector2(162, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Version"
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"Button_Theme_Select"
+toggle_mode = true
+button_group = ExtResource("6_yqt5a")
+icon_alignment = 1
+expand_icon = true
 
-[node name="Middle" type="Label" parent="Info/Panel2/MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = " : "
+[node name="TextureRect" type="TextureRect" parent="Theme/Panel/MarginContainer/ThemeArea/Light/Light"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
+pivot_offset = Vector2(80, 51)
+texture = ExtResource("3_wnb0c")
+expand_mode = 1
 
-[node name="VersionNumber" type="Label" parent="Info/Panel2/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="Theme/Panel/MarginContainer/ThemeArea/Light"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Light"
+
+[node name="Dark" type="VBoxContainer" parent="Theme/Panel/MarginContainer/ThemeArea"]
+custom_minimum_size = Vector2(162, 127)
+layout_mode = 2
+
+[node name="Dark" type="Button" parent="Theme/Panel/MarginContainer/ThemeArea/Dark"]
+custom_minimum_size = Vector2(162, 0)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"Button_Theme_Select"
+toggle_mode = true
+button_group = ExtResource("6_yqt5a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Theme/Panel/MarginContainer/ThemeArea/Dark/Dark"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
+pivot_offset = Vector2(80, 51)
+texture = ExtResource("4_qgxbq")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Theme/Panel/MarginContainer/ThemeArea/Dark"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Dark
+"
+
+[node name="Auto" type="VBoxContainer" parent="Theme/Panel/MarginContainer/ThemeArea"]
+custom_minimum_size = Vector2(162, 127)
+layout_mode = 2
+
+[node name="Auto" type="Button" parent="Theme/Panel/MarginContainer/ThemeArea/Auto"]
+custom_minimum_size = Vector2(162, 0)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_type_variation = &"Button_Theme_Select"
+toggle_mode = true
+button_group = ExtResource("6_yqt5a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Theme/Panel/MarginContainer/ThemeArea/Auto/Auto"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98, 0.98)
+pivot_offset = Vector2(80, 51)
+texture = ExtResource("5_10y7s")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Theme/Panel/MarginContainer/ThemeArea/Auto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Auto
+"
+
+[node name="ThemeButtonGroup" type="Button" parent="Theme"]
+visible = false
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_yqt5a")
 script = ExtResource("2_rhbms")
 
 [node name="Language" type="VBoxContainer" parent="."]
@@ -121,4 +227,42 @@ layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("1_tth81")
 text = " 世界语  "
+script = ExtResource("2_rhbms")
+
+[node name="Info" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Info"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Info"
+
+[node name="Panel2" type="PanelContainer" parent="Info"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"Panel_Setting"
+
+[node name="MarginContainer" type="MarginContainer" parent="Info/Panel2"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Info/Panel2/MarginContainer"]
+layout_mode = 2
+
+[node name="Version" type="Label" parent="Info/Panel2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Version"
+
+[node name="Middle" type="Label" parent="Info/Panel2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " : "
+
+[node name="VersionNumber" type="Label" parent="Info/Panel2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 script = ExtResource("2_rhbms")
